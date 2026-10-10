@@ -1,0 +1,15 @@
+﻿field,type,description,design_note
+target,string,"Target application/lab, e.g. crAPI or VAmPI",Primary dataset partition
+service_id,string,Stable internal identifier for the service,Use as node ID in attack graph
+service_name,string,Deployment/service name,Matches Docker Compose or application inventory
+service_type,categorical,"Gateway, web, application, database, vector DB, mail, etc.",Useful for graph rules
+technology,string,Framework/product/runtime,Prefer verified values
+language,string,Implementation language when known,Can be blank when not verified
+port,string,Listening/published port(s),Keep internal and published ports distinguishable
+protocol,string,"HTTP, HTTPS, SMTP, PostgreSQL, MongoDB, MCP, etc.",Supports attack-surface analysis
+exposure,categorical,"Host-exposed, internal, gateway, etc.",Supports reachability modeling
+depends_on,semicolon-list,Direct service dependencies,Candidate graph edges
+data_store,string,Database/storage used by service,Supports data-flow and impact analysis
+api_surface,string,Endpoint prefix or interface,Join later with endpoint inventory
+security_relevance,string,Why the service matters to the security model,Human-readable context
+source_status,string,Evidence/verification state,Prevents assumptions from becoming ground truth
