@@ -1,0 +1,2 @@
+1,BOLA,doğrulandı,dynamic,/identity/api/v2/vehicle/{vehicle_id}/location,findings/evidence/challenge_01,CWE-639,CAPEC-210,,,Attacker kullanıcısı victim kullanıcısının vehicle_id (UUID) değeriyle araç konum koordinatlarını yetkisiz okuyabildi.
+challenge_no,kategori,durum,kaynak,endpoint,kanit_klasoru,cwe,capec,attack,zincir,notlar
