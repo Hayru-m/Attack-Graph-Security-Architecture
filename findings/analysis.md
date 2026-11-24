@@ -3,12 +3,12 @@
 ## Genel kapsam
 
 - Planlanan Challenge numarası: 18
-- CSV'de kayıtlı benzersiz Challenge: 10 (55.6% kapsam)
-- Beklemede olmayan sonuç kaydı: 10; beklemede: 0; kaydı yok: 8
-- Durum sayıları: doğrulandı 9, analiz edildi 1, diğer nihai sonuç 0
-- Kayıtlı sonuçlar içindeki doğrulanmış payı: 90.0% (9/10)
-- Nihai sonuçlar içindeki doğrulama oranı: 100.0% (9/9)
-- Kaydı bulunmayan numaralar: 11, 12, 13, 14, 15, 16, 17, 18
+- CSV'de kayıtlı benzersiz Challenge: 15 (83.3% kapsam)
+- Beklemede olmayan sonuç kaydı: 15; beklemede: 0; kaydı yok: 3
+- Durum sayıları: doğrulandı 14, analiz edildi 1, diğer nihai sonuç 0
+- Kayıtlı sonuçlar içindeki doğrulanmış payı: 93.3% (14/15)
+- Nihai sonuçlar içindeki doğrulama oranı: 100.0% (14/14)
+- Kaydı bulunmayan numaralar: 16, 17, 18
 
 ## Yöntem
 
@@ -48,20 +48,25 @@
 ## Challenge 10–18 — ÖN ANALİZ (EKSİK/BEKLEYEN TEST)
 
 - Planlanan Challenge numarası: 9
-- CSV'de kayıtlı Challenge satırı: 1 (11.1% kapsam)
-- Beklemede olmayan sonuç satırı: 1 (11.1% kapsam)
+- CSV'de kayıtlı Challenge satırı: 6 (66.7% kapsam)
+- Beklemede olmayan sonuç satırı: 6 (66.7% kapsam)
 - Beklemede olan Challenge numaraları: yok
-- CSV'de kaydı bulunmayan numaralar: 11, 12, 13, 14, 15, 16, 17, 18
-- Duruma göre: doğrulandı 1, analiz edildi 0, diğer nihai sonuç 0
-- Sonuç satırları içindeki doğrulanmış payı: 100.0% (1/1)
-- Nihai sonuçlar içindeki doğrulama oranı: 100.0% (1/1)
-- Durum sayıları: `doğrulandı`: 1
+- CSV'de kaydı bulunmayan numaralar: 16, 17, 18
+- Duruma göre: doğrulandı 6, analiz edildi 0, diğer nihai sonuç 0
+- Sonuç satırları içindeki doğrulanmış payı: 100.0% (6/6)
+- Nihai sonuçlar içindeki doğrulama oranı: 100.0% (6/6)
+- Durum sayıları: `doğrulandı`: 6
 
 | Kategori | Sonuç kaydı | Pay | Doğrulandı | Analiz edildi | Diğer nihai sonuç |
 |---|---:|---:|---:|---:|---:|
-| Mass Assignment (API6:2023) | 1 | 100.0% | 1 | 0 | 0 |
+| Broken Authentication (Improper JWT Validation) | 1 | 16.7% | 1 | 0 | 0 |
+| Broken Authentication (Missing Authentication) | 1 | 16.7% | 1 | 0 | 0 |
+| Mass Assignment (API6:2023) | 1 | 16.7% | 1 | 0 | 0 |
+| NoSQL Injection | 1 | 16.7% | 1 | 0 | 0 |
+| Server-Side Request Forgery (SSRF) | 1 | 16.7% | 1 | 0 | 0 |
+| SQL Injection | 1 | 16.7% | 1 | 0 | 0 |
 
-- En sık görülen kategori: Mass Assignment (API6:2023) (1/1, 100.0%).
+- En sık görülen kategori: Broken Authentication (Improper JWT Validation), Broken Authentication (Missing Authentication), Mass Assignment (API6:2023), NoSQL Injection, SQL Injection, Server-Side Request Forgery (SSRF) (1/6, 16.7%).
 
 ![Challenge 10–18 kategori dağılımı; renkler durumları gösterir](figures/category_distribution_10_18.png)
 
