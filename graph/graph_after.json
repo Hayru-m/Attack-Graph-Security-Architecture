@@ -1,0 +1,346 @@
+{
+  "nodes": [
+    {
+      "id": "root",
+      "label": "crAPI System",
+      "type": "root"
+    },
+    {
+      "id": "access_control",
+      "label": "Access Control",
+      "type": "group"
+    },
+    {
+      "id": "authentication",
+      "label": "Authentication",
+      "type": "group"
+    },
+    {
+      "id": "data_exposure",
+      "label": "Sensitive Data Exposure",
+      "type": "group"
+    },
+    {
+      "id": "injection",
+      "label": "Injection",
+      "type": "group"
+    },
+    {
+      "id": "request_manipulation",
+      "label": "Request Manipulation",
+      "type": "group"
+    },
+    {
+      "id": "resource_abuse",
+      "label": "Resource Abuse",
+      "type": "group"
+    },
+    {
+      "id": "c1",
+      "label": "C1",
+      "short_name": "BOLA",
+      "type": "challenge",
+      "number": 1,
+      "group": "access_control",
+      "category": "BOLA",
+      "status": "doğrulandı",
+      "endpoint": "/identity/api/v2/vehicle/{vehicle_id}/location",
+      "cwe": "CWE-639",
+      "capec": "CAPEC-210"
+    },
+    {
+      "id": "c2",
+      "label": "C2",
+      "short_name": "BOLA",
+      "type": "challenge",
+      "number": 2,
+      "group": "access_control",
+      "category": "BOLA",
+      "status": "doğrulandı",
+      "endpoint": "/workshop/api/mechanic/receive_report",
+      "cwe": "CWE-639",
+      "capec": "CAPEC-210"
+    },
+    {
+      "id": "c3",
+      "label": "C3",
+      "short_name": "Broken Authentication",
+      "type": "challenge",
+      "number": 3,
+      "group": "authentication",
+      "category": "Broken Authentication",
+      "status": "doğrulandı",
+      "endpoint": "/identity/api/auth/v2/check-otp",
+      "cwe": "CWE-307",
+      "capec": "CAPEC-49"
+    },
+    {
+      "id": "c4",
+      "label": "C4",
+      "short_name": "Data Exposure",
+      "type": "challenge",
+      "number": 4,
+      "group": "data_exposure",
+      "category": "Excessive Data Exposure",
+      "status": "doğrulandı",
+      "endpoint": "/community/api/v2/community/posts/recent",
+      "cwe": "CWE-213",
+      "capec": "CAPEC-118"
+    },
+    {
+      "id": "c5",
+      "label": "C5",
+      "short_name": "Data Exposure",
+      "type": "challenge",
+      "number": 5,
+      "group": "data_exposure",
+      "category": "Excessive Data Exposure",
+      "status": "doğrulandı",
+      "endpoint": "/identity/api/v2/user/videos/{video_id}",
+      "cwe": "CWE-200",
+      "capec": "CAPEC-118"
+    },
+    {
+      "id": "c6",
+      "label": "C6",
+      "short_name": "Rate Limiting",
+      "type": "challenge",
+      "number": 6,
+      "group": "resource_abuse",
+      "category": "Lack of Resources & Rate Limiting",
+      "status": "doğrulandı",
+      "endpoint": "/workshop/api/merchant/contact_mechanic",
+      "cwe": "CWE-770",
+      "capec": "CAPEC-130"
+    },
+    {
+      "id": "c7",
+      "label": "C7",
+      "short_name": "BFLA",
+      "type": "challenge",
+      "number": 7,
+      "group": "access_control",
+      "category": "BFLA",
+      "status": "doğrulandı",
+      "endpoint": "/identity/api/v2/admin/videos/{video_id}",
+      "cwe": "CWE-285",
+      "capec": "CAPEC-233"
+    },
+    {
+      "id": "c8",
+      "label": "C8",
+      "short_name": "SSRF",
+      "type": "challenge",
+      "number": 8,
+      "group": "request_manipulation",
+      "category": "Server-Side Request Forgery (SSRF)",
+      "status": "analiz_edildi",
+      "endpoint": "/workshop/api/merchant/contact_mechanic",
+      "cwe": "CWE-918",
+      "capec": "CAPEC-664"
+    },
+    {
+      "id": "c9",
+      "label": "C9",
+      "short_name": "BOLA",
+      "type": "challenge",
+      "number": 9,
+      "group": "access_control",
+      "category": "BOLA",
+      "status": "doğrulandı",
+      "endpoint": "/workshop/api/shop/orders/{order_id}",
+      "cwe": "CWE-639",
+      "capec": "CAPEC-1"
+    },
+    {
+      "id": "c10",
+      "label": "C10",
+      "short_name": "Mass Assignment",
+      "type": "challenge",
+      "number": 10,
+      "group": "request_manipulation",
+      "category": "Mass Assignment (API6:2023)",
+      "status": "doğrulandı",
+      "endpoint": "/workshop/api/merchant/user/videos/{video_id}",
+      "cwe": "CWE-915",
+      "capec": "CAPEC-315"
+    },
+    {
+      "id": "c11",
+      "label": "C11",
+      "short_name": "SSRF",
+      "type": "challenge",
+      "number": 11,
+      "group": "request_manipulation",
+      "category": "Server-Side Request Forgery (SSRF)",
+      "status": "doğrulandı",
+      "endpoint": "/workshop/api/merchant/contact_mechanic",
+      "cwe": "CWE-918",
+      "capec": "CAPEC-664"
+    },
+    {
+      "id": "c12",
+      "label": "C12",
+      "short_name": "NoSQL Injection",
+      "type": "challenge",
+      "number": 12,
+      "group": "injection",
+      "category": "NoSQL Injection",
+      "status": "doğrulandı",
+      "endpoint": "/community/api/v2/coupon/validate-coupon",
+      "cwe": "CWE-943",
+      "capec": "CAPEC-248"
+    },
+    {
+      "id": "c13",
+      "label": "C13",
+      "short_name": "SQL Injection",
+      "type": "challenge",
+      "number": 13,
+      "group": "injection",
+      "category": "SQL Injection",
+      "status": "doğrulandı",
+      "endpoint": "/community/api/v2/coupon/apply-coupon",
+      "cwe": "CWE-89",
+      "capec": "CAPEC-66"
+    },
+    {
+      "id": "c14",
+      "label": "C14",
+      "short_name": "Missing Auth",
+      "type": "challenge",
+      "number": 14,
+      "group": "authentication",
+      "category": "Broken Authentication (Missing Authentication)",
+      "status": "doğrulandı",
+      "endpoint": "/identity/api/v2/user/videos",
+      "cwe": "CWE-306",
+      "capec": "CAPEC-115"
+    },
+    {
+      "id": "c15",
+      "label": "C15",
+      "short_name": "JWT Validation",
+      "type": "challenge",
+      "number": 15,
+      "group": "authentication",
+      "category": "Broken Authentication (Improper JWT Validation)",
+      "status": "doğrulandı",
+      "endpoint": "/identity/api/v2/user/dashboard",
+      "cwe": "CWE-347",
+      "capec": "CAPEC-633"
+    }
+  ],
+  "edges": [
+    {
+      "source": "root",
+      "target": "access_control",
+      "type": "contains"
+    },
+    {
+      "source": "access_control",
+      "target": "c1",
+      "type": "contains"
+    },
+    {
+      "source": "access_control",
+      "target": "c2",
+      "type": "contains"
+    },
+    {
+      "source": "root",
+      "target": "authentication",
+      "type": "contains"
+    },
+    {
+      "source": "authentication",
+      "target": "c3",
+      "type": "contains"
+    },
+    {
+      "source": "root",
+      "target": "data_exposure",
+      "type": "contains"
+    },
+    {
+      "source": "data_exposure",
+      "target": "c4",
+      "type": "contains"
+    },
+    {
+      "source": "data_exposure",
+      "target": "c5",
+      "type": "contains"
+    },
+    {
+      "source": "root",
+      "target": "resource_abuse",
+      "type": "contains"
+    },
+    {
+      "source": "resource_abuse",
+      "target": "c6",
+      "type": "contains"
+    },
+    {
+      "source": "access_control",
+      "target": "c7",
+      "type": "contains"
+    },
+    {
+      "source": "root",
+      "target": "request_manipulation",
+      "type": "contains"
+    },
+    {
+      "source": "request_manipulation",
+      "target": "c8",
+      "type": "contains"
+    },
+    {
+      "source": "access_control",
+      "target": "c9",
+      "type": "contains"
+    },
+    {
+      "source": "request_manipulation",
+      "target": "c10",
+      "type": "contains"
+    },
+    {
+      "source": "request_manipulation",
+      "target": "c11",
+      "type": "contains"
+    },
+    {
+      "source": "root",
+      "target": "injection",
+      "type": "contains"
+    },
+    {
+      "source": "injection",
+      "target": "c12",
+      "type": "contains"
+    },
+    {
+      "source": "injection",
+      "target": "c13",
+      "type": "contains"
+    },
+    {
+      "source": "authentication",
+      "target": "c14",
+      "type": "contains"
+    },
+    {
+      "source": "authentication",
+      "target": "c15",
+      "type": "contains"
+    },
+    {
+      "source": "c5",
+      "target": "c10",
+      "type": "chain"
+    }
+  ]
+}
