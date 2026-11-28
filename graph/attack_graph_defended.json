@@ -1,0 +1,3041 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "node_default": {},
+    "edge_default": {}
+  },
+  "nodes": [
+    {
+      "node_type": "system",
+      "label": "crAPI System",
+      "target": "crAPI",
+      "id": "system:crAPI"
+    },
+    {
+      "node_type": "service",
+      "label": "api.mypremiumdealership.com",
+      "service_id": "svc-gateway",
+      "service_type": "API gateway",
+      "technology": "Gateway service (implementation to verify)",
+      "language": "",
+      "port": "443/internal",
+      "exposure": "Internal/container; gateway entry point",
+      "api_surface": "External API ingress / routing",
+      "source_status": "Observed in current docker-compose; implementation not yet verified",
+      "id": "service:svc-gateway"
+    },
+    {
+      "node_type": "service",
+      "label": "crapi-web",
+      "service_id": "svc-web",
+      "service_type": "Web / ingress",
+      "technology": "Nginx/OpenResty-based web service",
+      "language": "JavaScript/UI",
+      "port": "80,443 (published 8888/30080/8443/30443)",
+      "exposure": "Host-exposed",
+      "api_surface": "Main UI + reverse-proxy/API routing",
+      "source_status": "Official crAPI docs + current compose",
+      "id": "service:svc-web"
+    },
+    {
+      "node_type": "service",
+      "label": "crapi-identity",
+      "service_id": "svc-identity",
+      "service_type": "Application service",
+      "technology": "Java",
+      "language": "Java",
+      "port": "8080",
+      "exposure": "Internal",
+      "api_surface": "/identity/api/*",
+      "source_status": "Official crAPI docs + current compose",
+      "id": "service:svc-identity"
+    },
+    {
+      "node_type": "service",
+      "label": "crapi-community",
+      "service_id": "svc-community",
+      "service_type": "Application service",
+      "technology": "Go",
+      "language": "Go",
+      "port": "8087",
+      "exposure": "Internal",
+      "api_surface": "/community/api/*",
+      "source_status": "Official crAPI docs + current compose",
+      "id": "service:svc-community"
+    },
+    {
+      "node_type": "service",
+      "label": "crapi-workshop",
+      "service_id": "svc-workshop",
+      "service_type": "Application service",
+      "technology": "Python",
+      "language": "Python",
+      "port": "8000",
+      "exposure": "Internal",
+      "api_surface": "/workshop/api/*",
+      "source_status": "Official crAPI docs + current compose",
+      "id": "service:svc-workshop"
+    },
+    {
+      "node_type": "service",
+      "label": "crapi-chatbot",
+      "service_id": "svc-chatbot",
+      "service_type": "LLM-backed application service",
+      "technology": "Chatbot service",
+      "language": "Python (verify in source)",
+      "port": "5002; MCP 5500 published",
+      "exposure": "Host-exposed MCP; API-facing through web",
+      "api_surface": "Chatbot / MCP endpoints",
+      "source_status": "Current compose; language needs source verification",
+      "id": "service:svc-chatbot"
+    },
+    {
+      "node_type": "service",
+      "label": "postgresdb",
+      "service_id": "db-postgres",
+      "service_type": "Relational database",
+      "technology": "PostgreSQL 14",
+      "language": "",
+      "port": "5432",
+      "exposure": "Internal",
+      "api_surface": "Database only",
+      "source_status": "Current compose",
+      "id": "service:db-postgres"
+    },
+    {
+      "node_type": "service",
+      "label": "mongodb",
+      "service_id": "db-mongo",
+      "service_type": "NoSQL database",
+      "technology": "MongoDB 4.4",
+      "language": "",
+      "port": "27017",
+      "exposure": "Internal",
+      "api_surface": "Database only",
+      "source_status": "Current compose",
+      "id": "service:db-mongo"
+    },
+    {
+      "node_type": "service",
+      "label": "chromadb",
+      "service_id": "db-chroma",
+      "service_type": "Vector database",
+      "technology": "ChromaDB",
+      "language": "",
+      "port": "8000/internal",
+      "exposure": "Internal",
+      "api_surface": "Vector store API",
+      "source_status": "Current compose",
+      "id": "service:db-chroma"
+    },
+    {
+      "node_type": "service",
+      "label": "mailhog",
+      "service_id": "svc-mailhog",
+      "service_type": "Mail testing service",
+      "technology": "MailHog",
+      "language": "",
+      "port": "8025 UI; 1025 SMTP/internal",
+      "exposure": "Host-exposed UI; SMTP internal",
+      "api_surface": "Mail UI / SMTP sink",
+      "source_status": "Official crAPI docs + current compose",
+      "id": "service:svc-mailhog"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /identity/api/auth/signup",
+      "path": "/identity/api/auth/signup",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_identity_api_auth_signup",
+      "summary": "Signup example.com",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:POST:/identity/api/auth/signup"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /identity/api/auth/login",
+      "path": "/identity/api/auth/login",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_identity_api_auth_login",
+      "summary": "Login",
+      "postman_request_count": "5",
+      "base_variable": "url",
+      "id": "endpoint:POST:/identity/api/auth/login"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /identity/api/auth/verify",
+      "path": "/identity/api/auth/verify",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_identity_api_auth_verify",
+      "summary": "Verify JWT Token",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:POST:/identity/api/auth/verify"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /identity/api/auth/forget-password",
+      "path": "/identity/api/auth/forget-password",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_identity_api_auth_forget_password",
+      "summary": "Forgot Password",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:POST:/identity/api/auth/forget-password"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "GET /api/v2/search",
+      "path": "/api/v2/search",
+      "method": "GET",
+      "openapi_match": "True",
+      "operation_id": "get_api_v2_search",
+      "summary": "SearchMailOTP",
+      "postman_request_count": "4",
+      "base_variable": "url_mail",
+      "id": "endpoint:GET:/api/v2/search"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /identity/api/auth/v3/check-otp",
+      "path": "/identity/api/auth/v3/check-otp",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_identity_api_auth_v3_check_otp",
+      "summary": "Check OTP",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:POST:/identity/api/auth/v3/check-otp"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /identity/api/v2/vehicle/resend_email",
+      "path": "/identity/api/v2/vehicle/resend_email",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_identity_api_v2_vehicle_resend_email",
+      "summary": "Resend vehicle email",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:POST:/identity/api/v2/vehicle/resend_email"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /identity/api/v2/vehicle/add_vehicle",
+      "path": "/identity/api/v2/vehicle/add_vehicle",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_identity_api_v2_vehicle_add_vehicle",
+      "summary": "Add Vehicle from Mail",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:POST:/identity/api/v2/vehicle/add_vehicle"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "GET /identity/api/v2/user/dashboard",
+      "path": "/identity/api/v2/user/dashboard",
+      "method": "GET",
+      "openapi_match": "True",
+      "operation_id": "get_identity_api_v2_user_dashboard",
+      "summary": "Get Dashboard",
+      "postman_request_count": "2",
+      "base_variable": "url",
+      "id": "endpoint:GET:/identity/api/v2/user/dashboard"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "GET /identity/api/v2/vehicle/vehicles",
+      "path": "/identity/api/v2/vehicle/vehicles",
+      "method": "GET",
+      "openapi_match": "True",
+      "operation_id": "get_identity_api_v2_vehicle_vehicles",
+      "summary": "Get vehicles",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:GET:/identity/api/v2/vehicle/vehicles"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "GET /identity/api/v2/vehicle/{vehicle_id}/location",
+      "path": "/identity/api/v2/vehicle/{vehicle_id}/location",
+      "method": "GET",
+      "openapi_match": "True",
+      "operation_id": "get_identity_api_v2_vehicle_vehicle_id_location",
+      "summary": "Get vehicle location",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:GET:/identity/api/v2/vehicle/{vehicle_id}/location"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /community/api/v2/coupon/validate-coupon",
+      "path": "/community/api/v2/coupon/validate-coupon",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_community_api_v2_coupon_validate_coupon",
+      "summary": "Validate coupon",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:POST:/community/api/v2/coupon/validate-coupon"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /workshop/api/shop/apply_coupon",
+      "path": "/workshop/api/shop/apply_coupon",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_workshop_api_shop_apply_coupon",
+      "summary": "Apply coupon",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:POST:/workshop/api/shop/apply_coupon"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /community/api/v2/community/posts",
+      "path": "/community/api/v2/community/posts",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_community_api_v2_community_posts",
+      "summary": "Create post ",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:POST:/community/api/v2/community/posts"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "GET /community/api/v2/community/posts/{post_id}",
+      "path": "/community/api/v2/community/posts/{post_id}",
+      "method": "GET",
+      "openapi_match": "True",
+      "operation_id": "get_community_api_v2_community_posts_post_id",
+      "summary": "Get post",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:GET:/community/api/v2/community/posts/{post_id}"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "GET /community/api/v2/community/posts/recent",
+      "path": "/community/api/v2/community/posts/recent",
+      "method": "GET",
+      "openapi_match": "True",
+      "operation_id": "get_community_api_v2_community_posts_recent",
+      "summary": "Get recent posts",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:GET:/community/api/v2/community/posts/recent"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /community/api/v2/community/posts/{post_id}/comment",
+      "path": "/community/api/v2/community/posts/{post_id}/comment",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_community_api_v2_community_posts_post_id_comment",
+      "summary": "Post comment",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:POST:/community/api/v2/community/posts/{post_id}/comment"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "GET /workshop/api/mechanic",
+      "path": "/workshop/api/mechanic",
+      "method": "GET",
+      "openapi_match": "True",
+      "operation_id": "get_workshop_api_mechanic",
+      "summary": "Get All Mechanics",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:GET:/workshop/api/mechanic"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /workshop/api/merchant/contact_mechanic",
+      "path": "/workshop/api/merchant/contact_mechanic",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_workshop_api_merchant_contact_mechanic",
+      "summary": "Contact mechanic",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:POST:/workshop/api/merchant/contact_mechanic"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "GET /workshop/api/mechanic/service_requests",
+      "path": "/workshop/api/mechanic/service_requests",
+      "method": "GET",
+      "openapi_match": "True",
+      "operation_id": "get_workshop_api_mechanic_service_requests",
+      "summary": "Service Requests",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:GET:/workshop/api/mechanic/service_requests"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "GET /workshop/api/mechanic/mechanic_report",
+      "path": "/workshop/api/mechanic/mechanic_report",
+      "method": "GET",
+      "openapi_match": "True",
+      "operation_id": "get_workshop_api_mechanic_mechanic_report",
+      "summary": "GetReport",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:GET:/workshop/api/mechanic/mechanic_report"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "GET /workshop/api/shop/products",
+      "path": "/workshop/api/shop/products",
+      "method": "GET",
+      "openapi_match": "True",
+      "operation_id": "get_workshop_api_shop_products",
+      "summary": "Get products",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:GET:/workshop/api/shop/products"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /workshop/api/shop/products",
+      "path": "/workshop/api/shop/products",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_workshop_api_shop_products",
+      "summary": "Add Product",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:POST:/workshop/api/shop/products"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /workshop/api/shop/orders",
+      "path": "/workshop/api/shop/orders",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_workshop_api_shop_orders",
+      "summary": "Create Order",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:POST:/workshop/api/shop/orders"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "GET /workshop/api/shop/orders/all",
+      "path": "/workshop/api/shop/orders/all",
+      "method": "GET",
+      "openapi_match": "True",
+      "operation_id": "get_workshop_api_shop_orders_all",
+      "summary": "Get orders",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:GET:/workshop/api/shop/orders/all"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "GET /workshop/api/shop/orders/{order_id}",
+      "path": "/workshop/api/shop/orders/{order_id}",
+      "method": "GET",
+      "openapi_match": "True",
+      "operation_id": "get_workshop_api_shop_orders_order_id",
+      "summary": "Get Order",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:GET:/workshop/api/shop/orders/{order_id}"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /workshop/api/shop/orders/return_order",
+      "path": "/workshop/api/shop/orders/return_order",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_workshop_api_shop_orders_return_order",
+      "summary": "Return order",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:POST:/workshop/api/shop/orders/return_order"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /identity/api/v2/user/videos",
+      "path": "/identity/api/v2/user/videos",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_identity_api_v2_user_videos",
+      "summary": "Add video",
+      "postman_request_count": "3",
+      "base_variable": "url",
+      "id": "endpoint:POST:/identity/api/v2/user/videos"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "GET /identity/api/v2/user/videos/{video_id}",
+      "path": "/identity/api/v2/user/videos/{video_id}",
+      "method": "GET",
+      "openapi_match": "True",
+      "operation_id": "get_identity_api_v2_user_videos_video_id",
+      "summary": "Get Video",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:GET:/identity/api/v2/user/videos/{video_id}"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "PUT /identity/api/v2/user/videos/{video_id}",
+      "path": "/identity/api/v2/user/videos/{video_id}",
+      "method": "PUT",
+      "openapi_match": "True",
+      "operation_id": "put_identity_api_v2_user_videos_video_id",
+      "summary": "Change Video Name",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:PUT:/identity/api/v2/user/videos/{video_id}"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "DELETE /identity/api/v2/user/videos/{video_id}",
+      "path": "/identity/api/v2/user/videos/{video_id}",
+      "method": "DELETE",
+      "openapi_match": "True",
+      "operation_id": "delete_identity_api_v2_user_videos_video_id",
+      "summary": "Delete video",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:DELETE:/identity/api/v2/user/videos/{video_id}"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "GET /identity/api/v2/user/videos/convert_video",
+      "path": "/identity/api/v2/user/videos/convert_video",
+      "method": "GET",
+      "openapi_match": "True",
+      "operation_id": "get_identity_api_v2_user_videos_convert_video",
+      "summary": "Share video",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:GET:/identity/api/v2/user/videos/convert_video"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "DELETE /identity/api/v2/admin/videos/{video_id}",
+      "path": "/identity/api/v2/admin/videos/{video_id}",
+      "method": "DELETE",
+      "openapi_match": "True",
+      "operation_id": "delete_identity_api_v2_admin_videos_video_id",
+      "summary": "Delete video by admin",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:DELETE:/identity/api/v2/admin/videos/{video_id}"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "GET /workshop/api/management/users/all",
+      "path": "/workshop/api/management/users/all",
+      "method": "GET",
+      "openapi_match": "True",
+      "operation_id": "get_workshop_api_management_users_all",
+      "summary": "Get Workshop User Details",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:GET:/workshop/api/management/users/all"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /identity/api/v2/user/change-email",
+      "path": "/identity/api/v2/user/change-email",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_identity_api_v2_user_change_email",
+      "summary": "Change email",
+      "postman_request_count": "2",
+      "base_variable": "url",
+      "id": "endpoint:POST:/identity/api/v2/user/change-email"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "POST /identity/api/v2/user/verify-email-token",
+      "path": "/identity/api/v2/user/verify-email-token",
+      "method": "POST",
+      "openapi_match": "True",
+      "operation_id": "post_identity_api_v2_user_verify_email_token",
+      "summary": "Verify email token",
+      "postman_request_count": "2",
+      "base_variable": "url",
+      "id": "endpoint:POST:/identity/api/v2/user/verify-email-token"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "GET /.well-known/jwks.json",
+      "path": "/.well-known/jwks.json",
+      "method": "GET",
+      "openapi_match": "True",
+      "operation_id": "get_well_known_jwks_json",
+      "summary": "Get Public Key",
+      "postman_request_count": "1",
+      "base_variable": "url",
+      "id": "endpoint:GET:/.well-known/jwks.json"
+    },
+    {
+      "node_type": "finding",
+      "label": "Challenge 1: BOLA",
+      "challenge_no": "1",
+      "category": "BOLA",
+      "finding_status": "doğrulandı",
+      "source": "dynamic",
+      "endpoint": "/identity/api/v2/vehicle/{vehicle_id}/location",
+      "evidence_folder": "findings/evidence/challanges_01_bola_vehicle",
+      "evidence_folder_source": "findings/evidence/challenge_01",
+      "cwe": "CWE-639",
+      "capec": "CAPEC-210",
+      "attack": "",
+      "notes": "Attacker kullanıcısı victim kullanıcısının vehicle_id (UUID) değeriyle araç konum koordinatlarını yetkisiz okuyabildi.",
+      "finding_validation_state": "recorded_status_only",
+      "id": "finding:challenge:1"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-639: Authorization Bypass Through User-Controlled Key",
+      "mapping_id": "CWE-639",
+      "title": "Authorization Bypass Through User-Controlled Key",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://cwe.mitre.org/data/definitions/639.html",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "confidence": "high",
+      "human_review_required": "True",
+      "rationale": "Başka kullanıcıya ait kayda, istekle denetlenen vehicle_id/report_id/order_id üzerinden erişim anlatılıyor; CWE-639 kullanıcı denetimli anahtarla yetkilendirme atlatmayı tanımlar.",
+      "deprecated": "False",
+      "id": "CWE:CWE-639"
+    },
+    {
+      "node_type": "attack_pattern",
+      "label": "CAPEC-210: Abuse Existing Functionality",
+      "mapping_id": "CAPEC-210",
+      "title": "Abuse Existing Functionality",
+      "verification_status": "recorded_but_not_verified",
+      "source_url": "https://capec.mitre.org/data/definitions/210.html",
+      "assessment": "not_supported_by_current_rule_set_unverified",
+      "id": "CAPEC:CAPEC-210"
+    },
+    {
+      "node_type": "attack_pattern",
+      "label": "CAPEC-1: Accessing Functionality Not Properly Constrained by ACLs",
+      "mapping_id": "CAPEC-1",
+      "title": "Accessing Functionality Not Properly Constrained by ACLs",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://capec.mitre.org/data/definitions/1.html",
+      "human_review_required": "True",
+      "rationale": "Yetkilendirme çerçevesinin kısıtlamadığı işlev veya sorgu üzerinden korunan kayda erişim, CAPEC-1 ile olası biçimde örtüşür.",
+      "deprecated": "False",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "id": "CAPEC:CAPEC-1"
+    },
+    {
+      "node_type": "finding",
+      "label": "Challenge 2: BOLA",
+      "challenge_no": "2",
+      "category": "BOLA",
+      "finding_status": "doğrulandı",
+      "source": "dynamic",
+      "endpoint": "/workshop/api/mechanic/receive_report",
+      "evidence_folder": "findings/evidence/challenges_02_bola_mechanic",
+      "evidence_folder_source": "findings/evidence/challenge_02",
+      "cwe": "CWE-639",
+      "capec": "CAPEC-210",
+      "attack": "",
+      "notes": "Attacker kullanıcısı victim kullanıcısının report_id değeriyle servis raporunu ve araç detaylarını yetkisiz okuyabildi.",
+      "finding_validation_state": "recorded_status_only",
+      "id": "finding:challenge:2"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "Unlisted API: /workshop/api/mechanic/receive_report",
+      "path": "/workshop/api/mechanic/receive_report",
+      "method": "UNKNOWN",
+      "openapi_match": "False",
+      "id": "endpoint:unlisted:/workshop/api/mechanic/receive_report"
+    },
+    {
+      "node_type": "finding",
+      "label": "Challenge 3: Broken Authentication",
+      "challenge_no": "3",
+      "category": "Broken Authentication",
+      "finding_status": "doğrulandı",
+      "source": "dynamic",
+      "endpoint": "/identity/api/auth/v2/check-otp",
+      "evidence_folder": "findings/evidence/challenges_03_bua_password_reset",
+      "evidence_folder_source": "findings/evidence/challenge_03",
+      "cwe": "CWE-307",
+      "capec": "CAPEC-49",
+      "attack": "",
+      "notes": "Eski API sürümünde (v2) rate limiting mekanizması uygulanmadığı için şifre sıfırlama OTP doğrulaması bypass edilebildi.",
+      "finding_validation_state": "recorded_status_only",
+      "id": "finding:challenge:3"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "Unlisted API: /identity/api/auth/v2/check-otp",
+      "path": "/identity/api/auth/v2/check-otp",
+      "method": "UNKNOWN",
+      "openapi_match": "False",
+      "id": "endpoint:unlisted:/identity/api/auth/v2/check-otp"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-307: Improper Restriction of Excessive Authentication Attempts",
+      "mapping_id": "CWE-307",
+      "title": "Improper Restriction of Excessive Authentication Attempts",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://cwe.mitre.org/data/definitions/307.html",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "confidence": "high",
+      "human_review_required": "True",
+      "rationale": "OTP doğrulama girişimlerini sınırlamama, aşırı kimlik doğrulama denemelerinin kısıtlanmamasıyla uyumludur.",
+      "deprecated": "False",
+      "id": "CWE:CWE-307"
+    },
+    {
+      "node_type": "attack_pattern",
+      "label": "CAPEC-49: Password Brute Forcing",
+      "mapping_id": "CAPEC-49",
+      "title": "Password Brute Forcing",
+      "verification_status": "recorded_but_not_verified",
+      "source_url": "https://capec.mitre.org/data/definitions/49.html",
+      "assessment": "not_supported_by_current_rule_set_unverified",
+      "id": "CAPEC:CAPEC-49"
+    },
+    {
+      "node_type": "attack_pattern",
+      "label": "CAPEC-112: Brute Force",
+      "mapping_id": "CAPEC-112",
+      "title": "Brute Force",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://capec.mitre.org/data/definitions/112.html",
+      "human_review_required": "True",
+      "rationale": "OTP değerleri üzerinde deneme-yanılma yapıldıysa genel brute-force örüntüsü uygun olabilir.",
+      "deprecated": "False",
+      "id": "CAPEC:CAPEC-112"
+    },
+    {
+      "node_type": "finding",
+      "label": "Challenge 4: Excessive Data Exposure",
+      "challenge_no": "4",
+      "category": "Excessive Data Exposure",
+      "finding_status": "doğrulandı",
+      "source": "dynamic",
+      "endpoint": "/community/api/v2/community/posts/recent",
+      "evidence_folder": "findings/evidence/challenges_04_ede_user_details",
+      "evidence_folder_source": "findings/evidence/challenge_04",
+      "cwe": "CWE-213",
+      "capec": "CAPEC-118",
+      "attack": "",
+      "notes": "Topluluk gönderileri listelenirken API yanıtında yazarın e-posta ve telefon gibi hassas PII verilerinin gereksiz yere istemciye döndüğü tespit edildi.",
+      "finding_validation_state": "recorded_status_only",
+      "id": "finding:challenge:4"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-213: Exposure of Sensitive Information Due to Incompatible Policies",
+      "mapping_id": "CWE-213",
+      "title": "Exposure of Sensitive Information Due to Incompatible Policies",
+      "verification_status": "recorded_but_not_verified",
+      "source_url": "https://cwe.mitre.org/data/definitions/213.html",
+      "assessment": "not_supported_by_current_rule_set_unverified",
+      "id": "CWE:CWE-213"
+    },
+    {
+      "node_type": "attack_pattern",
+      "label": "CAPEC-118: Collect and Analyze Information",
+      "mapping_id": "CAPEC-118",
+      "title": "Collect and Analyze Information",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://capec.mitre.org/data/definitions/118.html",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "confidence": "low",
+      "human_review_required": "True",
+      "rationale": "Bilgi edinme kategorisi üst düzeyde ilişkili olabilir.",
+      "deprecated": "False",
+      "id": "CAPEC:CAPEC-118"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-359: Exposure of Private Personal Information to an Unauthorized Actor",
+      "mapping_id": "CWE-359",
+      "title": "Exposure of Private Personal Information to an Unauthorized Actor",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://cwe.mitre.org/data/definitions/359.html",
+      "human_review_required": "True",
+      "rationale": "E-posta/telefon gibi kişisel bilgilerin yetkisiz aktörlere açılması CWE-359'un özel kişisel bilgi tanımıyla örtüşür.",
+      "deprecated": "False",
+      "id": "CWE:CWE-359"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-201: Insertion of Sensitive Information Into Sent Data",
+      "mapping_id": "CWE-201",
+      "title": "Insertion of Sensitive Information Into Sent Data",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://cwe.mitre.org/data/definitions/201.html",
+      "human_review_required": "True",
+      "rationale": "İç parametrelerin API yanıtında istemciye gönderilmesi hassas bilgi gönderimiyle örtüşebilir.",
+      "deprecated": "False",
+      "id": "CWE:CWE-201"
+    },
+    {
+      "node_type": "finding",
+      "label": "Challenge 5: Excessive Data Exposure",
+      "challenge_no": "5",
+      "category": "Excessive Data Exposure",
+      "finding_status": "doğrulandı",
+      "source": "dynamic",
+      "endpoint": "/identity/api/v2/user/videos/{video_id}",
+      "evidence_folder": "findings/evidence/challenges_05_ede_video_password",
+      "evidence_folder_source": "findings/evidence/challenge_05",
+      "cwe": "CWE-200",
+      "capec": "CAPEC-118",
+      "attack": "5 -> 10",
+      "notes": "Video nesnesi sorgulandığında sistemin iç dönüştürme parametrelerinin (conversion_params) yanıtta sızdırıldığı tespit edildi.",
+      "finding_validation_state": "recorded_status_only",
+      "id": "finding:challenge:5"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor",
+      "mapping_id": "CWE-200",
+      "title": "Exposure of Sensitive Information to an Unauthorized Actor",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://cwe.mitre.org/data/definitions/200.html",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "confidence": "medium",
+      "human_review_required": "True",
+      "rationale": "Hassasiyet ve erişim sınırı net değilken CWE-200 genel bir bilgi ifşası adayıdır.",
+      "deprecated": "False",
+      "id": "CWE:CWE-200"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-497: Exposure of Sensitive System Information to an Unauthorized Control Sphere",
+      "mapping_id": "CWE-497",
+      "title": "Exposure of Sensitive System Information to an Unauthorized Control Sphere",
+      "confidence": "low",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://cwe.mitre.org/data/definitions/497.html",
+      "human_review_required": "True",
+      "rationale": "Sızan alan sistem düzeyinde hassas uygulama/ortam bilgisi ise CWE-497 değerlendirilebilir.",
+      "deprecated": "False",
+      "id": "CWE:CWE-497"
+    },
+    {
+      "node_type": "finding",
+      "label": "Challenge 6: Lack of Resources & Rate Limiting",
+      "challenge_no": "6",
+      "category": "Lack of Resources & Rate Limiting",
+      "finding_status": "doğrulandı",
+      "source": "dynamic",
+      "endpoint": "/workshop/api/merchant/contact_mechanic",
+      "evidence_folder": "findings/evidence/challenges_06_rate_limiting_dos",
+      "evidence_folder_source": "findings/evidence/challenge_06",
+      "cwe": "CWE-770",
+      "capec": "CAPEC-130",
+      "attack": "",
+      "notes": "Contact mechanic endpoint'inde rate limiting bulunmadığı ve sunucunun ardışık istekleri engellemeden kabul ederek (ID artışı) kaynak tükettiği doğrulandı.",
+      "finding_validation_state": "recorded_status_only",
+      "id": "finding:challenge:6"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-770: Allocation of Resources Without Limits or Throttling",
+      "mapping_id": "CWE-770",
+      "title": "Allocation of Resources Without Limits or Throttling",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://cwe.mitre.org/data/definitions/770.html",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "confidence": "medium",
+      "human_review_required": "True",
+      "rationale": "İsteklerin kaynak tükettiği belirtiliyor; CWE-770 sınırsız veya kısıtlanmamış kaynak tahsisini kapsar.",
+      "deprecated": "False",
+      "id": "CWE:CWE-770"
+    },
+    {
+      "node_type": "attack_pattern",
+      "label": "CAPEC-130: Excessive Allocation",
+      "mapping_id": "CAPEC-130",
+      "title": "Excessive Allocation",
+      "verification_status": "recorded_but_not_verified",
+      "source_url": "https://capec.mitre.org/data/definitions/130.html",
+      "assessment": "not_supported_by_current_rule_set_unverified",
+      "id": "CAPEC:CAPEC-130"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-799: Improper Control of Interaction Frequency",
+      "mapping_id": "CWE-799",
+      "title": "Improper Control of Interaction Frequency",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://cwe.mitre.org/data/definitions/799.html",
+      "human_review_required": "True",
+      "rationale": "Kayıt art arda gelen isteklerin sınırlandırılmamasını açıkça anlatıyor; CWE-799 etkileşim sıklığının kontrolünü ele alır.",
+      "deprecated": "False",
+      "id": "CWE:CWE-799"
+    },
+    {
+      "node_type": "attack_pattern",
+      "label": "CAPEC-125: Flooding",
+      "mapping_id": "CAPEC-125",
+      "title": "Flooding",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://capec.mitre.org/data/definitions/125.html",
+      "human_review_required": "True",
+      "rationale": "Çok sayıda istekle kaynak tüketimi ve rate limiting zayıflığı CAPEC-125 Flooding tanımıyla örtüşür.",
+      "deprecated": "False",
+      "id": "CAPEC:CAPEC-125"
+    },
+    {
+      "node_type": "finding",
+      "label": "Challenge 7: BFLA",
+      "challenge_no": "7",
+      "category": "BFLA",
+      "finding_status": "doğrulandı",
+      "source": "dynamic",
+      "endpoint": "/identity/api/v2/admin/videos/{video_id}",
+      "evidence_folder": "findings/evidence/challenges_07_bfla_delete_video",
+      "evidence_folder_source": "findings/evidence/challenge_07",
+      "cwe": "CWE-285",
+      "capec": "CAPEC-233",
+      "attack": "",
+      "notes": "Standart kullanıcı token'ı ile admin silme endpoint'ine (/admin/videos/) istek atılarak yetkisiz fonksiyon seviyesinde işlem gerçekleştirildi ve video silindi.",
+      "finding_validation_state": "recorded_status_only",
+      "id": "finding:challenge:7"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-285: Improper Authorization",
+      "mapping_id": "CWE-285",
+      "title": "Improper Authorization",
+      "verification_status": "recorded_but_not_verified",
+      "source_url": "https://cwe.mitre.org/data/definitions/285.html",
+      "assessment": "not_supported_by_current_rule_set_unverified",
+      "id": "CWE:CWE-285"
+    },
+    {
+      "node_type": "attack_pattern",
+      "label": "CAPEC-233: Privilege Escalation",
+      "mapping_id": "CAPEC-233",
+      "title": "Privilege Escalation",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://capec.mitre.org/data/definitions/233.html",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "confidence": "medium",
+      "human_review_required": "True",
+      "rationale": "Daha yüksek ayrıcalık gerektiren eylemin yapılması genel ayrıcalık yükseltme örüntüsüne uyabilir.",
+      "deprecated": "False",
+      "id": "CAPEC:CAPEC-233"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-862: Missing Authorization",
+      "mapping_id": "CWE-862",
+      "title": "Missing Authorization",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://cwe.mitre.org/data/definitions/862.html",
+      "human_review_required": "True",
+      "rationale": "Standart kullanıcının yönetici işlevini çalıştırması, o eylem için yetkilendirme kontrolü eksikse CWE-862 ile örtüşür.",
+      "deprecated": "False",
+      "id": "CWE:CWE-862"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-863: Incorrect Authorization",
+      "mapping_id": "CWE-863",
+      "title": "Incorrect Authorization",
+      "confidence": "low",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://cwe.mitre.org/data/definitions/863.html",
+      "human_review_required": "True",
+      "rationale": "Yetkilendirme kontrolünün yanlış karar verdiği ortaya çıkarsa CWE-863 alternatifidir.",
+      "deprecated": "False",
+      "id": "CWE:CWE-863"
+    },
+    {
+      "node_type": "finding",
+      "label": "Challenge 8: Server-Side Request Forgery (SSRF)",
+      "challenge_no": "8",
+      "category": "Server-Side Request Forgery (SSRF)",
+      "finding_status": "analiz_edildi",
+      "source": "dynamic",
+      "endpoint": "/workshop/api/merchant/contact_mechanic",
+      "evidence_folder": "findings/evidence/challenges_08_mass_assignment_free_item",
+      "evidence_folder_source": "findings/evidence/challenge_08",
+      "cwe": "CWE-918",
+      "capec": "CAPEC-664",
+      "attack": "",
+      "notes": "mechanic_api parametresinin sunucu tarafında filtrelenmeden istek için kullanıldığı ve doğrulama eksikliği nedeniyle SSRF zafiyetine açık olduğu tespit edildi.",
+      "finding_validation_state": "not_final",
+      "id": "finding:challenge:8"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-918: Server-Side Request Forgery (SSRF)",
+      "mapping_id": "CWE-918",
+      "title": "Server-Side Request Forgery (SSRF)",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://cwe.mitre.org/data/definitions/918.html",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "confidence": "high",
+      "human_review_required": "True",
+      "rationale": "Kullanıcı girdisinin sunucuyu başka bir hedefe istek göndermeye zorladığı belirtiliyor; bu SSRF tanımıyla örtüşür.",
+      "deprecated": "False",
+      "id": "CWE:CWE-918"
+    },
+    {
+      "node_type": "attack_pattern",
+      "label": "CAPEC-664: Server Side Request Forgery",
+      "mapping_id": "CAPEC-664",
+      "title": "Server Side Request Forgery",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://capec.mitre.org/data/definitions/664.html",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "confidence": "high",
+      "human_review_required": "True",
+      "rationale": "CAPEC-664, kötü amaçlı girdinin sunucu tarafında istek başlatmaya zorlamasını doğrudan tanımlar.",
+      "deprecated": "False",
+      "id": "CAPEC:CAPEC-664"
+    },
+    {
+      "node_type": "finding",
+      "label": "Challenge 9: BOLA",
+      "challenge_no": "9",
+      "category": "BOLA",
+      "finding_status": "doğrulandı",
+      "source": "dynamic",
+      "endpoint": "/workshop/api/shop/orders/{order_id}",
+      "evidence_folder": "findings/evidence/challenges_09_mass_assignment_balance",
+      "evidence_folder_source": "findings/evidence/challenge_09",
+      "cwe": "CWE-639",
+      "capec": "CAPEC-1",
+      "attack": "",
+      "notes": "Saldırgan kullanıcısı, nesne seviyesinde yetkilendirme kontrolü eksikliği (BOLA) nedeniyle kurban kullanıcıya ait sipariş detaylarını (ürün, miktar, alıcı bilgileri) yetkisiz olarak görüntüleyebildi.",
+      "finding_validation_state": "recorded_status_only",
+      "id": "finding:challenge:9"
+    },
+    {
+      "node_type": "finding",
+      "label": "Challenge 10: Mass Assignment (API6:2023)",
+      "challenge_no": "10",
+      "category": "Mass Assignment (API6:2023)",
+      "finding_status": "doğrulandı",
+      "source": "dynamic",
+      "endpoint": "/workshop/api/merchant/user/videos/{video_id}",
+      "evidence_folder": "findings/evidence/challenges_10_mass_assignment_video",
+      "evidence_folder_source": "findings/evidence/challenge_10",
+      "cwe": "CWE-915",
+      "capec": "CAPEC-315",
+      "attack": "5 -> 10",
+      "notes": "Video nesnesi güncellenirken istemcinin modeldeki dahili conversion_params alanını doğrudan üzerine yazabildiği (Mass Assignment) ve girdi filtreleme eksikliği tespit edildi.",
+      "finding_validation_state": "recorded_status_only",
+      "id": "finding:challenge:10"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "Unlisted API: /workshop/api/merchant/user/videos/{video_id}",
+      "path": "/workshop/api/merchant/user/videos/{video_id}",
+      "method": "UNKNOWN",
+      "openapi_match": "False",
+      "id": "endpoint:unlisted:/workshop/api/merchant/user/videos/{video_id}"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+      "mapping_id": "CWE-915",
+      "title": "Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://cwe.mitre.org/data/definitions/915.html",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "confidence": "high",
+      "human_review_required": "True",
+      "rationale": "İstemci girdisinin nesnedeki dahili alanı değiştirebildiği anlatılıyor; CWE-915 dinamik belirlenen nesne özniteliklerinin kontrolsüz değiştirilmesini ve mass assignment terimini kapsar.",
+      "deprecated": "False",
+      "id": "CWE:CWE-915"
+    },
+    {
+      "node_type": "attack_pattern",
+      "label": "CAPEC-315: DEPRECATED: TCP/IP Fingerprinting Probes",
+      "mapping_id": "CAPEC-315",
+      "title": "DEPRECATED: TCP/IP Fingerprinting Probes",
+      "verification_status": "recorded_but_not_verified",
+      "source_url": "https://capec.mitre.org/data/definitions/315.html",
+      "assessment": "not_supported_by_current_rule_set_unverified",
+      "id": "CAPEC:CAPEC-315"
+    },
+    {
+      "node_type": "attack_pattern",
+      "label": "CAPEC-77: Manipulating User-Controlled Variables",
+      "mapping_id": "CAPEC-77",
+      "title": "Manipulating User-Controlled Variables",
+      "confidence": "low",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://capec.mitre.org/data/definitions/77.html",
+      "human_review_required": "True",
+      "rationale": "Kullanıcı denetimli alanların uygulama davranışını değiştirmesiyle kavramsal benzerlik var; CAPEC-77 mass assignment'a özel değildir.",
+      "deprecated": "False",
+      "id": "CAPEC:CAPEC-77"
+    },
+    {
+      "node_type": "finding",
+      "label": "Challenge 11: Server-Side Request Forgery (SSRF)",
+      "challenge_no": "11",
+      "category": "Server-Side Request Forgery (SSRF)",
+      "finding_status": "doğrulandı",
+      "source": "dynamic",
+      "endpoint": "/workshop/api/merchant/contact_mechanic",
+      "evidence_folder": "findings/evidence/challenges_11_ssrf_mechanic",
+      "evidence_folder_source": "findings/evidence/challenge_11",
+      "cwe": "CWE-918",
+      "capec": "CAPEC-664",
+      "attack": "",
+      "notes": "mechanic_api parametresinde adres doğrulaması yapılmadığı ve sunucunun kullanıcı tarafından sağlanan dahili/harici ağ hedeflerine yetkisiz HTTP istekleri yönlendirdiği (SSRF) doğrulandı.",
+      "finding_validation_state": "recorded_status_only",
+      "id": "finding:challenge:11"
+    },
+    {
+      "node_type": "finding",
+      "label": "Challenge 12: NoSQL Injection",
+      "challenge_no": "12",
+      "category": "NoSQL Injection",
+      "finding_status": "doğrulandı",
+      "source": "dynamic",
+      "endpoint": "/community/api/v2/coupon/validate-coupon",
+      "evidence_folder": "findings/evidence/challenges_12_nosql_injection_coupon",
+      "evidence_folder_source": "findings/evidence/challenge_12",
+      "cwe": "CWE-943",
+      "capec": "CAPEC-248",
+      "attack": "",
+      "notes": "coupon_code parametresinde tip ve şema denetimi yapılmadığı",
+      "finding_validation_state": "recorded_status_only",
+      "id": "finding:challenge:12"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-943: Improper Neutralization of Special Elements in Data Query Logic",
+      "mapping_id": "CWE-943",
+      "title": "Improper Neutralization of Special Elements in Data Query Logic",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://cwe.mitre.org/data/definitions/943.html",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "confidence": "medium",
+      "human_review_required": "True",
+      "rationale": "Challenge 12'de coupon_code parametresinin NoSQL sorgu mantığını değiştirebilen girdiler kabul ettiği ve filtreleme mekanizmasının atlatılabildiği bildirilmiştir. CWE-943 veri sorgulama mantığındaki özel öğelerin uygun şekilde etkisizleştirilmemesini kapsar.",
+      "deprecated": "False",
+      "id": "CWE:CWE-943"
+    },
+    {
+      "node_type": "attack_pattern",
+      "label": "CAPEC-248: Command Injection",
+      "mapping_id": "CAPEC-248",
+      "title": "Command Injection",
+      "verification_status": "recorded_but_not_verified",
+      "source_url": "https://capec.mitre.org/data/definitions/248.html",
+      "assessment": "not_supported_by_current_rule_set_unverified",
+      "id": "CAPEC:CAPEC-248"
+    },
+    {
+      "node_type": "attack_pattern",
+      "label": "CAPEC-676: NoSQL Injection",
+      "mapping_id": "CAPEC-676",
+      "title": "NoSQL Injection",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://capec.mitre.org/data/definitions/676.html",
+      "human_review_required": "True",
+      "rationale": "CAPEC-676 doğrudan NoSQL Injection saldırı örüntüsünü tanımlar ve kullanıcı girdisiyle oluşturulan NoSQL sorgularının manipüle edilmesini kapsar.",
+      "deprecated": "False",
+      "id": "CAPEC:CAPEC-676"
+    },
+    {
+      "node_type": "finding",
+      "label": "Challenge 13: SQL Injection",
+      "challenge_no": "13",
+      "category": "SQL Injection",
+      "finding_status": "doğrulandı",
+      "source": "dynamic",
+      "endpoint": "/community/api/v2/coupon/apply-coupon",
+      "evidence_folder": "findings/evidence/challenges_13_sql_injection_coupon",
+      "evidence_folder_source": "findings/evidence/challenge_13",
+      "cwe": "CWE-89",
+      "capec": "CAPEC-66",
+      "attack": "",
+      "notes": "coupon_code parametresi üzerinden veritabanı sorgularının parametrelendirilmeden çalıştırıldığı",
+      "finding_validation_state": "recorded_status_only",
+      "id": "finding:challenge:13"
+    },
+    {
+      "node_type": "endpoint",
+      "label": "Unlisted API: /community/api/v2/coupon/apply-coupon",
+      "path": "/community/api/v2/coupon/apply-coupon",
+      "method": "UNKNOWN",
+      "openapi_match": "False",
+      "id": "endpoint:unlisted:/community/api/v2/coupon/apply-coupon"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command",
+      "mapping_id": "CWE-89",
+      "title": "Improper Neutralization of Special Elements used in an SQL Command",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://cwe.mitre.org/data/definitions/89.html",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "confidence": "high",
+      "human_review_required": "True",
+      "rationale": "Challenge 13'te coupon_code parametresinin SQL sorgularında parametrelendirilmeden kullanıldığı ve SQL enjeksiyonuna neden olduğu belirtilmiştir. CWE-89 bu zafiyetin doğrudan karşılığıdır.",
+      "deprecated": "False",
+      "id": "CWE:CWE-89"
+    },
+    {
+      "node_type": "attack_pattern",
+      "label": "CAPEC-66: SQL Injection",
+      "mapping_id": "CAPEC-66",
+      "title": "SQL Injection",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://capec.mitre.org/data/definitions/66.html",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "confidence": "high",
+      "human_review_required": "True",
+      "rationale": "CAPEC-66 kullanıcı kontrollü girdilerle SQL ifadelerinin manipüle edilmesini tanımlayan doğrudan SQL Injection saldırı örüntüsüdür.",
+      "deprecated": "False",
+      "id": "CAPEC:CAPEC-66"
+    },
+    {
+      "node_type": "finding",
+      "label": "Challenge 14: Broken Authentication (Missing Authentication)",
+      "challenge_no": "14",
+      "category": "Broken Authentication (Missing Authentication)",
+      "finding_status": "doğrulandı",
+      "source": "dynamic",
+      "endpoint": "/identity/api/v2/user/videos",
+      "evidence_folder": "findings/evidence/challenges_14_unauthenticated_access",
+      "evidence_folder_source": "findings/evidence/challenge_14",
+      "cwe": "CWE-306",
+      "capec": "CAPEC-115",
+      "attack": "",
+      "notes": "Hassas işlem veya veri sunan uç noktada Authorization başlığının denetlenmediği",
+      "finding_validation_state": "recorded_status_only",
+      "id": "finding:challenge:14"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-306: Missing Authentication for Critical Functionality",
+      "mapping_id": "CWE-306",
+      "title": "Missing Authentication for Critical Functionality",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://cwe.mitre.org/data/definitions/306.html",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "confidence": "high",
+      "human_review_required": "True",
+      "rationale": "Challenge 14'te hassas API endpoint'ine Authorization başlığı olmadan erişilebildiği belirtilmiştir. Bu durum kritik işlevlerde kimlik doğrulamasının uygulanmamasıyla örtüşür.",
+      "deprecated": "False",
+      "id": "CWE:CWE-306"
+    },
+    {
+      "node_type": "attack_pattern",
+      "label": "CAPEC-115: Authentication Bypass",
+      "mapping_id": "CAPEC-115",
+      "title": "Authentication Bypass",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://capec.mitre.org/data/definitions/115.html",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "confidence": "high",
+      "human_review_required": "True",
+      "rationale": "Kimlik doğrulama kontrolünü atlayarak korunan API işlevine erişim CAPEC-115 Authentication Bypass saldırı örüntüsüyle örtüşür.",
+      "deprecated": "False",
+      "id": "CAPEC:CAPEC-115"
+    },
+    {
+      "node_type": "finding",
+      "label": "Challenge 15: Broken Authentication (Improper JWT Validation)",
+      "challenge_no": "15",
+      "category": "Broken Authentication (Improper JWT Validation)",
+      "finding_status": "doğrulandı",
+      "source": "dynamic",
+      "endpoint": "/identity/api/v2/user/dashboard",
+      "evidence_folder": "findings/evidence/challenges_15_jwt_forgery",
+      "evidence_folder_source": "findings/evidence/challenge_15",
+      "cwe": "CWE-347",
+      "capec": "CAPEC-633",
+      "attack": "",
+      "notes": "JWT doğrulama sürecinde zayıf gizli anahtar (weak secret) kullanımı veya algoritma denetimi eksikliği nedeniyle yetkisiz kullanıcı kimliğiyle sahte belirteç (forged token) üretilebildiği doğrulandı.",
+      "finding_validation_state": "recorded_status_only",
+      "id": "finding:challenge:15"
+    },
+    {
+      "node_type": "weakness",
+      "label": "CWE-347: Improper Verification of Cryptographic Signature",
+      "mapping_id": "CWE-347",
+      "title": "Improper Verification of Cryptographic Signature",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://cwe.mitre.org/data/definitions/347.html",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "confidence": "medium",
+      "human_review_required": "True",
+      "rationale": "Challenge 15'te JWT imzasının doğrulanması veya algoritma kontrolüyle ilgili zayıflık nedeniyle sahte token oluşturulabildiği belirtilmiştir.",
+      "deprecated": "False",
+      "id": "CWE:CWE-347"
+    },
+    {
+      "node_type": "attack_pattern",
+      "label": "CAPEC-633: Token Impersonation",
+      "mapping_id": "CAPEC-633",
+      "title": "Token Impersonation",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "source_url": "https://capec.mitre.org/data/definitions/633.html",
+      "assessment": "candidate_also_proposed_but_not_verified",
+      "confidence": "high",
+      "human_review_required": "True",
+      "rationale": "Sahte erişim belirteciyle başka bir kullanıcının kimliğine bürünülmesi CAPEC-633 Token Impersonation saldırı örüntüsüyle örtüşür.",
+      "deprecated": "False",
+      "id": "CAPEC:CAPEC-633"
+    },
+    {
+      "node_type": "risk",
+      "challenge_no": "1",
+      "risk_score": 86.0,
+      "risk_level": "Yüksek",
+      "evidence_confidence": 5,
+      "scenario": "baseline",
+      "id": "risk:challenge:1"
+    },
+    {
+      "node_type": "risk",
+      "challenge_no": "2",
+      "risk_score": 86.0,
+      "risk_level": "Yüksek",
+      "evidence_confidence": 5,
+      "scenario": "baseline",
+      "id": "risk:challenge:2"
+    },
+    {
+      "node_type": "risk",
+      "challenge_no": "3",
+      "risk_score": 86.0,
+      "risk_level": "Yüksek",
+      "evidence_confidence": 5,
+      "scenario": "baseline",
+      "id": "risk:challenge:3"
+    },
+    {
+      "node_type": "risk",
+      "challenge_no": "4",
+      "risk_score": 73.0,
+      "risk_level": "Orta",
+      "evidence_confidence": 5,
+      "scenario": "baseline",
+      "id": "risk:challenge:4"
+    },
+    {
+      "node_type": "risk",
+      "challenge_no": "5",
+      "risk_score": 73.0,
+      "risk_level": "Orta",
+      "evidence_confidence": 5,
+      "scenario": "baseline",
+      "id": "risk:challenge:5"
+    },
+    {
+      "node_type": "risk",
+      "challenge_no": "6",
+      "risk_score": 79.0,
+      "risk_level": "Orta",
+      "evidence_confidence": 5,
+      "scenario": "baseline",
+      "id": "risk:challenge:6"
+    },
+    {
+      "node_type": "risk",
+      "challenge_no": "7",
+      "risk_score": 86.0,
+      "risk_level": "Yüksek",
+      "evidence_confidence": 5,
+      "scenario": "baseline",
+      "id": "risk:challenge:7"
+    },
+    {
+      "node_type": "risk",
+      "challenge_no": "8",
+      "risk_score": 71.0,
+      "risk_level": "Orta",
+      "evidence_confidence": 2,
+      "scenario": "baseline",
+      "id": "risk:challenge:8"
+    },
+    {
+      "node_type": "risk",
+      "challenge_no": "9",
+      "risk_score": 86.0,
+      "risk_level": "Yüksek",
+      "evidence_confidence": 5,
+      "scenario": "baseline",
+      "id": "risk:challenge:9"
+    },
+    {
+      "node_type": "risk",
+      "challenge_no": "10",
+      "risk_score": 79.0,
+      "risk_level": "Orta",
+      "evidence_confidence": 5,
+      "scenario": "baseline",
+      "id": "risk:challenge:10"
+    },
+    {
+      "node_type": "risk",
+      "challenge_no": "11",
+      "risk_score": 86.0,
+      "risk_level": "Yüksek",
+      "evidence_confidence": 5,
+      "scenario": "baseline",
+      "id": "risk:challenge:11"
+    },
+    {
+      "node_type": "risk",
+      "challenge_no": "12",
+      "risk_score": 86.0,
+      "risk_level": "Yüksek",
+      "evidence_confidence": 5,
+      "scenario": "baseline",
+      "id": "risk:challenge:12"
+    },
+    {
+      "node_type": "risk",
+      "challenge_no": "13",
+      "risk_score": 86.0,
+      "risk_level": "Yüksek",
+      "evidence_confidence": 5,
+      "scenario": "baseline",
+      "id": "risk:challenge:13"
+    },
+    {
+      "node_type": "risk",
+      "challenge_no": "14",
+      "risk_score": 78.0,
+      "risk_level": "Orta",
+      "evidence_confidence": 5,
+      "scenario": "baseline",
+      "id": "risk:challenge:14"
+    },
+    {
+      "node_type": "risk",
+      "challenge_no": "15",
+      "risk_score": 72.0,
+      "risk_level": "Orta",
+      "evidence_confidence": 5,
+      "scenario": "baseline",
+      "id": "risk:challenge:15"
+    },
+    {
+      "node_type": "defense_control",
+      "control_id": "C01",
+      "label": "Nesne seviyesinde yetkilendirme",
+      "cost_units": 5,
+      "effectiveness_assumption": 0.85,
+      "selected": true,
+      "implementation_status": "proposed_not_deployed",
+      "id": "control:C01"
+    },
+    {
+      "node_type": "defense_control",
+      "control_id": "C02",
+      "label": "Fonksiyon seviyesinde RBAC/ABAC kontrolü",
+      "cost_units": 4,
+      "effectiveness_assumption": 0.85,
+      "selected": false,
+      "implementation_status": "proposed_not_deployed",
+      "id": "control:C02"
+    },
+    {
+      "node_type": "defense_control",
+      "control_id": "C03",
+      "label": "Rate limiting ve OTP deneme sınırı",
+      "cost_units": 3,
+      "effectiveness_assumption": 0.8,
+      "selected": true,
+      "implementation_status": "proposed_not_deployed",
+      "id": "control:C03"
+    },
+    {
+      "node_type": "defense_control",
+      "control_id": "C04",
+      "label": "Yanıt alanı allowlist'i ve veri minimizasyonu",
+      "cost_units": 3,
+      "effectiveness_assumption": 0.75,
+      "selected": true,
+      "implementation_status": "proposed_not_deployed",
+      "id": "control:C04"
+    },
+    {
+      "node_type": "defense_control",
+      "control_id": "C05",
+      "label": "Mass assignment için DTO allowlist'i",
+      "cost_units": 3,
+      "effectiveness_assumption": 0.85,
+      "selected": false,
+      "implementation_status": "proposed_not_deployed",
+      "id": "control:C05"
+    },
+    {
+      "node_type": "defense_control",
+      "control_id": "C06",
+      "label": "SSRF URL doğrulama ve egress kısıtlaması",
+      "cost_units": 5,
+      "effectiveness_assumption": 0.85,
+      "selected": true,
+      "implementation_status": "proposed_not_deployed",
+      "id": "control:C06"
+    },
+    {
+      "node_type": "defense_control",
+      "control_id": "C07",
+      "label": "NoSQL sorgu şeması ve operatör allowlist'i",
+      "cost_units": 4,
+      "effectiveness_assumption": 0.85,
+      "selected": false,
+      "implementation_status": "proposed_not_deployed",
+      "id": "control:C07"
+    },
+    {
+      "node_type": "defense_control",
+      "control_id": "C08",
+      "label": "Parametreli SQL sorguları",
+      "cost_units": 4,
+      "effectiveness_assumption": 0.9,
+      "selected": true,
+      "implementation_status": "proposed_not_deployed",
+      "id": "control:C08"
+    },
+    {
+      "node_type": "defense_control",
+      "control_id": "C09",
+      "label": "Hassas endpoint'lerde kimlik doğrulama zorunluluğu",
+      "cost_units": 4,
+      "effectiveness_assumption": 0.9,
+      "selected": false,
+      "implementation_status": "proposed_not_deployed",
+      "id": "control:C09"
+    },
+    {
+      "node_type": "defense_control",
+      "control_id": "C10",
+      "label": "JWT imza ve algoritma doğrulamasını güçlendirme",
+      "cost_units": 4,
+      "effectiveness_assumption": 0.9,
+      "selected": false,
+      "implementation_status": "proposed_not_deployed",
+      "id": "control:C10"
+    }
+  ],
+  "edges": [
+    {
+      "relation": "contains",
+      "source": "system:crAPI",
+      "target": "service:svc-gateway",
+      "key": 0
+    },
+    {
+      "relation": "contains",
+      "source": "system:crAPI",
+      "target": "service:svc-web",
+      "key": 0
+    },
+    {
+      "relation": "contains",
+      "source": "system:crAPI",
+      "target": "service:svc-identity",
+      "key": 0
+    },
+    {
+      "relation": "contains",
+      "source": "system:crAPI",
+      "target": "service:svc-community",
+      "key": 0
+    },
+    {
+      "relation": "contains",
+      "source": "system:crAPI",
+      "target": "service:svc-workshop",
+      "key": 0
+    },
+    {
+      "relation": "contains",
+      "source": "system:crAPI",
+      "target": "service:svc-chatbot",
+      "key": 0
+    },
+    {
+      "relation": "contains",
+      "source": "system:crAPI",
+      "target": "service:db-postgres",
+      "key": 0
+    },
+    {
+      "relation": "contains",
+      "source": "system:crAPI",
+      "target": "service:db-mongo",
+      "key": 0
+    },
+    {
+      "relation": "contains",
+      "source": "system:crAPI",
+      "target": "service:db-chroma",
+      "key": 0
+    },
+    {
+      "relation": "contains",
+      "source": "system:crAPI",
+      "target": "service:svc-mailhog",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-gateway",
+      "target": "service:svc-web",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-gateway",
+      "target": "service:svc-identity",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-gateway",
+      "target": "service:svc-workshop",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-gateway",
+      "target": "service:svc-community",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-web",
+      "target": "service:svc-mailhog",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-identity",
+      "target": "service:db-postgres",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-identity",
+      "target": "service:db-mongo",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-identity",
+      "target": "service:svc-mailhog",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:POST:/identity/api/auth/signup",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:POST:/identity/api/auth/login",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:POST:/identity/api/auth/verify",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:POST:/identity/api/auth/forget-password",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:POST:/identity/api/auth/v3/check-otp",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:POST:/identity/api/v2/vehicle/resend_email",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:POST:/identity/api/v2/vehicle/add_vehicle",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:GET:/identity/api/v2/user/dashboard",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:GET:/identity/api/v2/vehicle/vehicles",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:GET:/identity/api/v2/vehicle/{vehicle_id}/location",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:POST:/identity/api/v2/user/videos",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:GET:/identity/api/v2/user/videos/{video_id}",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:PUT:/identity/api/v2/user/videos/{video_id}",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:DELETE:/identity/api/v2/user/videos/{video_id}",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:GET:/identity/api/v2/user/videos/convert_video",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:DELETE:/identity/api/v2/admin/videos/{video_id}",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:POST:/identity/api/v2/user/change-email",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:POST:/identity/api/v2/user/verify-email-token",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-identity",
+      "target": "endpoint:unlisted:/identity/api/auth/v2/check-otp",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-community",
+      "target": "service:db-postgres",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-community",
+      "target": "service:db-mongo",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-community",
+      "target": "service:svc-identity",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-community",
+      "target": "endpoint:POST:/community/api/v2/coupon/validate-coupon",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-community",
+      "target": "endpoint:POST:/community/api/v2/community/posts",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-community",
+      "target": "endpoint:GET:/community/api/v2/community/posts/{post_id}",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-community",
+      "target": "endpoint:GET:/community/api/v2/community/posts/recent",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-community",
+      "target": "endpoint:POST:/community/api/v2/community/posts/{post_id}/comment",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-community",
+      "target": "endpoint:unlisted:/community/api/v2/coupon/apply-coupon",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-workshop",
+      "target": "service:db-postgres",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-workshop",
+      "target": "service:db-mongo",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-workshop",
+      "target": "service:svc-identity",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-workshop",
+      "target": "service:svc-community",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-workshop",
+      "target": "endpoint:POST:/workshop/api/shop/apply_coupon",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-workshop",
+      "target": "endpoint:GET:/workshop/api/mechanic",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-workshop",
+      "target": "endpoint:POST:/workshop/api/merchant/contact_mechanic",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-workshop",
+      "target": "endpoint:GET:/workshop/api/mechanic/service_requests",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-workshop",
+      "target": "endpoint:GET:/workshop/api/mechanic/mechanic_report",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-workshop",
+      "target": "endpoint:GET:/workshop/api/shop/products",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-workshop",
+      "target": "endpoint:POST:/workshop/api/shop/products",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-workshop",
+      "target": "endpoint:POST:/workshop/api/shop/orders",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-workshop",
+      "target": "endpoint:GET:/workshop/api/shop/orders/all",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-workshop",
+      "target": "endpoint:GET:/workshop/api/shop/orders/{order_id}",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-workshop",
+      "target": "endpoint:POST:/workshop/api/shop/orders/return_order",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-workshop",
+      "target": "endpoint:GET:/workshop/api/management/users/all",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-workshop",
+      "target": "endpoint:unlisted:/workshop/api/mechanic/receive_report",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "inventory_api_surface",
+      "source": "service:svc-workshop",
+      "target": "endpoint:unlisted:/workshop/api/merchant/user/videos/{video_id}",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-chatbot",
+      "target": "service:db-mongo",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-chatbot",
+      "target": "service:db-chroma",
+      "key": 0
+    },
+    {
+      "relation": "depends_on",
+      "source": "service:svc-mailhog",
+      "target": "service:db-mongo",
+      "key": 0
+    },
+    {
+      "relation": "exposes",
+      "match_basis": "postman_url_mail_variable",
+      "source": "service:svc-mailhog",
+      "target": "endpoint:GET:/api/v2/search",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:GET:/identity/api/v2/user/dashboard",
+      "target": "finding:challenge:15",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:GET:/identity/api/v2/vehicle/{vehicle_id}/location",
+      "target": "finding:challenge:1",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:POST:/community/api/v2/coupon/validate-coupon",
+      "target": "finding:challenge:12",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:GET:/community/api/v2/community/posts/recent",
+      "target": "finding:challenge:4",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:POST:/workshop/api/merchant/contact_mechanic",
+      "target": "finding:challenge:6",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:POST:/workshop/api/merchant/contact_mechanic",
+      "target": "finding:challenge:8",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:POST:/workshop/api/merchant/contact_mechanic",
+      "target": "finding:challenge:11",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:GET:/workshop/api/shop/orders/{order_id}",
+      "target": "finding:challenge:9",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:POST:/identity/api/v2/user/videos",
+      "target": "finding:challenge:14",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:GET:/identity/api/v2/user/videos/{video_id}",
+      "target": "finding:challenge:5",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:PUT:/identity/api/v2/user/videos/{video_id}",
+      "target": "finding:challenge:5",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:DELETE:/identity/api/v2/user/videos/{video_id}",
+      "target": "finding:challenge:5",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:DELETE:/identity/api/v2/admin/videos/{video_id}",
+      "target": "finding:challenge:7",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:1",
+      "target": "CWE:CWE-639",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:1",
+      "target": "CWE:CWE-639",
+      "key": 1
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Başka kullanıcıya ait kayda, istekle denetlenen vehicle_id/report_id/order_id üzerinden erişim anlatılıyor; CWE-639 kullanıcı denetimli anahtarla yetkilendirme atlatmayı tanımlar.",
+      "source": "finding:challenge:1",
+      "target": "CWE:CWE-639",
+      "key": 2
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:1",
+      "target": "CAPEC:CAPEC-210",
+      "key": 0
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:1",
+      "target": "CAPEC:CAPEC-210",
+      "key": 1
+    },
+    {
+      "relation": "candidate_capec_mapping",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Yetkilendirme çerçevesinin kısıtlamadığı işlev veya sorgu üzerinden korunan kayda erişim, CAPEC-1 ile olası biçimde örtüşür.",
+      "source": "finding:challenge:1",
+      "target": "CAPEC:CAPEC-1",
+      "key": 0
+    },
+    {
+      "relation": "has_risk",
+      "source": "finding:challenge:1",
+      "target": "risk:challenge:1",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:2",
+      "target": "CWE:CWE-639",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:2",
+      "target": "CWE:CWE-639",
+      "key": 1
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Başka kullanıcıya ait kayda, istekle denetlenen vehicle_id/report_id/order_id üzerinden erişim anlatılıyor; CWE-639 kullanıcı denetimli anahtarla yetkilendirme atlatmayı tanımlar.",
+      "source": "finding:challenge:2",
+      "target": "CWE:CWE-639",
+      "key": 2
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:2",
+      "target": "CAPEC:CAPEC-210",
+      "key": 0
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:2",
+      "target": "CAPEC:CAPEC-210",
+      "key": 1
+    },
+    {
+      "relation": "candidate_capec_mapping",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Yetkilendirme çerçevesinin kısıtlamadığı işlev veya sorgu üzerinden korunan kayda erişim, CAPEC-1 ile olası biçimde örtüşür.",
+      "source": "finding:challenge:2",
+      "target": "CAPEC:CAPEC-1",
+      "key": 0
+    },
+    {
+      "relation": "has_risk",
+      "source": "finding:challenge:2",
+      "target": "risk:challenge:2",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:unlisted:/workshop/api/mechanic/receive_report",
+      "target": "finding:challenge:2",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:3",
+      "target": "CWE:CWE-307",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:3",
+      "target": "CWE:CWE-307",
+      "key": 1
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "OTP doğrulama girişimlerini sınırlamama, aşırı kimlik doğrulama denemelerinin kısıtlanmamasıyla uyumludur.",
+      "source": "finding:challenge:3",
+      "target": "CWE:CWE-307",
+      "key": 2
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:3",
+      "target": "CAPEC:CAPEC-49",
+      "key": 0
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:3",
+      "target": "CAPEC:CAPEC-49",
+      "key": 1
+    },
+    {
+      "relation": "candidate_capec_mapping",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "OTP değerleri üzerinde deneme-yanılma yapıldıysa genel brute-force örüntüsü uygun olabilir.",
+      "source": "finding:challenge:3",
+      "target": "CAPEC:CAPEC-112",
+      "key": 0
+    },
+    {
+      "relation": "has_risk",
+      "source": "finding:challenge:3",
+      "target": "risk:challenge:3",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:unlisted:/identity/api/auth/v2/check-otp",
+      "target": "finding:challenge:3",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:4",
+      "target": "CWE:CWE-213",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:4",
+      "target": "CWE:CWE-213",
+      "key": 1
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:4",
+      "target": "CAPEC:CAPEC-118",
+      "key": 0
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:4",
+      "target": "CAPEC:CAPEC-118",
+      "key": 1
+    },
+    {
+      "relation": "candidate_capec_mapping",
+      "confidence": "low",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Bilgi toplama/hedefin beklenenden fazla bilgi vermesi üst kategorisi senaryoyla ilişkili olabilir.",
+      "source": "finding:challenge:4",
+      "target": "CAPEC:CAPEC-118",
+      "key": 2
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "E-posta/telefon gibi kişisel bilgilerin yetkisiz aktörlere açılması CWE-359'un özel kişisel bilgi tanımıyla örtüşür.",
+      "source": "finding:challenge:4",
+      "target": "CWE:CWE-359",
+      "key": 0
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Hassas alanların API yanıtında istemciye gönderilmesi, gönderilen veriye hassas bilgi eklenmesiyle örtüşür.",
+      "source": "finding:challenge:4",
+      "target": "CWE:CWE-201",
+      "key": 0
+    },
+    {
+      "relation": "has_risk",
+      "source": "finding:challenge:4",
+      "target": "risk:challenge:4",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:5",
+      "target": "CWE:CWE-200",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:5",
+      "target": "CWE:CWE-200",
+      "key": 1
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Hassasiyet ve erişim sınırı net değilken CWE-200 genel bir bilgi ifşası adayıdır.",
+      "source": "finding:challenge:5",
+      "target": "CWE:CWE-200",
+      "key": 2
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:5",
+      "target": "CAPEC:CAPEC-118",
+      "key": 0
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:5",
+      "target": "CAPEC:CAPEC-118",
+      "key": 1
+    },
+    {
+      "relation": "candidate_capec_mapping",
+      "confidence": "low",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Bilgi edinme kategorisi üst düzeyde ilişkili olabilir.",
+      "source": "finding:challenge:5",
+      "target": "CAPEC:CAPEC-118",
+      "key": 2
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "İç parametrelerin API yanıtında istemciye gönderilmesi hassas bilgi gönderimiyle örtüşebilir.",
+      "source": "finding:challenge:5",
+      "target": "CWE:CWE-201",
+      "key": 0
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "low",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Sızan alan sistem düzeyinde hassas uygulama/ortam bilgisi ise CWE-497 değerlendirilebilir.",
+      "source": "finding:challenge:5",
+      "target": "CWE:CWE-497",
+      "key": 0
+    },
+    {
+      "relation": "has_risk",
+      "source": "finding:challenge:5",
+      "target": "risk:challenge:5",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:6",
+      "target": "CWE:CWE-770",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:6",
+      "target": "CWE:CWE-770",
+      "key": 1
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "İsteklerin kaynak tükettiği belirtiliyor; CWE-770 sınırsız veya kısıtlanmamış kaynak tahsisini kapsar.",
+      "source": "finding:challenge:6",
+      "target": "CWE:CWE-770",
+      "key": 2
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:6",
+      "target": "CAPEC:CAPEC-130",
+      "key": 0
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:6",
+      "target": "CAPEC:CAPEC-130",
+      "key": 1
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Kayıt art arda gelen isteklerin sınırlandırılmamasını açıkça anlatıyor; CWE-799 etkileşim sıklığının kontrolünü ele alır.",
+      "source": "finding:challenge:6",
+      "target": "CWE:CWE-799",
+      "key": 0
+    },
+    {
+      "relation": "candidate_capec_mapping",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Çok sayıda istekle kaynak tüketimi ve rate limiting zayıflığı CAPEC-125 Flooding tanımıyla örtüşür.",
+      "source": "finding:challenge:6",
+      "target": "CAPEC:CAPEC-125",
+      "key": 0
+    },
+    {
+      "relation": "has_risk",
+      "source": "finding:challenge:6",
+      "target": "risk:challenge:6",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:7",
+      "target": "CWE:CWE-285",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:7",
+      "target": "CWE:CWE-285",
+      "key": 1
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:7",
+      "target": "CAPEC:CAPEC-233",
+      "key": 0
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:7",
+      "target": "CAPEC:CAPEC-233",
+      "key": 1
+    },
+    {
+      "relation": "candidate_capec_mapping",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Daha yüksek ayrıcalık gerektiren eylemin yapılması genel ayrıcalık yükseltme örüntüsüne uyabilir.",
+      "source": "finding:challenge:7",
+      "target": "CAPEC:CAPEC-233",
+      "key": 2
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Standart kullanıcının yönetici işlevini çalıştırması, o eylem için yetkilendirme kontrolü eksikse CWE-862 ile örtüşür.",
+      "source": "finding:challenge:7",
+      "target": "CWE:CWE-862",
+      "key": 0
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "low",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Yetkilendirme kontrolünün yanlış karar verdiği ortaya çıkarsa CWE-863 alternatifidir.",
+      "source": "finding:challenge:7",
+      "target": "CWE:CWE-863",
+      "key": 0
+    },
+    {
+      "relation": "candidate_capec_mapping",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Yetkisiz standart kullanıcının ACL ile kısıtlanması gereken yönetim URL'sine erişmesi CAPEC-1 ile olası biçimde örtüşür.",
+      "source": "finding:challenge:7",
+      "target": "CAPEC:CAPEC-1",
+      "key": 0
+    },
+    {
+      "relation": "has_risk",
+      "source": "finding:challenge:7",
+      "target": "risk:challenge:7",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:8",
+      "target": "CWE:CWE-918",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:8",
+      "target": "CWE:CWE-918",
+      "key": 1
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Kullanıcı girdisinin sunucuyu başka bir hedefe istek göndermeye zorladığı belirtiliyor; bu SSRF tanımıyla örtüşür.",
+      "source": "finding:challenge:8",
+      "target": "CWE:CWE-918",
+      "key": 2
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:8",
+      "target": "CAPEC:CAPEC-664",
+      "key": 0
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:8",
+      "target": "CAPEC:CAPEC-664",
+      "key": 1
+    },
+    {
+      "relation": "candidate_capec_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "CAPEC-664, kötü amaçlı girdinin sunucu tarafında istek başlatmaya zorlamasını doğrudan tanımlar.",
+      "source": "finding:challenge:8",
+      "target": "CAPEC:CAPEC-664",
+      "key": 2
+    },
+    {
+      "relation": "has_risk",
+      "source": "finding:challenge:8",
+      "target": "risk:challenge:8",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:9",
+      "target": "CWE:CWE-639",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:9",
+      "target": "CWE:CWE-639",
+      "key": 1
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Başka kullanıcıya ait kayda, istekle denetlenen vehicle_id/report_id/order_id üzerinden erişim anlatılıyor; CWE-639 kullanıcı denetimli anahtarla yetkilendirme atlatmayı tanımlar.",
+      "source": "finding:challenge:9",
+      "target": "CWE:CWE-639",
+      "key": 2
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:9",
+      "target": "CAPEC:CAPEC-1",
+      "key": 0
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:9",
+      "target": "CAPEC:CAPEC-1",
+      "key": 1
+    },
+    {
+      "relation": "candidate_capec_mapping",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Yetkilendirme çerçevesinin kısıtlamadığı işlev veya sorgu üzerinden korunan kayda erişim, CAPEC-1 ile olası biçimde örtüşür.",
+      "source": "finding:challenge:9",
+      "target": "CAPEC:CAPEC-1",
+      "key": 2
+    },
+    {
+      "relation": "has_risk",
+      "source": "finding:challenge:9",
+      "target": "risk:challenge:9",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:10",
+      "target": "CWE:CWE-915",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:10",
+      "target": "CWE:CWE-915",
+      "key": 1
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "İstemci girdisinin nesnedeki dahili alanı değiştirebildiği anlatılıyor; CWE-915 dinamik belirlenen nesne özniteliklerinin kontrolsüz değiştirilmesini ve mass assignment terimini kapsar.",
+      "source": "finding:challenge:10",
+      "target": "CWE:CWE-915",
+      "key": 2
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:10",
+      "target": "CAPEC:CAPEC-315",
+      "key": 0
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:10",
+      "target": "CAPEC:CAPEC-315",
+      "key": 1
+    },
+    {
+      "relation": "candidate_capec_mapping",
+      "confidence": "low",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Kullanıcı denetimli alanların uygulama davranışını değiştirmesiyle kavramsal benzerlik var; CAPEC-77 mass assignment'a özel değildir.",
+      "source": "finding:challenge:10",
+      "target": "CAPEC:CAPEC-77",
+      "key": 0
+    },
+    {
+      "relation": "has_risk",
+      "source": "finding:challenge:10",
+      "target": "risk:challenge:10",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:unlisted:/workshop/api/merchant/user/videos/{video_id}",
+      "target": "finding:challenge:10",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:11",
+      "target": "CWE:CWE-918",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:11",
+      "target": "CWE:CWE-918",
+      "key": 1
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Kullanıcı girdisinin sunucuyu başka bir hedefe istek göndermeye zorladığı belirtiliyor; bu SSRF tanımıyla örtüşür.",
+      "source": "finding:challenge:11",
+      "target": "CWE:CWE-918",
+      "key": 2
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:11",
+      "target": "CAPEC:CAPEC-664",
+      "key": 0
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:11",
+      "target": "CAPEC:CAPEC-664",
+      "key": 1
+    },
+    {
+      "relation": "candidate_capec_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "CAPEC-664, kötü amaçlı girdinin sunucu tarafında istek başlatmaya zorlamasını doğrudan tanımlar.",
+      "source": "finding:challenge:11",
+      "target": "CAPEC:CAPEC-664",
+      "key": 2
+    },
+    {
+      "relation": "has_risk",
+      "source": "finding:challenge:11",
+      "target": "risk:challenge:11",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:12",
+      "target": "CWE:CWE-943",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:12",
+      "target": "CWE:CWE-943",
+      "key": 1
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Challenge 12'de coupon_code parametresinin NoSQL sorgu mantığını değiştirebilen girdiler kabul ettiği ve filtreleme mekanizmasının atlatılabildiği bildirilmiştir. CWE-943 veri sorgulama mantığındaki özel öğelerin uygun şekilde etkisizleştirilmemesini kapsar.",
+      "source": "finding:challenge:12",
+      "target": "CWE:CWE-943",
+      "key": 2
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:12",
+      "target": "CAPEC:CAPEC-248",
+      "key": 0
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:12",
+      "target": "CAPEC:CAPEC-248",
+      "key": 1
+    },
+    {
+      "relation": "candidate_capec_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "CAPEC-676 doğrudan NoSQL Injection saldırı örüntüsünü tanımlar ve kullanıcı girdisiyle oluşturulan NoSQL sorgularının manipüle edilmesini kapsar.",
+      "source": "finding:challenge:12",
+      "target": "CAPEC:CAPEC-676",
+      "key": 0
+    },
+    {
+      "relation": "has_risk",
+      "source": "finding:challenge:12",
+      "target": "risk:challenge:12",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:13",
+      "target": "CWE:CWE-89",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:13",
+      "target": "CWE:CWE-89",
+      "key": 1
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Challenge 13'te coupon_code parametresinin SQL sorgularında parametrelendirilmeden kullanıldığı ve SQL enjeksiyonuna neden olduğu belirtilmiştir. CWE-89 bu zafiyetin doğrudan karşılığıdır.",
+      "source": "finding:challenge:13",
+      "target": "CWE:CWE-89",
+      "key": 2
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:13",
+      "target": "CAPEC:CAPEC-66",
+      "key": 0
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:13",
+      "target": "CAPEC:CAPEC-66",
+      "key": 1
+    },
+    {
+      "relation": "candidate_capec_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "CAPEC-66 kullanıcı kontrollü girdilerle SQL ifadelerinin manipüle edilmesini tanımlayan doğrudan SQL Injection saldırı örüntüsüdür.",
+      "source": "finding:challenge:13",
+      "target": "CAPEC:CAPEC-66",
+      "key": 2
+    },
+    {
+      "relation": "has_risk",
+      "source": "finding:challenge:13",
+      "target": "risk:challenge:13",
+      "key": 0
+    },
+    {
+      "relation": "has_finding",
+      "source": "endpoint:unlisted:/community/api/v2/coupon/apply-coupon",
+      "target": "finding:challenge:13",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:14",
+      "target": "CWE:CWE-306",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:14",
+      "target": "CWE:CWE-306",
+      "key": 1
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Challenge 14'te hassas API endpoint'ine Authorization başlığı olmadan erişilebildiği belirtilmiştir. Bu durum kritik işlevlerde kimlik doğrulamasının uygulanmamasıyla örtüşür.",
+      "source": "finding:challenge:14",
+      "target": "CWE:CWE-306",
+      "key": 2
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:14",
+      "target": "CAPEC:CAPEC-115",
+      "key": 0
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:14",
+      "target": "CAPEC:CAPEC-115",
+      "key": 1
+    },
+    {
+      "relation": "candidate_capec_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Kimlik doğrulama kontrolünü atlayarak korunan API işlevine erişim CAPEC-115 Authentication Bypass saldırı örüntüsüyle örtüşür.",
+      "source": "finding:challenge:14",
+      "target": "CAPEC:CAPEC-115",
+      "key": 2
+    },
+    {
+      "relation": "has_risk",
+      "source": "finding:challenge:14",
+      "target": "risk:challenge:14",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:15",
+      "target": "CWE:CWE-347",
+      "key": 0
+    },
+    {
+      "relation": "recorded_cwe_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:15",
+      "target": "CWE:CWE-347",
+      "key": 1
+    },
+    {
+      "relation": "candidate_cwe_mapping",
+      "confidence": "medium",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Challenge 15'te JWT imzasının doğrulanması veya algoritma kontrolüyle ilgili zayıflık nedeniyle sahte token oluşturulabildiği belirtilmiştir.",
+      "source": "finding:challenge:15",
+      "target": "CWE:CWE-347",
+      "key": 2
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:15",
+      "target": "CAPEC:CAPEC-633",
+      "key": 0
+    },
+    {
+      "relation": "recorded_capec_mapping",
+      "verification_status": "recorded_but_not_verified",
+      "source": "finding:challenge:15",
+      "target": "CAPEC:CAPEC-633",
+      "key": 1
+    },
+    {
+      "relation": "candidate_capec_mapping",
+      "confidence": "high",
+      "verification_status": "candidate_not_verified_human_review_required",
+      "rationale": "Sahte erişim belirteciyle başka bir kullanıcının kimliğine bürünülmesi CAPEC-633 Token Impersonation saldırı örüntüsüyle örtüşür.",
+      "source": "finding:challenge:15",
+      "target": "CAPEC:CAPEC-633",
+      "key": 2
+    },
+    {
+      "relation": "has_risk",
+      "source": "finding:challenge:15",
+      "target": "risk:challenge:15",
+      "key": 0
+    },
+    {
+      "relation": "mitigated_by",
+      "selected": true,
+      "source": "risk:challenge:1",
+      "target": "control:C01",
+      "key": 0
+    },
+    {
+      "relation": "mitigated_by",
+      "selected": true,
+      "source": "risk:challenge:2",
+      "target": "control:C01",
+      "key": 0
+    },
+    {
+      "relation": "mitigated_by",
+      "selected": true,
+      "source": "risk:challenge:3",
+      "target": "control:C03",
+      "key": 0
+    },
+    {
+      "relation": "mitigated_by",
+      "selected": true,
+      "source": "risk:challenge:4",
+      "target": "control:C04",
+      "key": 0
+    },
+    {
+      "relation": "mitigated_by",
+      "selected": true,
+      "source": "risk:challenge:5",
+      "target": "control:C04",
+      "key": 0
+    },
+    {
+      "relation": "mitigated_by",
+      "selected": true,
+      "source": "risk:challenge:6",
+      "target": "control:C03",
+      "key": 0
+    },
+    {
+      "relation": "mitigated_by",
+      "selected": false,
+      "source": "risk:challenge:7",
+      "target": "control:C02",
+      "key": 0
+    },
+    {
+      "relation": "mitigated_by",
+      "selected": true,
+      "source": "risk:challenge:8",
+      "target": "control:C06",
+      "key": 0
+    },
+    {
+      "relation": "mitigated_by",
+      "selected": true,
+      "source": "risk:challenge:9",
+      "target": "control:C01",
+      "key": 0
+    },
+    {
+      "relation": "mitigated_by",
+      "selected": false,
+      "source": "risk:challenge:10",
+      "target": "control:C05",
+      "key": 0
+    },
+    {
+      "relation": "mitigated_by",
+      "selected": true,
+      "source": "risk:challenge:11",
+      "target": "control:C06",
+      "key": 0
+    },
+    {
+      "relation": "mitigated_by",
+      "selected": false,
+      "source": "risk:challenge:12",
+      "target": "control:C07",
+      "key": 0
+    },
+    {
+      "relation": "mitigated_by",
+      "selected": true,
+      "source": "risk:challenge:13",
+      "target": "control:C08",
+      "key": 0
+    },
+    {
+      "relation": "mitigated_by",
+      "selected": false,
+      "source": "risk:challenge:14",
+      "target": "control:C09",
+      "key": 0
+    },
+    {
+      "relation": "mitigated_by",
+      "selected": false,
+      "source": "risk:challenge:15",
+      "target": "control:C10",
+      "key": 0
+    }
+  ]
+}

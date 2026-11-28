@@ -1,0 +1,177 @@
+﻿/usr/local/bin/generate-certificate: generating new certificate
+/usr/local/bin/generate-certificate: generated /usr/local/apache2/conf/server.key and /usr/local/apache2/conf/server.crt
+/usr/local/bin/update-ssl-client-verify-config: client certificate verification disabled
+# # #
+Running CRS plugin activation
+- - -
+
+- - -
+Finished CRS plugin activation
+# # #
+
+# # #
+Running CRS rule configuration
+- - -
+docker : Warning: Not placing -key in cert or request since request is used
+At line:11 char:1
++ docker logs --since 10m crapi-modsecurity 2>&1 |
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: Not pl...request is used:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Warning: No -copy_extensions given; ignoring any extensions in the request
+Detected CRS config file version: v4
+Configuring 900000 for BLOCKING_PARANOIA with blocking_paranoia_level=1
+Configuring 900001 for DETECTION_PARANOIA with detection_paranoia_level=1
+Configuring 900110 for ANOMALY_INBOUND with inbound_anomaly_score_threshold=5
+Configuring 900110 for ANOMALY_OUTBOUND with outbound_anomaly_score_threshold=4
+- - -
+Finished CRS rule configuration
+# # #
+
+[Sat Nov 28 14:52:57.980522 2026] [ssl:error] [pid 1:tid 137548539927552] AH02217: ssl_stapling_init_cert: can'
+t retrieve issuer certificate! [subject: OU=MyUnit,O=MyOrg,L=NY,ST=NY,C=US,emailAddress=none@none.com,CN=localh
+ost / issuer: OU=MyUnit,O=MyOrg,L=NY,ST=NY,C=US,emailAddress=none@none.com,CN=localhost / serial: 1C6C25E1FA62E
+1CDEBE49FB1EBAC14F1A41C3CDA / notbefore: Nov 28 14:52:57 2026 GMT / notafter: Nov 28 14:52:57 2027 GMT]
+[Sat Nov 28 14:52:57.980713 2026] [ssl:error] [pid 1:tid 137548539927552] AH02604: Unable to configure certific
+ate localhost:8443:0 for stapling
+[Sat Nov 28 14:52:57.980863 2026] [security2:notice] [pid 1:tid 137548539927552] ModSecurity for Apache/2.9.15 
+(http://www.modsecurity.org/) configured.
+[Sat Nov 28 14:52:57.980910 2026] [security2:notice] [pid 1:tid 137548539927552] ModSecurity: APR compiled vers
+ion="1.7.5"; loaded version="1.7.5"
+[Sat Nov 28 14:52:57.980917 2026] [security2:notice] [pid 1:tid 137548539927552] ModSecurity: PCRE2 compiled ve
+rsion="10.46 "; loaded version="10.46 2025-08-27"
+[Sat Nov 28 14:52:57.980936 2026] [security2:notice] [pid 1:tid 137548539927552] ModSecurity: LUA compiled vers
+ion="Lua 5.3"
+[Sat Nov 28 14:52:57.980938 2026] [security2:notice] [pid 1:tid 137548539927552] ModSecurity: YAJL compiled ver
+sion="2.1.0"
+[Sat Nov 28 14:52:57.980940 2026] [security2:notice] [pid 1:tid 137548539927552] ModSecurity: LIBXML compiled v
+ersion="2.9.14"
+[Sat Nov 28 14:52:57.980941 2026] [security2:notice] [pid 1:tid 137548539927552] ModSecurity: Original server s
+ignature: Apache
+[Sat Nov 28 14:52:57.980942 2026] [security2:notice] [pid 1:tid 137548539927552] ModSecurity: Status engine is 
+currently disabled, enable it by set SecStatusEngine to On.
+[Sat Nov 28 14:52:58.061191 2026] [ssl:error] [pid 1:tid 137548539927552] AH02217: ssl_stapling_init_cert: can'
+t retrieve issuer certificate! [subject: OU=MyUnit,O=MyOrg,L=NY,ST=NY,C=US,emailAddress=none@none.com,CN=localh
+ost / issuer: OU=MyUnit,O=MyOrg,L=NY,ST=NY,C=US,emailAddress=none@none.com,CN=localhost / serial: 1C6C25E1FA62E
+1CDEBE49FB1EBAC14F1A41C3CDA / notbefore: Nov 28 14:52:57 2026 GMT / notafter: Nov 28 14:52:57 2027 GMT]
+[Sat Nov 28 14:52:58.061310 2026] [ssl:error] [pid 1:tid 137548539927552] AH02604: Unable to configure certific
+ate localhost:8443:0 for stapling
+[Sat Nov 28 14:52:58.066969 2026] [mpm_event:notice] [pid 1:tid 137548539927552] AH00489: Apache/2.4.71 (Unix) 
+OpenSSL/3.5.9 Apache configured -- resuming normal operations
+[Sat Nov 28 14:52:58.067018 2026] [core:notice] [pid 1:tid 137548539927552] AH00094: Command line: 'httpd -D FO
+REGROUND'
+[Sat Nov 28 14:55:26.343317 2026] [security2:error] [pid 513:tid 137548236302016] [client 172.19.0.1:39716] Mod
+Security: Warning. detected SQLi using libinjection with fingerprint '1UEv' [file "/etc/modsecurity.d/owasp-crs
+/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "66"] [id "942100"] [msg "SQL Injection Attack Detected
+ via libinjection"] [data "Matched Data: 1UEv found within ARGS:id: 1 UNION SELECT NULL"] [severity "CRITICAL"]
+ [ver "OWASP_CRS/4.25.2"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-
+sqli"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-SQLI"] [tag "capec/1000/152/248/66"] [
+hostname "localhost"] [uri "/health"] [unique_id "awrrXjCa0FsV7Sj45wU9ywAAAEI"]
+[Sat Nov 28 14:55:26.343435 2026] [security2:error] [pid 513:tid 137548236302016] [client 172.19.0.1:39716] Mod
+Security: Warning. Pattern match "(?i)[\\"'`](?:[\\\\s\\\\x0b]*![\\\\s\\\\x0b]*[\\"'0-9A-Z_-z]|;?[\\\\s\\\\x0b]
+*(?:having|select|union\\\\b[\\\\s\\\\x0b]*(?:all|(?:distin|sele)ct))\\\\b[\\\\s\\\\x0b]*[^\\\\s\\\\x0b])|\\\\b
+(?:(?:(?:c(?:onnection_id|urrent_user)|database|schema|user)[\\\\s\\\\x0b]*?|select.*?[0-9A-Z_a-z]?u ..." at AR
+GS:id. [file "/etc/modsecurity.d/owasp-crs/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "225"] [id "9
+42190"] [msg "Detects MSSQL code execution and information gathering attempts"] [data "Matched Data: UNION SELE
+CT found within ARGS:id: 1 UNION SELECT NULL"] [severity "CRITICAL"] [ver "OWASP_CRS/4.25.2"] [tag "application
+-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-sqli"] [tag "paranoia-level/1"] [tag "OWASP
+_CRS"] [tag "OWASP_CRS/ATTACK-SQLI"] [tag "capec/1000/152/248/66"] [hostname "localhost"] [uri "/health"] [uniq
+ue_id "awrrXjCa0FsV7Sj45wU9ywAAAEI"]
+[Sat Nov 28 14:55:26.343605 2026] [security2:error] [pid 513:tid 137548236302016] [client 172.19.0.1:39716] Mod
+Security: Warning. Pattern match "(?i)\\\\b(?:(?:alter|(?:(?:cre|trunc|upd)at|renam)e|de(?:lete|sc)|(?:inser|se
+lec)t|load)[\\\\s\\\\x0b]+(?:char|group_concat|load_file)\\\\b[\\\\s\\\\x0b]*\\\\(?|end[\\\\s\\\\x0b]*?\\\\);)|
+[\\\\s\\\\x0b\\\\(]load_file[\\\\s\\\\x0b]*?\\\\(|[\\"'`][\\\\s\\\\x0b]+regexp[^0-9A-Z_a-z]|[\\"'0-9A- ..." at 
+ARGS:id. [file "/etc/modsecurity.d/owasp-crs/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "499"] [id 
+"942360"] [msg "Detects concatenated basic SQL injection and SQLLFI attempts"] [data "Matched Data: 1 UNION SEL
+ECT found within ARGS:id: 1 UNION SELECT NULL"] [severity "CRITICAL"] [ver "OWASP_CRS/4.25.2"] [tag "applicatio
+n-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-sqli"] [tag "paranoia-level/1"] [tag "OWAS
+P_CRS"] [tag "OWASP_CRS/ATTACK-SQLI"] [tag "capec/1000/152/248/66"] [hostname "localhost"] [uri "/health"] [uni
+que_id "awrrXjCa0FsV7Sj45wU9ywAAAEI"]
+[Sat Nov 28 14:55:26.343899 2026] [security2:error] [pid 513:tid 137548236302016] [client 172.19.0.1:39716] Mod
+Security: Access denied with code 403 (phase 2). Operator GE matched 5 at TX:blocking_inbound_anomaly_score. [f
+ile "/etc/modsecurity.d/owasp-crs/rules/REQUEST-949-BLOCKING-EVALUATION.conf"] [line "233"] [id "949110"] [msg 
+"Inbound Anomaly Score Exceeded (Total Score: 15)"] [ver "OWASP_CRS/4.25.2"] [tag "anomaly-evaluation"] [tag "O
+WASP_CRS"] [hostname "localhost"] [uri "/health"] [unique_id "awrrXjCa0FsV7Sj45wU9ywAAAEI"]
+[Sat Nov 28 14:55:26.344179 2026] [security2:error] [pid 513:tid 137548236302016] [client 172.19.0.1:39716] Mod
+Security: Warning. Unconditional match in SecAction. [file "/etc/modsecurity.d/owasp-crs/rules/RESPONSE-980-COR
+RELATION.conf"] [line "98"] [id "980170"] [msg "Anomaly Scores: (Inbound Scores: blocking=15, detection=15, per
+_pl=15-0-0-0, threshold=5) - (Outbound Scores: blocking=0, detection=0, per_pl=0-0-0-0, threshold=4) - (SQLI=15
+, XSS=0, RFI=0, LFI=0, RCE=0, PHPI=0, HTTP=0, SESS=0, COMBINED_SCORE=15)"] [ver "OWASP_CRS/4.25.2"] [tag "repor
+ting"] [tag "OWASP_CRS"] [hostname "localhost"] [uri "/health"] [unique_id "awrrXjCa0FsV7Sj45wU9ywAAAEI"]
+[Sat Nov 28 14:55:35.105183 2026] [security2:error] [pid 538:tid 137547829192384] [client 172.19.0.1:39724] Mod
+Security: Warning. detected SQLi using libinjection with fingerprint '1UEv' [file "/etc/modsecurity.d/owasp-crs
+/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "66"] [id "942100"] [msg "SQL Injection Attack Detected
+ via libinjection"] [data "Matched Data: 1UEv found within ARGS:id: 1 UNION SELECT NULL"] [severity "CRITICAL"]
+ [ver "OWASP_CRS/4.25.2"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-
+sqli"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-SQLI"] [tag "capec/1000/152/248/66"] [
+hostname "localhost"] [uri "/health"] [unique_id "awrrZ5H4IWSD6qAoAsNiOAAAAIo"]
+[Sat Nov 28 14:55:35.105313 2026] [security2:error] [pid 538:tid 137547829192384] [client 172.19.0.1:39724] Mod
+Security: Warning. Pattern match "(?i)[\\"'`](?:[\\\\s\\\\x0b]*![\\\\s\\\\x0b]*[\\"'0-9A-Z_-z]|;?[\\\\s\\\\x0b]
+*(?:having|select|union\\\\b[\\\\s\\\\x0b]*(?:all|(?:distin|sele)ct))\\\\b[\\\\s\\\\x0b]*[^\\\\s\\\\x0b])|\\\\b
+(?:(?:(?:c(?:onnection_id|urrent_user)|database|schema|user)[\\\\s\\\\x0b]*?|select.*?[0-9A-Z_a-z]?u ..." at AR
+GS:id. [file "/etc/modsecurity.d/owasp-crs/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "225"] [id "9
+42190"] [msg "Detects MSSQL code execution and information gathering attempts"] [data "Matched Data: UNION SELE
+CT found within ARGS:id: 1 UNION SELECT NULL"] [severity "CRITICAL"] [ver "OWASP_CRS/4.25.2"] [tag "application
+-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-sqli"] [tag "paranoia-level/1"] [tag "OWASP
+_CRS"] [tag "OWASP_CRS/ATTACK-SQLI"] [tag "capec/1000/152/248/66"] [hostname "localhost"] [uri "/health"] [uniq
+ue_id "awrrZ5H4IWSD6qAoAsNiOAAAAIo"]
+[Sat Nov 28 14:55:35.105482 2026] [security2:error] [pid 538:tid 137547829192384] [client 172.19.0.1:39724] Mod
+Security: Warning. Pattern match "(?i)\\\\b(?:(?:alter|(?:(?:cre|trunc|upd)at|renam)e|de(?:lete|sc)|(?:inser|se
+lec)t|load)[\\\\s\\\\x0b]+(?:char|group_concat|load_file)\\\\b[\\\\s\\\\x0b]*\\\\(?|end[\\\\s\\\\x0b]*?\\\\);)|
+[\\\\s\\\\x0b\\\\(]load_file[\\\\s\\\\x0b]*?\\\\(|[\\"'`][\\\\s\\\\x0b]+regexp[^0-9A-Z_a-z]|[\\"'0-9A- ..." at 
+ARGS:id. [file "/etc/modsecurity.d/owasp-crs/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "499"] [id 
+"942360"] [msg "Detects concatenated basic SQL injection and SQLLFI attempts"] [data "Matched Data: 1 UNION SEL
+ECT found within ARGS:id: 1 UNION SELECT NULL"] [severity "CRITICAL"] [ver "OWASP_CRS/4.25.2"] [tag "applicatio
+n-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-sqli"] [tag "paranoia-level/1"] [tag "OWAS
+P_CRS"] [tag "OWASP_CRS/ATTACK-SQLI"] [tag "capec/1000/152/248/66"] [hostname "localhost"] [uri "/health"] [uni
+que_id "awrrZ5H4IWSD6qAoAsNiOAAAAIo"]
+[Sat Nov 28 14:55:35.105805 2026] [security2:error] [pid 538:tid 137547829192384] [client 172.19.0.1:39724] Mod
+Security: Access denied with code 403 (phase 2). Operator GE matched 5 at TX:blocking_inbound_anomaly_score. [f
+ile "/etc/modsecurity.d/owasp-crs/rules/REQUEST-949-BLOCKING-EVALUATION.conf"] [line "233"] [id "949110"] [msg 
+"Inbound Anomaly Score Exceeded (Total Score: 15)"] [ver "OWASP_CRS/4.25.2"] [tag "anomaly-evaluation"] [tag "O
+WASP_CRS"] [hostname "localhost"] [uri "/health"] [unique_id "awrrZ5H4IWSD6qAoAsNiOAAAAIo"]
+[Sat Nov 28 14:55:35.106004 2026] [security2:error] [pid 538:tid 137547829192384] [client 172.19.0.1:39724] Mod
+Security: Warning. Unconditional match in SecAction. [file "/etc/modsecurity.d/owasp-crs/rules/RESPONSE-980-COR
+RELATION.conf"] [line "98"] [id "980170"] [msg "Anomaly Scores: (Inbound Scores: blocking=15, detection=15, per
+_pl=15-0-0-0, threshold=5) - (Outbound Scores: blocking=0, detection=0, per_pl=0-0-0-0, threshold=4) - (SQLI=15
+, XSS=0, RFI=0, LFI=0, RCE=0, PHPI=0, HTTP=0, SESS=0, COMBINED_SCORE=15)"] [ver "OWASP_CRS/4.25.2"] [tag "repor
+ting"] [tag "OWASP_CRS"] [hostname "localhost"] [uri "/health"] [unique_id "awrrZ5H4IWSD6qAoAsNiOAAAAIo"]
+[Sat Nov 28 14:58:42.361239 2026] [security2:error] [pid 538:tid 137546755450560] [client 172.19.0.1:47154] Mod
+Security: Warning. detected SQLi using libinjection with fingerprint '1UEv' [file "/etc/modsecurity.d/owasp-crs
+/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "66"] [id "942100"] [msg "SQL Injection Attack Detected
+ via libinjection"] [data "Matched Data: 1UEv found within ARGS:id: 1 UNION SELECT NULL"] [severity "CRITICAL"]
+ [ver "OWASP_CRS/4.25.2"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-
+sqli"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-SQLI"] [tag "capec/1000/152/248/66"] [
+hostname "localhost"] [uri "/health"] [unique_id "awrsIpH4IWSD6qAoAsNiPwAAAJg"]
+[Sat Nov 28 14:58:42.361361 2026] [security2:error] [pid 538:tid 137546755450560] [client 172.19.0.1:47154] Mod
+Security: Warning. Pattern match "(?i)[\\"'`](?:[\\\\s\\\\x0b]*![\\\\s\\\\x0b]*[\\"'0-9A-Z_-z]|;?[\\\\s\\\\x0b]
+*(?:having|select|union\\\\b[\\\\s\\\\x0b]*(?:all|(?:distin|sele)ct))\\\\b[\\\\s\\\\x0b]*[^\\\\s\\\\x0b])|\\\\b
+(?:(?:(?:c(?:onnection_id|urrent_user)|database|schema|user)[\\\\s\\\\x0b]*?|select.*?[0-9A-Z_a-z]?u ..." at AR
+GS:id. [file "/etc/modsecurity.d/owasp-crs/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "225"] [id "9
+42190"] [msg "Detects MSSQL code execution and information gathering attempts"] [data "Matched Data: UNION SELE
+CT found within ARGS:id: 1 UNION SELECT NULL"] [severity "CRITICAL"] [ver "OWASP_CRS/4.25.2"] [tag "application
+-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-sqli"] [tag "paranoia-level/1"] [tag "OWASP
+_CRS"] [tag "OWASP_CRS/ATTACK-SQLI"] [tag "capec/1000/152/248/66"] [hostname "localhost"] [uri "/health"] [uniq
+ue_id "awrsIpH4IWSD6qAoAsNiPwAAAJg"]
+[Sat Nov 28 14:58:42.361630 2026] [security2:error] [pid 538:tid 137546755450560] [client 172.19.0.1:47154] Mod
+Security: Warning. Pattern match "(?i)\\\\b(?:(?:alter|(?:(?:cre|trunc|upd)at|renam)e|de(?:lete|sc)|(?:inser|se
+lec)t|load)[\\\\s\\\\x0b]+(?:char|group_concat|load_file)\\\\b[\\\\s\\\\x0b]*\\\\(?|end[\\\\s\\\\x0b]*?\\\\);)|
+[\\\\s\\\\x0b\\\\(]load_file[\\\\s\\\\x0b]*?\\\\(|[\\"'`][\\\\s\\\\x0b]+regexp[^0-9A-Z_a-z]|[\\"'0-9A- ..." at 
+ARGS:id. [file "/etc/modsecurity.d/owasp-crs/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "499"] [id 
+"942360"] [msg "Detects concatenated basic SQL injection and SQLLFI attempts"] [data "Matched Data: 1 UNION SEL
+ECT found within ARGS:id: 1 UNION SELECT NULL"] [severity "CRITICAL"] [ver "OWASP_CRS/4.25.2"] [tag "applicatio
+n-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-sqli"] [tag "paranoia-level/1"] [tag "OWAS
+P_CRS"] [tag "OWASP_CRS/ATTACK-SQLI"] [tag "capec/1000/152/248/66"] [hostname "localhost"] [uri "/health"] [uni
+que_id "awrsIpH4IWSD6qAoAsNiPwAAAJg"]
+[Sat Nov 28 14:58:42.362092 2026] [security2:error] [pid 538:tid 137546755450560] [client 172.19.0.1:47154] Mod
+Security: Access denied with code 403 (phase 2). Operator GE matched 5 at TX:blocking_inbound_anomaly_score. [f
+ile "/etc/modsecurity.d/owasp-crs/rules/REQUEST-949-BLOCKING-EVALUATION.conf"] [line "233"] [id "949110"] [msg 
+"Inbound Anomaly Score Exceeded (Total Score: 15)"] [ver "OWASP_CRS/4.25.2"] [tag "anomaly-evaluation"] [tag "O
+WASP_CRS"] [hostname "localhost"] [uri "/health"] [unique_id "awrsIpH4IWSD6qAoAsNiPwAAAJg"]
+[Sat Nov 28 14:58:42.362363 2026] [security2:error] [pid 538:tid 137546755450560] [client 172.19.0.1:47154] Mod
+Security: Warning. Unconditional match in SecAction. [file "/etc/modsecurity.d/owasp-crs/rules/RESPONSE-980-COR
+RELATION.conf"] [line "98"] [id "980170"] [msg "Anomaly Scores: (Inbound Scores: blocking=15, detection=15, per
+_pl=15-0-0-0, threshold=5) - (Outbound Scores: blocking=0, detection=0, per_pl=0-0-0-0, threshold=4) - (SQLI=15
+, XSS=0, RFI=0, LFI=0, RCE=0, PHPI=0, HTTP=0, SESS=0, COMBINED_SCORE=15)"] [ver "OWASP_CRS/4.25.2"] [tag "repor
+ting"] [tag "OWASP_CRS"] [hostname "localhost"] [uri "/health"] [unique_id "awrsIpH4IWSD6qAoAsNiPwAAAJg"]

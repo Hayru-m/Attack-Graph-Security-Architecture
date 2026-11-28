@@ -1,0 +1,21 @@
+﻿curl.exe :   % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+At line:5 char:1
++ curl.exe -i "http://localhost:8889/health" 2>&1 |
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ... Time   Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload  Total   Spent   Left   Speed
+
+  0      0   0      0   0      0      0      0                              0
+100      2 100      2   0      0    319      0                              0
+100      2 100      2   0      0    316      0                              0
+100      2 100      2   0      0    312      0                              0
+HTTP/1.1 200 OK
+Date: Sat, 28 Nov 2026 14:58:42 GMT
+Server: openresty/1.27.1.2
+X-Frame-Options: SAMEORIGIN
+Content-Type: application/octet-stream
+Content-Length: 2
+
+OK

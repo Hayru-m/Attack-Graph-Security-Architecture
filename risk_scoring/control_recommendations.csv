@@ -1,0 +1,16 @@
+﻿challenge_no,category,control_id,control_name,cost_units,effectiveness_assumption,rationale,deployment_status
+1,BOLA,C01,Nesne seviyesinde yetkilendirme,5,0.85,Her nesne erişiminde oturum sahibi ile nesne sahibini sunucu tarafında karşılaştır.,öneri; uygulanmış değil
+2,BOLA,C01,Nesne seviyesinde yetkilendirme,5,0.85,Her nesne erişiminde oturum sahibi ile nesne sahibini sunucu tarafında karşılaştır.,öneri; uygulanmış değil
+3,Broken Authentication,C03,Rate limiting ve OTP deneme sınırı,3,0.8,"Kullanıcı, IP ve işlem bazında hız sınırı; OTP için deneme limiti ve geçici kilitleme uygula.",öneri; uygulanmış değil
+4,Excessive Data Exposure,C04,Yanıt alanı allowlist'i ve veri minimizasyonu,3,0.75,API yanıtlarında yalnızca istemcinin ihtiyaç duyduğu alanları DTO/serializer allowlist'i ile döndür.,öneri; uygulanmış değil
+5,Excessive Data Exposure,C04,Yanıt alanı allowlist'i ve veri minimizasyonu,3,0.75,API yanıtlarında yalnızca istemcinin ihtiyaç duyduğu alanları DTO/serializer allowlist'i ile döndür.,öneri; uygulanmış değil
+6,Lack of Resources & Rate Limiting,C03,Rate limiting ve OTP deneme sınırı,3,0.8,"Kullanıcı, IP ve işlem bazında hız sınırı; OTP için deneme limiti ve geçici kilitleme uygula.",öneri; uygulanmış değil
+7,BFLA,C02,Fonksiyon seviyesinde RBAC/ABAC kontrolü,4,0.85,Yönetici işlevlerini rol/izin kontrolü olmadan standart kullanıcıya açma.,öneri; uygulanmış değil
+8,Server-Side Request Forgery (SSRF),C06,SSRF URL doğrulama ve egress kısıtlaması,5,0.85,"Hedef URL'leri allowlist ile doğrula; loopback, private ve metadata ağlarına çıkışı engelle.",öneri; uygulanmış değil
+9,BOLA,C01,Nesne seviyesinde yetkilendirme,5,0.85,Her nesne erişiminde oturum sahibi ile nesne sahibini sunucu tarafında karşılaştır.,öneri; uygulanmış değil
+10,Mass Assignment (API6:2023),C05,Mass assignment için DTO allowlist'i,3,0.85,İstemciden gelen alanları izinli alan listesiyle sınırla; dahili alanların yazılmasını engelle.,öneri; uygulanmış değil
+11,Server-Side Request Forgery (SSRF),C06,SSRF URL doğrulama ve egress kısıtlaması,5,0.85,"Hedef URL'leri allowlist ile doğrula; loopback, private ve metadata ağlarına çıkışı engelle.",öneri; uygulanmış değil
+12,NoSQL Injection,C07,NoSQL sorgu şeması ve operatör allowlist'i,4,0.85,Girdi tiplerini doğrula; istemci girdisinin sorgu operatörü veya nesne haline gelmesini engelle.,öneri; uygulanmış değil
+13,SQL Injection,C08,Parametreli SQL sorguları,4,0.9,SQL sorgularını string birleştirme yerine parametreli sorgu/prepared statement ile çalıştır.,öneri; uygulanmış değil
+14,Broken Authentication (Missing Authentication),C09,Hassas endpoint'lerde kimlik doğrulama zorunluluğu,4,0.9,Hassas veri/işlem sunan tüm endpoint'lerde token ve oturum doğrulamasını zorunlu kıl.,öneri; uygulanmış değil
+15,Broken Authentication (Improper JWT Validation),C10,JWT imza ve algoritma doğrulamasını güçlendirme,4,0.9,"Güçlü anahtar kullan; izin verilen algoritmayı sabitle; imza, issuer, audience ve süreyi doğrula.",öneri; uygulanmış değil

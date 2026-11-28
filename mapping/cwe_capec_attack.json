@@ -1,0 +1,1357 @@
+{
+  "engine": "offline_rule_based",
+  "llm_used": false,
+  "network_used": false,
+  "source_csv": "C:\\Users\\hyrns\\Desktop\\masa\\sınıf\\4.sınıf\\e.design_2\\Attack-Graph-Security-Architecture\\findings\\challenges.csv",
+  "official_registry_reviewed_on": "2026-10-27",
+  "mapping_semantics": {
+    "CWE": "software weakness / root cause category",
+    "CAPEC": "attack pattern / adversary technique"
+  },
+  "limitations": [
+    "This is a curated, deterministic rule set, not an LLM or live MITRE lookup.",
+    "An official entry definition does not by itself prove that it maps to this finding.",
+    "Every candidate remains unverified and requires a human review against evidence.",
+    "Missing fields produce warnings; the CSV is read-only and is never updated."
+  ],
+  "warnings": [],
+  "findings": [
+    {
+      "challenge_no": "1",
+      "category": "BOLA",
+      "finding_status": "doğrulandı",
+      "finding_validation_state": "recorded_status_only",
+      "description": "Attacker kullanıcısı victim kullanıcısının vehicle_id (UUID) değeriyle araç konum koordinatlarını yetkisiz okuyabildi.",
+      "endpoint": "/identity/api/v2/vehicle/{vehicle_id}/location",
+      "existing_mappings": {
+        "cwe": {
+          "id": "CWE-639",
+          "normalized_id": "CWE-639",
+          "title": "Authorization Bypass Through User-Controlled Key",
+          "source_url": "https://cwe.mitre.org/data/definitions/639.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        },
+        "capec": {
+          "id": "CAPEC-210",
+          "normalized_id": "CAPEC-210",
+          "title": "Abuse Existing Functionality",
+          "source_url": "https://capec.mitre.org/data/definitions/210.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "not_supported_by_current_rule_set_unverified",
+          "verified": false,
+          "flags": [
+            "CAPEC kategorisi; tekniğe özgü saldırı örüntüsü değil."
+          ]
+        }
+      },
+      "candidates": {
+        "cwe": [
+          {
+            "type": "software_weakness",
+            "id": "CWE-639",
+            "title": "Authorization Bypass Through User-Controlled Key",
+            "abstraction": "Base",
+            "confidence": "high",
+            "rationale": "Başka kullanıcıya ait kayda, istekle denetlenen vehicle_id/report_id/order_id üzerinden erişim anlatılıyor; CWE-639 kullanıcı denetimli anahtarla yetkilendirme atlatmayı tanımlar.",
+            "source_url": "https://cwe.mitre.org/data/definitions/639.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed"
+          }
+        ],
+        "capec": [
+          {
+            "type": "attack_pattern",
+            "id": "CAPEC-1",
+            "title": "Accessing Functionality Not Properly Constrained by ACLs",
+            "abstraction": "Standard",
+            "confidence": "medium",
+            "rationale": "Yetkilendirme çerçevesinin kısıtlamadığı işlev veya sorgu üzerinden korunan kayda erişim, CAPEC-1 ile olası biçimde örtüşür.",
+            "source_url": "https://capec.mitre.org/data/definitions/1.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "definition only; case mapping not endorsed",
+            "caveat": "CAPEC-1 işlev/ACL erişimine odaklanır; BOLA'nın nesne sahipliği kontrolüyle bire bir eşdeğer değildir."
+          }
+        ]
+      },
+      "review_required": true,
+      "review_flags": [
+        "Mevcut CAPEC-210 genel bir CAPEC kategorisidir; tekniğe özgü saldırı örüntüsü olarak fazla geneldir."
+      ],
+      "warnings": []
+    },
+    {
+      "challenge_no": "2",
+      "category": "BOLA",
+      "finding_status": "doğrulandı",
+      "finding_validation_state": "recorded_status_only",
+      "description": "Attacker kullanıcısı victim kullanıcısının report_id değeriyle servis raporunu ve araç detaylarını yetkisiz okuyabildi.",
+      "endpoint": "/workshop/api/mechanic/receive_report",
+      "existing_mappings": {
+        "cwe": {
+          "id": "CWE-639",
+          "normalized_id": "CWE-639",
+          "title": "Authorization Bypass Through User-Controlled Key",
+          "source_url": "https://cwe.mitre.org/data/definitions/639.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        },
+        "capec": {
+          "id": "CAPEC-210",
+          "normalized_id": "CAPEC-210",
+          "title": "Abuse Existing Functionality",
+          "source_url": "https://capec.mitre.org/data/definitions/210.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "not_supported_by_current_rule_set_unverified",
+          "verified": false,
+          "flags": [
+            "CAPEC kategorisi; tekniğe özgü saldırı örüntüsü değil."
+          ]
+        }
+      },
+      "candidates": {
+        "cwe": [
+          {
+            "type": "software_weakness",
+            "id": "CWE-639",
+            "title": "Authorization Bypass Through User-Controlled Key",
+            "abstraction": "Base",
+            "confidence": "high",
+            "rationale": "Başka kullanıcıya ait kayda, istekle denetlenen vehicle_id/report_id/order_id üzerinden erişim anlatılıyor; CWE-639 kullanıcı denetimli anahtarla yetkilendirme atlatmayı tanımlar.",
+            "source_url": "https://cwe.mitre.org/data/definitions/639.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed"
+          }
+        ],
+        "capec": [
+          {
+            "type": "attack_pattern",
+            "id": "CAPEC-1",
+            "title": "Accessing Functionality Not Properly Constrained by ACLs",
+            "abstraction": "Standard",
+            "confidence": "medium",
+            "rationale": "Yetkilendirme çerçevesinin kısıtlamadığı işlev veya sorgu üzerinden korunan kayda erişim, CAPEC-1 ile olası biçimde örtüşür.",
+            "source_url": "https://capec.mitre.org/data/definitions/1.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "definition only; case mapping not endorsed",
+            "caveat": "CAPEC-1 işlev/ACL erişimine odaklanır; BOLA'nın nesne sahipliği kontrolüyle bire bir eşdeğer değildir."
+          }
+        ]
+      },
+      "review_required": true,
+      "review_flags": [
+        "Mevcut CAPEC-210 genel bir CAPEC kategorisidir; tekniğe özgü saldırı örüntüsü olarak fazla geneldir."
+      ],
+      "warnings": []
+    },
+    {
+      "challenge_no": "3",
+      "category": "Broken Authentication",
+      "finding_status": "doğrulandı",
+      "finding_validation_state": "recorded_status_only",
+      "description": "Eski API sürümünde (v2) rate limiting mekanizması uygulanmadığı için şifre sıfırlama OTP doğrulaması bypass edilebildi.",
+      "endpoint": "/identity/api/auth/v2/check-otp",
+      "existing_mappings": {
+        "cwe": {
+          "id": "CWE-307",
+          "normalized_id": "CWE-307",
+          "title": "Improper Restriction of Excessive Authentication Attempts",
+          "source_url": "https://cwe.mitre.org/data/definitions/307.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        },
+        "capec": {
+          "id": "CAPEC-49",
+          "normalized_id": "CAPEC-49",
+          "title": "Password Brute Forcing",
+          "source_url": "https://capec.mitre.org/data/definitions/49.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "not_supported_by_current_rule_set_unverified",
+          "verified": false,
+          "flags": []
+        }
+      },
+      "candidates": {
+        "cwe": [
+          {
+            "type": "software_weakness",
+            "id": "CWE-307",
+            "title": "Improper Restriction of Excessive Authentication Attempts",
+            "abstraction": "Base",
+            "confidence": "high",
+            "rationale": "OTP doğrulama girişimlerini sınırlamama, aşırı kimlik doğrulama denemelerinin kısıtlanmamasıyla uyumludur.",
+            "source_url": "https://cwe.mitre.org/data/definitions/307.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed"
+          }
+        ],
+        "capec": [
+          {
+            "type": "attack_pattern",
+            "id": "CAPEC-112",
+            "title": "Brute Force",
+            "abstraction": "Meta",
+            "confidence": "medium",
+            "rationale": "OTP değerleri üzerinde deneme-yanılma yapıldıysa genel brute-force örüntüsü uygun olabilir.",
+            "source_url": "https://capec.mitre.org/data/definitions/112.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": true,
+            "flags": [
+              "overly_general_category_or_meta_pattern",
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "definition only; case mapping not endorsed",
+            "caveat": "CAPEC-112 meta düzeyindedir; CSV açıklaması çok sayıda OTP tahmin denemesini açıkça kanıtlamıyor. CAPEC-49 ise parola brute force'a özeldir."
+          }
+        ]
+      },
+      "review_required": true,
+      "review_flags": [
+        "Mevcut CAPEC-49 parola brute force içindir; OTP tahmini olduğu kanıtlanmadıkça doğrudan eşleşme sayılmamalı."
+      ],
+      "warnings": []
+    },
+    {
+      "challenge_no": "4",
+      "category": "Excessive Data Exposure",
+      "finding_status": "doğrulandı",
+      "finding_validation_state": "recorded_status_only",
+      "description": "Topluluk gönderileri listelenirken API yanıtında yazarın e-posta ve telefon gibi hassas PII verilerinin gereksiz yere istemciye döndüğü tespit edildi.",
+      "endpoint": "/community/api/v2/community/posts/recent",
+      "existing_mappings": {
+        "cwe": {
+          "id": "CWE-213",
+          "normalized_id": "CWE-213",
+          "title": "Exposure of Sensitive Information Due to Incompatible Policies",
+          "source_url": "https://cwe.mitre.org/data/definitions/213.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "not_supported_by_current_rule_set_unverified",
+          "verified": false,
+          "flags": []
+        },
+        "capec": {
+          "id": "CAPEC-118",
+          "normalized_id": "CAPEC-118",
+          "title": "Collect and Analyze Information",
+          "source_url": "https://capec.mitre.org/data/definitions/118.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": [
+            "CAPEC kategorisi; tekniğe özgü saldırı örüntüsü değil."
+          ]
+        }
+      },
+      "candidates": {
+        "cwe": [
+          {
+            "type": "software_weakness",
+            "id": "CWE-359",
+            "title": "Exposure of Private Personal Information to an Unauthorized Actor",
+            "abstraction": "Base",
+            "confidence": "high",
+            "rationale": "E-posta/telefon gibi kişisel bilgilerin yetkisiz aktörlere açılması CWE-359'un özel kişisel bilgi tanımıyla örtüşür.",
+            "source_url": "https://cwe.mitre.org/data/definitions/359.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed"
+          },
+          {
+            "type": "software_weakness",
+            "id": "CWE-201",
+            "title": "Insertion of Sensitive Information Into Sent Data",
+            "abstraction": "Base",
+            "confidence": "high",
+            "rationale": "Hassas alanların API yanıtında istemciye gönderilmesi, gönderilen veriye hassas bilgi eklenmesiyle örtüşür.",
+            "source_url": "https://cwe.mitre.org/data/definitions/201.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed"
+          }
+        ],
+        "capec": [
+          {
+            "type": "attack_pattern",
+            "id": "CAPEC-118",
+            "title": "Collect and Analyze Information",
+            "abstraction": "Category",
+            "confidence": "low",
+            "rationale": "Bilgi toplama/hedefin beklenenden fazla bilgi vermesi üst kategorisi senaryoyla ilişkili olabilir.",
+            "source_url": "https://capec.mitre.org/data/definitions/118.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": true,
+            "flags": [
+              "overly_general_category_or_meta_pattern",
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "definition only; case mapping not endorsed",
+            "caveat": "CAPEC-118 bir Category'dir; saldırganın sorgu/erişim tekniği verilmeden daha özel CAPEC seçilemez."
+          }
+        ]
+      },
+      "review_required": true,
+      "review_flags": [
+        "CWE-213 politika uyuşmazlığı gerektirir; yalnızca gereksiz PII yanıtı anlatımı CWE-359/CWE-201 ile daha doğrudan örtüşüyor.",
+        "CAPEC-118 bilgi toplama kategorisidir; ayrıntılı bir saldırı örüntüsü değildir."
+      ],
+      "warnings": []
+    },
+    {
+      "challenge_no": "5",
+      "category": "Excessive Data Exposure",
+      "finding_status": "doğrulandı",
+      "finding_validation_state": "recorded_status_only",
+      "description": "Video nesnesi sorgulandığında sistemin iç dönüştürme parametrelerinin (conversion_params) yanıtta sızdırıldığı tespit edildi.",
+      "endpoint": "/identity/api/v2/user/videos/{video_id}",
+      "existing_mappings": {
+        "cwe": {
+          "id": "CWE-200",
+          "normalized_id": "CWE-200",
+          "title": "Exposure of Sensitive Information to an Unauthorized Actor",
+          "source_url": "https://cwe.mitre.org/data/definitions/200.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        },
+        "capec": {
+          "id": "CAPEC-118",
+          "normalized_id": "CAPEC-118",
+          "title": "Collect and Analyze Information",
+          "source_url": "https://capec.mitre.org/data/definitions/118.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": [
+            "CAPEC kategorisi; tekniğe özgü saldırı örüntüsü değil."
+          ]
+        }
+      },
+      "candidates": {
+        "cwe": [
+          {
+            "type": "software_weakness",
+            "id": "CWE-201",
+            "title": "Insertion of Sensitive Information Into Sent Data",
+            "abstraction": "Base",
+            "confidence": "medium",
+            "rationale": "İç parametrelerin API yanıtında istemciye gönderilmesi hassas bilgi gönderimiyle örtüşebilir.",
+            "source_url": "https://cwe.mitre.org/data/definitions/201.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed",
+            "caveat": "Alanların gerçekten hassas olup olmadığı ve alıcının yetkisiz olup olmadığı kanıtla doğrulanmalı."
+          },
+          {
+            "type": "software_weakness",
+            "id": "CWE-200",
+            "title": "Exposure of Sensitive Information to an Unauthorized Actor",
+            "abstraction": "Class",
+            "confidence": "medium",
+            "rationale": "Hassasiyet ve erişim sınırı net değilken CWE-200 genel bir bilgi ifşası adayıdır.",
+            "source_url": "https://cwe.mitre.org/data/definitions/200.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed; broad parent weakness",
+            "caveat": "CWE-200 geniş bir Class düzeyi eşlemedir; verinin ne olduğu belirlenmeden daha dar CWE seçilmemeli."
+          },
+          {
+            "type": "software_weakness",
+            "id": "CWE-497",
+            "title": "Exposure of Sensitive System Information to an Unauthorized Control Sphere",
+            "abstraction": "Base",
+            "confidence": "low",
+            "rationale": "Sızan alan sistem düzeyinde hassas uygulama/ortam bilgisi ise CWE-497 değerlendirilebilir.",
+            "source_url": "https://cwe.mitre.org/data/definitions/497.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed",
+            "caveat": "conversion_params'ın sistem düzeyinde bilgi olduğu CSV'den doğrulanamıyor."
+          }
+        ],
+        "capec": [
+          {
+            "type": "attack_pattern",
+            "id": "CAPEC-118",
+            "title": "Collect and Analyze Information",
+            "abstraction": "Category",
+            "confidence": "low",
+            "rationale": "Bilgi edinme kategorisi üst düzeyde ilişkili olabilir.",
+            "source_url": "https://capec.mitre.org/data/definitions/118.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": true,
+            "flags": [
+              "overly_general_category_or_meta_pattern",
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "definition only; case mapping not endorsed",
+            "caveat": "CAPEC-118 kategori seviyesindedir; saldırı tekniği kaydedilmediği için daha özgül örüntü önerilmiyor."
+          }
+        ]
+      },
+      "review_required": true,
+      "review_flags": [
+        "CWE-200 genel bir Class'tır; conversion_params'ın hassasiyet ve yetkisiz alıcı bağlamı netleştirilmeli.",
+        "CAPEC-118 bilgi toplama kategorisidir; saldırı tekniği için fazla geneldir."
+      ],
+      "warnings": []
+    },
+    {
+      "challenge_no": "6",
+      "category": "Lack of Resources & Rate Limiting",
+      "finding_status": "doğrulandı",
+      "finding_validation_state": "recorded_status_only",
+      "description": "Contact mechanic endpoint'inde rate limiting bulunmadığı ve sunucunun ardışık istekleri engellemeden kabul ederek (ID artışı) kaynak tükettiği doğrulandı.",
+      "endpoint": "/workshop/api/merchant/contact_mechanic",
+      "existing_mappings": {
+        "cwe": {
+          "id": "CWE-770",
+          "normalized_id": "CWE-770",
+          "title": "Allocation of Resources Without Limits or Throttling",
+          "source_url": "https://cwe.mitre.org/data/definitions/770.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        },
+        "capec": {
+          "id": "CAPEC-130",
+          "normalized_id": "CAPEC-130",
+          "title": "Excessive Allocation",
+          "source_url": "https://capec.mitre.org/data/definitions/130.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "not_supported_by_current_rule_set_unverified",
+          "verified": false,
+          "flags": [
+            "Meta düzeyde genel saldırı örüntüsü; özgüllüğü kontrol edilmeli."
+          ]
+        }
+      },
+      "candidates": {
+        "cwe": [
+          {
+            "type": "software_weakness",
+            "id": "CWE-799",
+            "title": "Improper Control of Interaction Frequency",
+            "abstraction": "Class",
+            "confidence": "medium",
+            "rationale": "Kayıt art arda gelen isteklerin sınırlandırılmamasını açıkça anlatıyor; CWE-799 etkileşim sıklığının kontrolünü ele alır.",
+            "source_url": "https://cwe.mitre.org/data/definitions/799.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed with review; inspect more-specific children",
+            "caveat": "CWE-799 Class düzeyindedir ve MITRE daha özel alt CWE olup olmadığının dikkatle incelenmesini ister."
+          },
+          {
+            "type": "software_weakness",
+            "id": "CWE-770",
+            "title": "Allocation of Resources Without Limits or Throttling",
+            "abstraction": "Base",
+            "confidence": "medium",
+            "rationale": "İsteklerin kaynak tükettiği belirtiliyor; CWE-770 sınırsız veya kısıtlanmamış kaynak tahsisini kapsar.",
+            "source_url": "https://cwe.mitre.org/data/definitions/770.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed"
+          }
+        ],
+        "capec": [
+          {
+            "type": "attack_pattern",
+            "id": "CAPEC-125",
+            "title": "Flooding",
+            "abstraction": "Meta",
+            "confidence": "medium",
+            "rationale": "Çok sayıda istekle kaynak tüketimi ve rate limiting zayıflığı CAPEC-125 Flooding tanımıyla örtüşür.",
+            "source_url": "https://capec.mitre.org/data/definitions/125.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": true,
+            "flags": [
+              "overly_general_category_or_meta_pattern",
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "definition only; case mapping not endorsed",
+            "caveat": "CAPEC-125 meta düzeyinde genel bir saldırı örüntüsüdür; uygulama protokolü/ölçeği verilmediğinden daha özel alt örüntü seçilmedi."
+          }
+        ]
+      },
+      "review_required": true,
+      "review_flags": [
+        "Mevcut CAPEC-130 az sayıda özel hazırlanmış istekle aşırı tahsise odaklanır; tekrar hacmi/rate-limit senaryosuyla karıştırılmamalı."
+      ],
+      "warnings": []
+    },
+    {
+      "challenge_no": "7",
+      "category": "BFLA",
+      "finding_status": "doğrulandı",
+      "finding_validation_state": "recorded_status_only",
+      "description": "Standart kullanıcı token'ı ile admin silme endpoint'ine (/admin/videos/) istek atılarak yetkisiz fonksiyon seviyesinde işlem gerçekleştirildi ve video silindi.",
+      "endpoint": "/identity/api/v2/admin/videos/{video_id}",
+      "existing_mappings": {
+        "cwe": {
+          "id": "CWE-285",
+          "normalized_id": "CWE-285",
+          "title": "Improper Authorization",
+          "source_url": "https://cwe.mitre.org/data/definitions/285.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "not_supported_by_current_rule_set_unverified",
+          "verified": false,
+          "flags": [
+            "MITRE gerçek dünya zafiyet eşlemesi için bu yüksek soyutlama düzeyini önermiyor."
+          ]
+        },
+        "capec": {
+          "id": "CAPEC-233",
+          "normalized_id": "CAPEC-233",
+          "title": "Privilege Escalation",
+          "source_url": "https://capec.mitre.org/data/definitions/233.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": [
+            "Meta düzeyde genel saldırı örüntüsü; özgüllüğü kontrol edilmeli."
+          ]
+        }
+      },
+      "candidates": {
+        "cwe": [
+          {
+            "type": "software_weakness",
+            "id": "CWE-862",
+            "title": "Missing Authorization",
+            "abstraction": "Class",
+            "confidence": "medium",
+            "rationale": "Standart kullanıcının yönetici işlevini çalıştırması, o eylem için yetkilendirme kontrolü eksikse CWE-862 ile örtüşür.",
+            "source_url": "https://cwe.mitre.org/data/definitions/862.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed with review",
+            "caveat": "Yetki kontrolü mevcut fakat yanlış uygulanmışsa CWE-863 daha uygun olabilir; uygulama ayrıntısı yok."
+          },
+          {
+            "type": "software_weakness",
+            "id": "CWE-863",
+            "title": "Incorrect Authorization",
+            "abstraction": "Class",
+            "confidence": "low",
+            "rationale": "Yetkilendirme kontrolünün yanlış karar verdiği ortaya çıkarsa CWE-863 alternatifidir.",
+            "source_url": "https://cwe.mitre.org/data/definitions/863.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed with review",
+            "caveat": "CSV, kontrolün tamamen eksik mi yoksa hatalı mı olduğunu ayırmıyor."
+          }
+        ],
+        "capec": [
+          {
+            "type": "attack_pattern",
+            "id": "CAPEC-1",
+            "title": "Accessing Functionality Not Properly Constrained by ACLs",
+            "abstraction": "Standard",
+            "confidence": "medium",
+            "rationale": "Yetkisiz standart kullanıcının ACL ile kısıtlanması gereken yönetim URL'sine erişmesi CAPEC-1 ile olası biçimde örtüşür.",
+            "source_url": "https://capec.mitre.org/data/definitions/1.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "definition only; case mapping not endorsed"
+          },
+          {
+            "type": "attack_pattern",
+            "id": "CAPEC-233",
+            "title": "Privilege Escalation",
+            "abstraction": "Meta",
+            "confidence": "medium",
+            "rationale": "Daha yüksek ayrıcalık gerektiren eylemin yapılması genel ayrıcalık yükseltme örüntüsüne uyabilir.",
+            "source_url": "https://capec.mitre.org/data/definitions/233.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": true,
+            "flags": [
+              "overly_general_category_or_meta_pattern",
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "definition only; case mapping not endorsed",
+            "caveat": "CAPEC-233 meta düzeyindedir; doğrudan HTTP işlevine erişim için CAPEC-1 daha özgül olabilir."
+          }
+        ]
+      },
+      "review_required": true,
+      "review_flags": [
+        "Mevcut CWE-285 yüksek seviyeli Class'tır; MITRE gerçek dünya eşlemelerinde daha özgül CWE-862/CWE-863 seçeneklerini önerir.",
+        "CAPEC-233 genel/meta düzeyde ayrıcalık yükseltmedir; işlev seviyesindeki admin URL erişimi için fazla genel kalabilir."
+      ],
+      "warnings": []
+    },
+    {
+      "challenge_no": "8",
+      "category": "Server-Side Request Forgery (SSRF)",
+      "finding_status": "analiz_edildi",
+      "finding_validation_state": "not_final",
+      "description": "mechanic_api parametresinin sunucu tarafında filtrelenmeden istek için kullanıldığı ve doğrulama eksikliği nedeniyle SSRF zafiyetine açık olduğu tespit edildi.",
+      "endpoint": "/workshop/api/merchant/contact_mechanic",
+      "existing_mappings": {
+        "cwe": {
+          "id": "CWE-918",
+          "normalized_id": "CWE-918",
+          "title": "Server-Side Request Forgery (SSRF)",
+          "source_url": "https://cwe.mitre.org/data/definitions/918.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        },
+        "capec": {
+          "id": "CAPEC-664",
+          "normalized_id": "CAPEC-664",
+          "title": "Server Side Request Forgery",
+          "source_url": "https://capec.mitre.org/data/definitions/664.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        }
+      },
+      "candidates": {
+        "cwe": [
+          {
+            "type": "software_weakness",
+            "id": "CWE-918",
+            "title": "Server-Side Request Forgery (SSRF)",
+            "abstraction": "Base",
+            "confidence": "high",
+            "rationale": "Kullanıcı girdisinin sunucuyu başka bir hedefe istek göndermeye zorladığı belirtiliyor; bu SSRF tanımıyla örtüşür.",
+            "source_url": "https://cwe.mitre.org/data/definitions/918.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed"
+          }
+        ],
+        "capec": [
+          {
+            "type": "attack_pattern",
+            "id": "CAPEC-664",
+            "title": "Server Side Request Forgery",
+            "abstraction": "Standard",
+            "confidence": "high",
+            "rationale": "CAPEC-664, kötü amaçlı girdinin sunucu tarafında istek başlatmaya zorlamasını doğrudan tanımlar.",
+            "source_url": "https://capec.mitre.org/data/definitions/664.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "definition only; case mapping not endorsed"
+          }
+        ]
+      },
+      "review_required": true,
+      "review_flags": [
+        "CSV durumu analiz_edildi; eşleme uyumu yüksek olsa da zafiyet henüz nihai olarak doğrulanmış sayılmamalı.",
+        "Bulgu durumu nihai değil; bu durum eşleme önerisinin doğrulanması anlamına gelmez."
+      ],
+      "warnings": []
+    },
+    {
+      "challenge_no": "9",
+      "category": "BOLA",
+      "finding_status": "doğrulandı",
+      "finding_validation_state": "recorded_status_only",
+      "description": "Saldırgan kullanıcısı, nesne seviyesinde yetkilendirme kontrolü eksikliği (BOLA) nedeniyle kurban kullanıcıya ait sipariş detaylarını (ürün, miktar, alıcı bilgileri) yetkisiz olarak görüntüleyebildi.",
+      "endpoint": "/workshop/api/shop/orders/{order_id}",
+      "existing_mappings": {
+        "cwe": {
+          "id": "CWE-639",
+          "normalized_id": "CWE-639",
+          "title": "Authorization Bypass Through User-Controlled Key",
+          "source_url": "https://cwe.mitre.org/data/definitions/639.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        },
+        "capec": {
+          "id": "CAPEC-1",
+          "normalized_id": "CAPEC-1",
+          "title": "Accessing Functionality Not Properly Constrained by ACLs",
+          "source_url": "https://capec.mitre.org/data/definitions/1.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        }
+      },
+      "candidates": {
+        "cwe": [
+          {
+            "type": "software_weakness",
+            "id": "CWE-639",
+            "title": "Authorization Bypass Through User-Controlled Key",
+            "abstraction": "Base",
+            "confidence": "high",
+            "rationale": "Başka kullanıcıya ait kayda, istekle denetlenen vehicle_id/report_id/order_id üzerinden erişim anlatılıyor; CWE-639 kullanıcı denetimli anahtarla yetkilendirme atlatmayı tanımlar.",
+            "source_url": "https://cwe.mitre.org/data/definitions/639.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed"
+          }
+        ],
+        "capec": [
+          {
+            "type": "attack_pattern",
+            "id": "CAPEC-1",
+            "title": "Accessing Functionality Not Properly Constrained by ACLs",
+            "abstraction": "Standard",
+            "confidence": "medium",
+            "rationale": "Yetkilendirme çerçevesinin kısıtlamadığı işlev veya sorgu üzerinden korunan kayda erişim, CAPEC-1 ile olası biçimde örtüşür.",
+            "source_url": "https://capec.mitre.org/data/definitions/1.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "definition only; case mapping not endorsed",
+            "caveat": "CAPEC-1 işlev/ACL erişimine odaklanır; BOLA'nın nesne sahipliği kontrolüyle bire bir eşdeğer değildir."
+          }
+        ]
+      },
+      "review_required": true,
+      "review_flags": [
+        "Mevcut CAPEC-1 olasıdır ancak işlev ACL'sini anlatır; nesne düzeyi sahiplik kontrolü ayrıca incelenmeli."
+      ],
+      "warnings": []
+    },
+    {
+      "challenge_no": "10",
+      "category": "Mass Assignment (API6:2023)",
+      "finding_status": "doğrulandı",
+      "finding_validation_state": "recorded_status_only",
+      "description": "Video nesnesi güncellenirken istemcinin modeldeki dahili conversion_params alanını doğrudan üzerine yazabildiği (Mass Assignment) ve girdi filtreleme eksikliği tespit edildi.",
+      "endpoint": "/workshop/api/merchant/user/videos/{video_id}",
+      "existing_mappings": {
+        "cwe": {
+          "id": "CWE-915",
+          "normalized_id": "CWE-915",
+          "title": "Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+          "source_url": "https://cwe.mitre.org/data/definitions/915.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        },
+        "capec": {
+          "id": "CAPEC-315",
+          "normalized_id": "CAPEC-315",
+          "title": "DEPRECATED: TCP/IP Fingerprinting Probes",
+          "source_url": "https://capec.mitre.org/data/definitions/315.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "not_supported_by_current_rule_set_unverified",
+          "verified": false,
+          "flags": [
+            "Deprecated CAPEC ID."
+          ]
+        }
+      },
+      "candidates": {
+        "cwe": [
+          {
+            "type": "software_weakness",
+            "id": "CWE-915",
+            "title": "Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+            "abstraction": "Base",
+            "confidence": "high",
+            "rationale": "İstemci girdisinin nesnedeki dahili alanı değiştirebildiği anlatılıyor; CWE-915 dinamik belirlenen nesne özniteliklerinin kontrolsüz değiştirilmesini ve mass assignment terimini kapsar.",
+            "source_url": "https://cwe.mitre.org/data/definitions/915.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed"
+          }
+        ],
+        "capec": [
+          {
+            "type": "attack_pattern",
+            "id": "CAPEC-77",
+            "title": "Manipulating User-Controlled Variables",
+            "abstraction": "Standard",
+            "confidence": "low",
+            "rationale": "Kullanıcı denetimli alanların uygulama davranışını değiştirmesiyle kavramsal benzerlik var; CAPEC-77 mass assignment'a özel değildir.",
+            "source_url": "https://capec.mitre.org/data/definitions/77.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "definition only; case mapping not endorsed",
+            "caveat": "Yalnızca alanların gerçekten kullanıcı tarafından kontrol edilip iş mantığını etkilediği doğrulanırsa değerlendirilmeli."
+          }
+        ]
+      },
+      "review_required": true,
+      "review_flags": [
+        "Mevcut CAPEC-315 deprecated ve TCP/IP fingerprinting ile ilgilidir; bu bulguyu açıklamıyor."
+      ],
+      "warnings": []
+    },
+    {
+      "challenge_no": "11",
+      "category": "Server-Side Request Forgery (SSRF)",
+      "finding_status": "doğrulandı",
+      "finding_validation_state": "recorded_status_only",
+      "description": "mechanic_api parametresinde adres doğrulaması yapılmadığı ve sunucunun kullanıcı tarafından sağlanan dahili/harici ağ hedeflerine yetkisiz HTTP istekleri yönlendirdiği (SSRF) doğrulandı.",
+      "endpoint": "/workshop/api/merchant/contact_mechanic",
+      "existing_mappings": {
+        "cwe": {
+          "id": "CWE-918",
+          "normalized_id": "CWE-918",
+          "title": "Server-Side Request Forgery (SSRF)",
+          "source_url": "https://cwe.mitre.org/data/definitions/918.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        },
+        "capec": {
+          "id": "CAPEC-664",
+          "normalized_id": "CAPEC-664",
+          "title": "Server Side Request Forgery",
+          "source_url": "https://capec.mitre.org/data/definitions/664.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        }
+      },
+      "candidates": {
+        "cwe": [
+          {
+            "type": "software_weakness",
+            "id": "CWE-918",
+            "title": "Server-Side Request Forgery (SSRF)",
+            "abstraction": "Base",
+            "confidence": "high",
+            "rationale": "Kullanıcı girdisinin sunucuyu başka bir hedefe istek göndermeye zorladığı belirtiliyor; bu SSRF tanımıyla örtüşür.",
+            "source_url": "https://cwe.mitre.org/data/definitions/918.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed"
+          }
+        ],
+        "capec": [
+          {
+            "type": "attack_pattern",
+            "id": "CAPEC-664",
+            "title": "Server Side Request Forgery",
+            "abstraction": "Standard",
+            "confidence": "high",
+            "rationale": "CAPEC-664, kötü amaçlı girdinin sunucu tarafında istek başlatmaya zorlamasını doğrudan tanımlar.",
+            "source_url": "https://capec.mitre.org/data/definitions/664.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "definition only; case mapping not endorsed"
+          }
+        ]
+      },
+      "review_required": true,
+      "review_flags": [],
+      "warnings": []
+    },
+    {
+      "challenge_no": "12",
+      "category": "NoSQL Injection",
+      "finding_status": "doğrulandı",
+      "finding_validation_state": "recorded_status_only",
+      "description": "coupon_code parametresinde tip ve şema denetimi yapılmadığı",
+      "endpoint": "/community/api/v2/coupon/validate-coupon",
+      "existing_mappings": {
+        "cwe": {
+          "id": "CWE-943",
+          "normalized_id": "CWE-943",
+          "title": "Improper Neutralization of Special Elements in Data Query Logic",
+          "source_url": "https://cwe.mitre.org/data/definitions/943.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        },
+        "capec": {
+          "id": "CAPEC-248",
+          "normalized_id": "CAPEC-248",
+          "title": "Command Injection",
+          "source_url": "https://capec.mitre.org/data/definitions/248.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "not_supported_by_current_rule_set_unverified",
+          "verified": false,
+          "flags": [
+            "Meta düzeyde genel saldırı örüntüsü; özgüllüğü kontrol edilmeli."
+          ]
+        }
+      },
+      "candidates": {
+        "cwe": [
+          {
+            "type": "software_weakness",
+            "id": "CWE-943",
+            "title": "Improper Neutralization of Special Elements in Data Query Logic",
+            "abstraction": "Class",
+            "confidence": "medium",
+            "rationale": "Challenge 12'de coupon_code parametresinin NoSQL sorgu mantığını değiştirebilen girdiler kabul ettiği ve filtreleme mekanizmasının atlatılabildiği bildirilmiştir. CWE-943 veri sorgulama mantığındaki özel öğelerin uygun şekilde etkisizleştirilmemesini kapsar.",
+            "source_url": "https://cwe.mitre.org/data/definitions/943.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed with review; inspect more-specific children",
+            "caveat": "CWE-943 Class seviyesindedir. Daha özel bir alt CWE bulunup bulunmadığı ayrıca incelenmelidir."
+          }
+        ],
+        "capec": [
+          {
+            "type": "attack_pattern",
+            "id": "CAPEC-676",
+            "title": "NoSQL Injection",
+            "abstraction": "Standard",
+            "confidence": "high",
+            "rationale": "CAPEC-676 doğrudan NoSQL Injection saldırı örüntüsünü tanımlar ve kullanıcı girdisiyle oluşturulan NoSQL sorgularının manipüle edilmesini kapsar.",
+            "source_url": "https://capec.mitre.org/data/definitions/676.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "definition only; case mapping not endorsed"
+          }
+        ]
+      },
+      "review_required": true,
+      "review_flags": [
+        "Mevcut CAPEC-248 genel Meta seviyesinde Command Injection örüntüsüdür. CAPEC-676 daha özel NoSQL Injection eşleşmesidir."
+      ],
+      "warnings": []
+    },
+    {
+      "challenge_no": "13",
+      "category": "SQL Injection",
+      "finding_status": "doğrulandı",
+      "finding_validation_state": "recorded_status_only",
+      "description": "coupon_code parametresi üzerinden veritabanı sorgularının parametrelendirilmeden çalıştırıldığı",
+      "endpoint": "/community/api/v2/coupon/apply-coupon",
+      "existing_mappings": {
+        "cwe": {
+          "id": "CWE-89",
+          "normalized_id": "CWE-89",
+          "title": "Improper Neutralization of Special Elements used in an SQL Command",
+          "source_url": "https://cwe.mitre.org/data/definitions/89.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        },
+        "capec": {
+          "id": "CAPEC-66",
+          "normalized_id": "CAPEC-66",
+          "title": "SQL Injection",
+          "source_url": "https://capec.mitre.org/data/definitions/66.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        }
+      },
+      "candidates": {
+        "cwe": [
+          {
+            "type": "software_weakness",
+            "id": "CWE-89",
+            "title": "Improper Neutralization of Special Elements used in an SQL Command",
+            "abstraction": "Base",
+            "confidence": "high",
+            "rationale": "Challenge 13'te coupon_code parametresinin SQL sorgularında parametrelendirilmeden kullanıldığı ve SQL enjeksiyonuna neden olduğu belirtilmiştir. CWE-89 bu zafiyetin doğrudan karşılığıdır.",
+            "source_url": "https://cwe.mitre.org/data/definitions/89.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed"
+          }
+        ],
+        "capec": [
+          {
+            "type": "attack_pattern",
+            "id": "CAPEC-66",
+            "title": "SQL Injection",
+            "abstraction": "Standard",
+            "confidence": "high",
+            "rationale": "CAPEC-66 kullanıcı kontrollü girdilerle SQL ifadelerinin manipüle edilmesini tanımlayan doğrudan SQL Injection saldırı örüntüsüdür.",
+            "source_url": "https://capec.mitre.org/data/definitions/66.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "definition only; case mapping not endorsed"
+          }
+        ]
+      },
+      "review_required": true,
+      "review_flags": [],
+      "warnings": []
+    },
+    {
+      "challenge_no": "14",
+      "category": "Broken Authentication (Missing Authentication)",
+      "finding_status": "doğrulandı",
+      "finding_validation_state": "recorded_status_only",
+      "description": "Hassas işlem veya veri sunan uç noktada Authorization başlığının denetlenmediği",
+      "endpoint": "/identity/api/v2/user/videos",
+      "existing_mappings": {
+        "cwe": {
+          "id": "CWE-306",
+          "normalized_id": "CWE-306",
+          "title": "Missing Authentication for Critical Functionality",
+          "source_url": "https://cwe.mitre.org/data/definitions/306.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        },
+        "capec": {
+          "id": "CAPEC-115",
+          "normalized_id": "CAPEC-115",
+          "title": "Authentication Bypass",
+          "source_url": "https://capec.mitre.org/data/definitions/115.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": [
+            "Meta düzeyde genel saldırı örüntüsü; özgüllüğü kontrol edilmeli."
+          ]
+        }
+      },
+      "candidates": {
+        "cwe": [
+          {
+            "type": "software_weakness",
+            "id": "CWE-306",
+            "title": "Missing Authentication for Critical Functionality",
+            "abstraction": "Base",
+            "confidence": "high",
+            "rationale": "Challenge 14'te hassas API endpoint'ine Authorization başlığı olmadan erişilebildiği belirtilmiştir. Bu durum kritik işlevlerde kimlik doğrulamasının uygulanmamasıyla örtüşür.",
+            "source_url": "https://cwe.mitre.org/data/definitions/306.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed"
+          }
+        ],
+        "capec": [
+          {
+            "type": "attack_pattern",
+            "id": "CAPEC-115",
+            "title": "Authentication Bypass",
+            "abstraction": "Meta",
+            "confidence": "high",
+            "rationale": "Kimlik doğrulama kontrolünü atlayarak korunan API işlevine erişim CAPEC-115 Authentication Bypass saldırı örüntüsüyle örtüşür.",
+            "source_url": "https://capec.mitre.org/data/definitions/115.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": true,
+            "flags": [
+              "overly_general_category_or_meta_pattern"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "definition only; case mapping not endorsed"
+          }
+        ]
+      },
+      "review_required": true,
+      "review_flags": [],
+      "warnings": []
+    },
+    {
+      "challenge_no": "15",
+      "category": "Broken Authentication (Improper JWT Validation)",
+      "finding_status": "doğrulandı",
+      "finding_validation_state": "recorded_status_only",
+      "description": "JWT doğrulama sürecinde zayıf gizli anahtar (weak secret) kullanımı veya algoritma denetimi eksikliği nedeniyle yetkisiz kullanıcı kimliğiyle sahte belirteç (forged token) üretilebildiği doğrulandı.",
+      "endpoint": "/identity/api/v2/user/dashboard",
+      "existing_mappings": {
+        "cwe": {
+          "id": "CWE-347",
+          "normalized_id": "CWE-347",
+          "title": "Improper Verification of Cryptographic Signature",
+          "source_url": "https://cwe.mitre.org/data/definitions/347.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        },
+        "capec": {
+          "id": "CAPEC-633",
+          "normalized_id": "CAPEC-633",
+          "title": "Token Impersonation",
+          "source_url": "https://capec.mitre.org/data/definitions/633.html",
+          "source_status": "official_definition_reviewed_offline",
+          "assessment": "candidate_also_proposed_but_not_verified",
+          "verified": false,
+          "flags": []
+        }
+      },
+      "candidates": {
+        "cwe": [
+          {
+            "type": "software_weakness",
+            "id": "CWE-347",
+            "title": "Improper Verification of Cryptographic Signature",
+            "abstraction": "Base",
+            "confidence": "medium",
+            "rationale": "Challenge 15'te JWT imzasının doğrulanması veya algoritma kontrolüyle ilgili zayıflık nedeniyle sahte token oluşturulabildiği belirtilmiştir.",
+            "source_url": "https://cwe.mitre.org/data/definitions/347.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [
+              "conditional_or_limited_fit"
+            ],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "allowed",
+            "caveat": "Zayıflığın gerçekten imza doğrulama eksikliği mi yoksa yalnızca zayıf gizli anahtar mı olduğu kanıt üzerinden ayrıştırılmalıdır."
+          }
+        ],
+        "capec": [
+          {
+            "type": "attack_pattern",
+            "id": "CAPEC-633",
+            "title": "Token Impersonation",
+            "abstraction": "Detailed",
+            "confidence": "high",
+            "rationale": "Sahte erişim belirteciyle başka bir kullanıcının kimliğine bürünülmesi CAPEC-633 Token Impersonation saldırı örüntüsüyle örtüşür.",
+            "source_url": "https://capec.mitre.org/data/definitions/633.html",
+            "source_status": "official_definition_reviewed_offline",
+            "source_reviewed_on": "2026-10-27",
+            "mapping_verification_status": "candidate_not_verified_human_review_required",
+            "mitre_case_mapping_endorsed": false,
+            "deprecated": false,
+            "too_general": false,
+            "flags": [],
+            "human_review_required": true,
+            "mitre_mapping_guidance": "definition only; case mapping not endorsed"
+          }
+        ]
+      },
+      "review_required": true,
+      "review_flags": [],
+      "warnings": []
+    }
+  ]
+}

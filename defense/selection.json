@@ -1,0 +1,78 @@
+{
+  "budget_units": 20,
+  "selected_cost_units": 20,
+  "remaining_budget_units": 0,
+  "selected_control_ids": [
+    "C01",
+    "C03",
+    "C04",
+    "C06",
+    "C08"
+  ],
+  "modeled_risk_reduction_points": 671.65,
+  "optimization_method": "Exact subset search (0/1 knapsack enumeration)",
+  "objective": "Budget sınırı içinde toplam modellenmiş risk azaltımını ençoklamak",
+  "selected_controls": [
+    {
+      "control_id": "C01",
+      "name": "Nesne seviyesinde yetkilendirme",
+      "cost": 5,
+      "effectiveness": 0.85,
+      "challenges": [
+        1,
+        2,
+        9
+      ],
+      "rationale": "Her nesne erişiminde oturum sahibi ile nesne sahibini sunucu tarafında karşılaştır.",
+      "implementation": "Object-level authorization / ownership check"
+    },
+    {
+      "control_id": "C03",
+      "name": "Rate limiting ve OTP deneme sınırı",
+      "cost": 3,
+      "effectiveness": 0.8,
+      "challenges": [
+        3,
+        6
+      ],
+      "rationale": "Kullanıcı, IP ve işlem bazında hız sınırı; OTP için deneme limiti ve geçici kilitleme uygula.",
+      "implementation": "Rate limiting / throttling"
+    },
+    {
+      "control_id": "C04",
+      "name": "Yanıt alanı allowlist'i ve veri minimizasyonu",
+      "cost": 3,
+      "effectiveness": 0.75,
+      "challenges": [
+        4,
+        5
+      ],
+      "rationale": "API yanıtlarında yalnızca istemcinin ihtiyaç duyduğu alanları DTO/serializer allowlist'i ile döndür.",
+      "implementation": "Response schema / data minimization"
+    },
+    {
+      "control_id": "C06",
+      "name": "SSRF URL doğrulama ve egress kısıtlaması",
+      "cost": 5,
+      "effectiveness": 0.85,
+      "challenges": [
+        8,
+        11
+      ],
+      "rationale": "Hedef URL'leri allowlist ile doğrula; loopback, private ve metadata ağlarına çıkışı engelle.",
+      "implementation": "SSRF validation / network egress policy"
+    },
+    {
+      "control_id": "C08",
+      "name": "Parametreli SQL sorguları",
+      "cost": 4,
+      "effectiveness": 0.9,
+      "challenges": [
+        13
+      ],
+      "rationale": "SQL sorgularını string birleştirme yerine parametreli sorgu/prepared statement ile çalıştır.",
+      "implementation": "Parameterized queries"
+    }
+  ],
+  "selection_is_simulation": true
+}

@@ -1,0 +1,2365 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d54" for="edge" attr.name="selected" attr.type="boolean" />
+  <key id="d53" for="edge" attr.name="rationale" attr.type="string" />
+  <key id="d52" for="edge" attr.name="confidence" attr.type="string" />
+  <key id="d51" for="edge" attr.name="verification_status" attr.type="string" />
+  <key id="d50" for="edge" attr.name="match_basis" attr.type="string" />
+  <key id="d49" for="edge" attr.name="source" attr.type="string" />
+  <key id="d48" for="edge" attr.name="relation" attr.type="string" />
+  <key id="d47" for="node" attr.name="implementation_status" attr.type="string" />
+  <key id="d46" for="node" attr.name="selected" attr.type="boolean" />
+  <key id="d45" for="node" attr.name="effectiveness_assumption" attr.type="double" />
+  <key id="d44" for="node" attr.name="cost_units" attr.type="long" />
+  <key id="d43" for="node" attr.name="control_id" attr.type="string" />
+  <key id="d42" for="node" attr.name="scenario" attr.type="string" />
+  <key id="d41" for="node" attr.name="evidence_confidence" attr.type="long" />
+  <key id="d40" for="node" attr.name="risk_level" attr.type="string" />
+  <key id="d39" for="node" attr.name="risk_score" attr.type="double" />
+  <key id="d38" for="node" attr.name="deprecated" attr.type="string" />
+  <key id="d37" for="node" attr.name="rationale" attr.type="string" />
+  <key id="d36" for="node" attr.name="human_review_required" attr.type="string" />
+  <key id="d35" for="node" attr.name="confidence" attr.type="string" />
+  <key id="d34" for="node" attr.name="assessment" attr.type="string" />
+  <key id="d33" for="node" attr.name="source_url" attr.type="string" />
+  <key id="d32" for="node" attr.name="verification_status" attr.type="string" />
+  <key id="d31" for="node" attr.name="title" attr.type="string" />
+  <key id="d30" for="node" attr.name="mapping_id" attr.type="string" />
+  <key id="d29" for="node" attr.name="finding_validation_state" attr.type="string" />
+  <key id="d28" for="node" attr.name="notes" attr.type="string" />
+  <key id="d27" for="node" attr.name="attack" attr.type="string" />
+  <key id="d26" for="node" attr.name="capec" attr.type="string" />
+  <key id="d25" for="node" attr.name="cwe" attr.type="string" />
+  <key id="d24" for="node" attr.name="evidence_folder_source" attr.type="string" />
+  <key id="d23" for="node" attr.name="evidence_folder" attr.type="string" />
+  <key id="d22" for="node" attr.name="endpoint" attr.type="string" />
+  <key id="d21" for="node" attr.name="source" attr.type="string" />
+  <key id="d20" for="node" attr.name="finding_status" attr.type="string" />
+  <key id="d19" for="node" attr.name="category" attr.type="string" />
+  <key id="d18" for="node" attr.name="challenge_no" attr.type="string" />
+  <key id="d17" for="node" attr.name="base_variable" attr.type="string" />
+  <key id="d16" for="node" attr.name="postman_request_count" attr.type="string" />
+  <key id="d15" for="node" attr.name="summary" attr.type="string" />
+  <key id="d14" for="node" attr.name="operation_id" attr.type="string" />
+  <key id="d13" for="node" attr.name="openapi_match" attr.type="string" />
+  <key id="d12" for="node" attr.name="method" attr.type="string" />
+  <key id="d11" for="node" attr.name="path" attr.type="string" />
+  <key id="d10" for="node" attr.name="source_status" attr.type="string" />
+  <key id="d9" for="node" attr.name="api_surface" attr.type="string" />
+  <key id="d8" for="node" attr.name="exposure" attr.type="string" />
+  <key id="d7" for="node" attr.name="port" attr.type="string" />
+  <key id="d6" for="node" attr.name="language" attr.type="string" />
+  <key id="d5" for="node" attr.name="technology" attr.type="string" />
+  <key id="d4" for="node" attr.name="service_type" attr.type="string" />
+  <key id="d3" for="node" attr.name="service_id" attr.type="string" />
+  <key id="d2" for="node" attr.name="target" attr.type="string" />
+  <key id="d1" for="node" attr.name="label" attr.type="string" />
+  <key id="d0" for="node" attr.name="node_type" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="system:crAPI">
+      <data key="d0">system</data>
+      <data key="d1">crAPI System</data>
+      <data key="d2">crAPI</data>
+    </node>
+    <node id="service:svc-gateway">
+      <data key="d0">service</data>
+      <data key="d1">api.mypremiumdealership.com</data>
+      <data key="d3">svc-gateway</data>
+      <data key="d4">API gateway</data>
+      <data key="d5">Gateway service (implementation to verify)</data>
+      <data key="d6" />
+      <data key="d7">443/internal</data>
+      <data key="d8">Internal/container; gateway entry point</data>
+      <data key="d9">External API ingress / routing</data>
+      <data key="d10">Observed in current docker-compose; implementation not yet verified</data>
+    </node>
+    <node id="service:svc-web">
+      <data key="d0">service</data>
+      <data key="d1">crapi-web</data>
+      <data key="d3">svc-web</data>
+      <data key="d4">Web / ingress</data>
+      <data key="d5">Nginx/OpenResty-based web service</data>
+      <data key="d6">JavaScript/UI</data>
+      <data key="d7">80,443 (published 8888/30080/8443/30443)</data>
+      <data key="d8">Host-exposed</data>
+      <data key="d9">Main UI + reverse-proxy/API routing</data>
+      <data key="d10">Official crAPI docs + current compose</data>
+    </node>
+    <node id="service:svc-identity">
+      <data key="d0">service</data>
+      <data key="d1">crapi-identity</data>
+      <data key="d3">svc-identity</data>
+      <data key="d4">Application service</data>
+      <data key="d5">Java</data>
+      <data key="d6">Java</data>
+      <data key="d7">8080</data>
+      <data key="d8">Internal</data>
+      <data key="d9">/identity/api/*</data>
+      <data key="d10">Official crAPI docs + current compose</data>
+    </node>
+    <node id="service:svc-community">
+      <data key="d0">service</data>
+      <data key="d1">crapi-community</data>
+      <data key="d3">svc-community</data>
+      <data key="d4">Application service</data>
+      <data key="d5">Go</data>
+      <data key="d6">Go</data>
+      <data key="d7">8087</data>
+      <data key="d8">Internal</data>
+      <data key="d9">/community/api/*</data>
+      <data key="d10">Official crAPI docs + current compose</data>
+    </node>
+    <node id="service:svc-workshop">
+      <data key="d0">service</data>
+      <data key="d1">crapi-workshop</data>
+      <data key="d3">svc-workshop</data>
+      <data key="d4">Application service</data>
+      <data key="d5">Python</data>
+      <data key="d6">Python</data>
+      <data key="d7">8000</data>
+      <data key="d8">Internal</data>
+      <data key="d9">/workshop/api/*</data>
+      <data key="d10">Official crAPI docs + current compose</data>
+    </node>
+    <node id="service:svc-chatbot">
+      <data key="d0">service</data>
+      <data key="d1">crapi-chatbot</data>
+      <data key="d3">svc-chatbot</data>
+      <data key="d4">LLM-backed application service</data>
+      <data key="d5">Chatbot service</data>
+      <data key="d6">Python (verify in source)</data>
+      <data key="d7">5002; MCP 5500 published</data>
+      <data key="d8">Host-exposed MCP; API-facing through web</data>
+      <data key="d9">Chatbot / MCP endpoints</data>
+      <data key="d10">Current compose; language needs source verification</data>
+    </node>
+    <node id="service:db-postgres">
+      <data key="d0">service</data>
+      <data key="d1">postgresdb</data>
+      <data key="d3">db-postgres</data>
+      <data key="d4">Relational database</data>
+      <data key="d5">PostgreSQL 14</data>
+      <data key="d6" />
+      <data key="d7">5432</data>
+      <data key="d8">Internal</data>
+      <data key="d9">Database only</data>
+      <data key="d10">Current compose</data>
+    </node>
+    <node id="service:db-mongo">
+      <data key="d0">service</data>
+      <data key="d1">mongodb</data>
+      <data key="d3">db-mongo</data>
+      <data key="d4">NoSQL database</data>
+      <data key="d5">MongoDB 4.4</data>
+      <data key="d6" />
+      <data key="d7">27017</data>
+      <data key="d8">Internal</data>
+      <data key="d9">Database only</data>
+      <data key="d10">Current compose</data>
+    </node>
+    <node id="service:db-chroma">
+      <data key="d0">service</data>
+      <data key="d1">chromadb</data>
+      <data key="d3">db-chroma</data>
+      <data key="d4">Vector database</data>
+      <data key="d5">ChromaDB</data>
+      <data key="d6" />
+      <data key="d7">8000/internal</data>
+      <data key="d8">Internal</data>
+      <data key="d9">Vector store API</data>
+      <data key="d10">Current compose</data>
+    </node>
+    <node id="service:svc-mailhog">
+      <data key="d0">service</data>
+      <data key="d1">mailhog</data>
+      <data key="d3">svc-mailhog</data>
+      <data key="d4">Mail testing service</data>
+      <data key="d5">MailHog</data>
+      <data key="d6" />
+      <data key="d7">8025 UI; 1025 SMTP/internal</data>
+      <data key="d8">Host-exposed UI; SMTP internal</data>
+      <data key="d9">Mail UI / SMTP sink</data>
+      <data key="d10">Official crAPI docs + current compose</data>
+    </node>
+    <node id="endpoint:POST:/identity/api/auth/signup">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /identity/api/auth/signup</data>
+      <data key="d11">/identity/api/auth/signup</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_identity_api_auth_signup</data>
+      <data key="d15">Signup example.com</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:POST:/identity/api/auth/login">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /identity/api/auth/login</data>
+      <data key="d11">/identity/api/auth/login</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_identity_api_auth_login</data>
+      <data key="d15">Login</data>
+      <data key="d16">5</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:POST:/identity/api/auth/verify">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /identity/api/auth/verify</data>
+      <data key="d11">/identity/api/auth/verify</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_identity_api_auth_verify</data>
+      <data key="d15">Verify JWT Token</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:POST:/identity/api/auth/forget-password">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /identity/api/auth/forget-password</data>
+      <data key="d11">/identity/api/auth/forget-password</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_identity_api_auth_forget_password</data>
+      <data key="d15">Forgot Password</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:GET:/api/v2/search">
+      <data key="d0">endpoint</data>
+      <data key="d1">GET /api/v2/search</data>
+      <data key="d11">/api/v2/search</data>
+      <data key="d12">GET</data>
+      <data key="d13">True</data>
+      <data key="d14">get_api_v2_search</data>
+      <data key="d15">SearchMailOTP</data>
+      <data key="d16">4</data>
+      <data key="d17">url_mail</data>
+    </node>
+    <node id="endpoint:POST:/identity/api/auth/v3/check-otp">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /identity/api/auth/v3/check-otp</data>
+      <data key="d11">/identity/api/auth/v3/check-otp</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_identity_api_auth_v3_check_otp</data>
+      <data key="d15">Check OTP</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:POST:/identity/api/v2/vehicle/resend_email">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /identity/api/v2/vehicle/resend_email</data>
+      <data key="d11">/identity/api/v2/vehicle/resend_email</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_identity_api_v2_vehicle_resend_email</data>
+      <data key="d15">Resend vehicle email</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:POST:/identity/api/v2/vehicle/add_vehicle">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /identity/api/v2/vehicle/add_vehicle</data>
+      <data key="d11">/identity/api/v2/vehicle/add_vehicle</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_identity_api_v2_vehicle_add_vehicle</data>
+      <data key="d15">Add Vehicle from Mail</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:GET:/identity/api/v2/user/dashboard">
+      <data key="d0">endpoint</data>
+      <data key="d1">GET /identity/api/v2/user/dashboard</data>
+      <data key="d11">/identity/api/v2/user/dashboard</data>
+      <data key="d12">GET</data>
+      <data key="d13">True</data>
+      <data key="d14">get_identity_api_v2_user_dashboard</data>
+      <data key="d15">Get Dashboard</data>
+      <data key="d16">2</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:GET:/identity/api/v2/vehicle/vehicles">
+      <data key="d0">endpoint</data>
+      <data key="d1">GET /identity/api/v2/vehicle/vehicles</data>
+      <data key="d11">/identity/api/v2/vehicle/vehicles</data>
+      <data key="d12">GET</data>
+      <data key="d13">True</data>
+      <data key="d14">get_identity_api_v2_vehicle_vehicles</data>
+      <data key="d15">Get vehicles</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:GET:/identity/api/v2/vehicle/{vehicle_id}/location">
+      <data key="d0">endpoint</data>
+      <data key="d1">GET /identity/api/v2/vehicle/{vehicle_id}/location</data>
+      <data key="d11">/identity/api/v2/vehicle/{vehicle_id}/location</data>
+      <data key="d12">GET</data>
+      <data key="d13">True</data>
+      <data key="d14">get_identity_api_v2_vehicle_vehicle_id_location</data>
+      <data key="d15">Get vehicle location</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:POST:/community/api/v2/coupon/validate-coupon">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /community/api/v2/coupon/validate-coupon</data>
+      <data key="d11">/community/api/v2/coupon/validate-coupon</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_community_api_v2_coupon_validate_coupon</data>
+      <data key="d15">Validate coupon</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:POST:/workshop/api/shop/apply_coupon">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /workshop/api/shop/apply_coupon</data>
+      <data key="d11">/workshop/api/shop/apply_coupon</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_workshop_api_shop_apply_coupon</data>
+      <data key="d15">Apply coupon</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:POST:/community/api/v2/community/posts">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /community/api/v2/community/posts</data>
+      <data key="d11">/community/api/v2/community/posts</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_community_api_v2_community_posts</data>
+      <data key="d15">Create post </data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:GET:/community/api/v2/community/posts/{post_id}">
+      <data key="d0">endpoint</data>
+      <data key="d1">GET /community/api/v2/community/posts/{post_id}</data>
+      <data key="d11">/community/api/v2/community/posts/{post_id}</data>
+      <data key="d12">GET</data>
+      <data key="d13">True</data>
+      <data key="d14">get_community_api_v2_community_posts_post_id</data>
+      <data key="d15">Get post</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:GET:/community/api/v2/community/posts/recent">
+      <data key="d0">endpoint</data>
+      <data key="d1">GET /community/api/v2/community/posts/recent</data>
+      <data key="d11">/community/api/v2/community/posts/recent</data>
+      <data key="d12">GET</data>
+      <data key="d13">True</data>
+      <data key="d14">get_community_api_v2_community_posts_recent</data>
+      <data key="d15">Get recent posts</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:POST:/community/api/v2/community/posts/{post_id}/comment">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /community/api/v2/community/posts/{post_id}/comment</data>
+      <data key="d11">/community/api/v2/community/posts/{post_id}/comment</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_community_api_v2_community_posts_post_id_comment</data>
+      <data key="d15">Post comment</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:GET:/workshop/api/mechanic">
+      <data key="d0">endpoint</data>
+      <data key="d1">GET /workshop/api/mechanic</data>
+      <data key="d11">/workshop/api/mechanic</data>
+      <data key="d12">GET</data>
+      <data key="d13">True</data>
+      <data key="d14">get_workshop_api_mechanic</data>
+      <data key="d15">Get All Mechanics</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:POST:/workshop/api/merchant/contact_mechanic">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /workshop/api/merchant/contact_mechanic</data>
+      <data key="d11">/workshop/api/merchant/contact_mechanic</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_workshop_api_merchant_contact_mechanic</data>
+      <data key="d15">Contact mechanic</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:GET:/workshop/api/mechanic/service_requests">
+      <data key="d0">endpoint</data>
+      <data key="d1">GET /workshop/api/mechanic/service_requests</data>
+      <data key="d11">/workshop/api/mechanic/service_requests</data>
+      <data key="d12">GET</data>
+      <data key="d13">True</data>
+      <data key="d14">get_workshop_api_mechanic_service_requests</data>
+      <data key="d15">Service Requests</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:GET:/workshop/api/mechanic/mechanic_report">
+      <data key="d0">endpoint</data>
+      <data key="d1">GET /workshop/api/mechanic/mechanic_report</data>
+      <data key="d11">/workshop/api/mechanic/mechanic_report</data>
+      <data key="d12">GET</data>
+      <data key="d13">True</data>
+      <data key="d14">get_workshop_api_mechanic_mechanic_report</data>
+      <data key="d15">GetReport</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:GET:/workshop/api/shop/products">
+      <data key="d0">endpoint</data>
+      <data key="d1">GET /workshop/api/shop/products</data>
+      <data key="d11">/workshop/api/shop/products</data>
+      <data key="d12">GET</data>
+      <data key="d13">True</data>
+      <data key="d14">get_workshop_api_shop_products</data>
+      <data key="d15">Get products</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:POST:/workshop/api/shop/products">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /workshop/api/shop/products</data>
+      <data key="d11">/workshop/api/shop/products</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_workshop_api_shop_products</data>
+      <data key="d15">Add Product</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:POST:/workshop/api/shop/orders">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /workshop/api/shop/orders</data>
+      <data key="d11">/workshop/api/shop/orders</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_workshop_api_shop_orders</data>
+      <data key="d15">Create Order</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:GET:/workshop/api/shop/orders/all">
+      <data key="d0">endpoint</data>
+      <data key="d1">GET /workshop/api/shop/orders/all</data>
+      <data key="d11">/workshop/api/shop/orders/all</data>
+      <data key="d12">GET</data>
+      <data key="d13">True</data>
+      <data key="d14">get_workshop_api_shop_orders_all</data>
+      <data key="d15">Get orders</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:GET:/workshop/api/shop/orders/{order_id}">
+      <data key="d0">endpoint</data>
+      <data key="d1">GET /workshop/api/shop/orders/{order_id}</data>
+      <data key="d11">/workshop/api/shop/orders/{order_id}</data>
+      <data key="d12">GET</data>
+      <data key="d13">True</data>
+      <data key="d14">get_workshop_api_shop_orders_order_id</data>
+      <data key="d15">Get Order</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:POST:/workshop/api/shop/orders/return_order">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /workshop/api/shop/orders/return_order</data>
+      <data key="d11">/workshop/api/shop/orders/return_order</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_workshop_api_shop_orders_return_order</data>
+      <data key="d15">Return order</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:POST:/identity/api/v2/user/videos">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /identity/api/v2/user/videos</data>
+      <data key="d11">/identity/api/v2/user/videos</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_identity_api_v2_user_videos</data>
+      <data key="d15">Add video</data>
+      <data key="d16">3</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:GET:/identity/api/v2/user/videos/{video_id}">
+      <data key="d0">endpoint</data>
+      <data key="d1">GET /identity/api/v2/user/videos/{video_id}</data>
+      <data key="d11">/identity/api/v2/user/videos/{video_id}</data>
+      <data key="d12">GET</data>
+      <data key="d13">True</data>
+      <data key="d14">get_identity_api_v2_user_videos_video_id</data>
+      <data key="d15">Get Video</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:PUT:/identity/api/v2/user/videos/{video_id}">
+      <data key="d0">endpoint</data>
+      <data key="d1">PUT /identity/api/v2/user/videos/{video_id}</data>
+      <data key="d11">/identity/api/v2/user/videos/{video_id}</data>
+      <data key="d12">PUT</data>
+      <data key="d13">True</data>
+      <data key="d14">put_identity_api_v2_user_videos_video_id</data>
+      <data key="d15">Change Video Name</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:DELETE:/identity/api/v2/user/videos/{video_id}">
+      <data key="d0">endpoint</data>
+      <data key="d1">DELETE /identity/api/v2/user/videos/{video_id}</data>
+      <data key="d11">/identity/api/v2/user/videos/{video_id}</data>
+      <data key="d12">DELETE</data>
+      <data key="d13">True</data>
+      <data key="d14">delete_identity_api_v2_user_videos_video_id</data>
+      <data key="d15">Delete video</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:GET:/identity/api/v2/user/videos/convert_video">
+      <data key="d0">endpoint</data>
+      <data key="d1">GET /identity/api/v2/user/videos/convert_video</data>
+      <data key="d11">/identity/api/v2/user/videos/convert_video</data>
+      <data key="d12">GET</data>
+      <data key="d13">True</data>
+      <data key="d14">get_identity_api_v2_user_videos_convert_video</data>
+      <data key="d15">Share video</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:DELETE:/identity/api/v2/admin/videos/{video_id}">
+      <data key="d0">endpoint</data>
+      <data key="d1">DELETE /identity/api/v2/admin/videos/{video_id}</data>
+      <data key="d11">/identity/api/v2/admin/videos/{video_id}</data>
+      <data key="d12">DELETE</data>
+      <data key="d13">True</data>
+      <data key="d14">delete_identity_api_v2_admin_videos_video_id</data>
+      <data key="d15">Delete video by admin</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:GET:/workshop/api/management/users/all">
+      <data key="d0">endpoint</data>
+      <data key="d1">GET /workshop/api/management/users/all</data>
+      <data key="d11">/workshop/api/management/users/all</data>
+      <data key="d12">GET</data>
+      <data key="d13">True</data>
+      <data key="d14">get_workshop_api_management_users_all</data>
+      <data key="d15">Get Workshop User Details</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:POST:/identity/api/v2/user/change-email">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /identity/api/v2/user/change-email</data>
+      <data key="d11">/identity/api/v2/user/change-email</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_identity_api_v2_user_change_email</data>
+      <data key="d15">Change email</data>
+      <data key="d16">2</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:POST:/identity/api/v2/user/verify-email-token">
+      <data key="d0">endpoint</data>
+      <data key="d1">POST /identity/api/v2/user/verify-email-token</data>
+      <data key="d11">/identity/api/v2/user/verify-email-token</data>
+      <data key="d12">POST</data>
+      <data key="d13">True</data>
+      <data key="d14">post_identity_api_v2_user_verify_email_token</data>
+      <data key="d15">Verify email token</data>
+      <data key="d16">2</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="endpoint:GET:/.well-known/jwks.json">
+      <data key="d0">endpoint</data>
+      <data key="d1">GET /.well-known/jwks.json</data>
+      <data key="d11">/.well-known/jwks.json</data>
+      <data key="d12">GET</data>
+      <data key="d13">True</data>
+      <data key="d14">get_well_known_jwks_json</data>
+      <data key="d15">Get Public Key</data>
+      <data key="d16">1</data>
+      <data key="d17">url</data>
+    </node>
+    <node id="finding:challenge:1">
+      <data key="d0">finding</data>
+      <data key="d1">Challenge 1: BOLA</data>
+      <data key="d18">1</data>
+      <data key="d19">BOLA</data>
+      <data key="d20">doğrulandı</data>
+      <data key="d21">dynamic</data>
+      <data key="d22">/identity/api/v2/vehicle/{vehicle_id}/location</data>
+      <data key="d23">findings/evidence/challanges_01_bola_vehicle</data>
+      <data key="d24">findings/evidence/challenge_01</data>
+      <data key="d25">CWE-639</data>
+      <data key="d26">CAPEC-210</data>
+      <data key="d27" />
+      <data key="d28">Attacker kullanıcısı victim kullanıcısının vehicle_id (UUID) değeriyle araç konum koordinatlarını yetkisiz okuyabildi.</data>
+      <data key="d29">recorded_status_only</data>
+    </node>
+    <node id="CWE:CWE-639">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-639: Authorization Bypass Through User-Controlled Key</data>
+      <data key="d30">CWE-639</data>
+      <data key="d31">Authorization Bypass Through User-Controlled Key</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/639.html</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+      <data key="d35">high</data>
+      <data key="d36">True</data>
+      <data key="d37">Başka kullanıcıya ait kayda, istekle denetlenen vehicle_id/report_id/order_id üzerinden erişim anlatılıyor; CWE-639 kullanıcı denetimli anahtarla yetkilendirme atlatmayı tanımlar.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="CAPEC:CAPEC-210">
+      <data key="d0">attack_pattern</data>
+      <data key="d1">CAPEC-210: Abuse Existing Functionality</data>
+      <data key="d30">CAPEC-210</data>
+      <data key="d31">Abuse Existing Functionality</data>
+      <data key="d32">recorded_but_not_verified</data>
+      <data key="d33">https://capec.mitre.org/data/definitions/210.html</data>
+      <data key="d34">not_supported_by_current_rule_set_unverified</data>
+    </node>
+    <node id="CAPEC:CAPEC-1">
+      <data key="d0">attack_pattern</data>
+      <data key="d1">CAPEC-1: Accessing Functionality Not Properly Constrained by ACLs</data>
+      <data key="d30">CAPEC-1</data>
+      <data key="d31">Accessing Functionality Not Properly Constrained by ACLs</data>
+      <data key="d35">medium</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://capec.mitre.org/data/definitions/1.html</data>
+      <data key="d36">True</data>
+      <data key="d37">Yetkilendirme çerçevesinin kısıtlamadığı işlev veya sorgu üzerinden korunan kayda erişim, CAPEC-1 ile olası biçimde örtüşür.</data>
+      <data key="d38">False</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+    </node>
+    <node id="finding:challenge:2">
+      <data key="d0">finding</data>
+      <data key="d1">Challenge 2: BOLA</data>
+      <data key="d18">2</data>
+      <data key="d19">BOLA</data>
+      <data key="d20">doğrulandı</data>
+      <data key="d21">dynamic</data>
+      <data key="d22">/workshop/api/mechanic/receive_report</data>
+      <data key="d23">findings/evidence/challenges_02_bola_mechanic</data>
+      <data key="d24">findings/evidence/challenge_02</data>
+      <data key="d25">CWE-639</data>
+      <data key="d26">CAPEC-210</data>
+      <data key="d27" />
+      <data key="d28">Attacker kullanıcısı victim kullanıcısının report_id değeriyle servis raporunu ve araç detaylarını yetkisiz okuyabildi.</data>
+      <data key="d29">recorded_status_only</data>
+    </node>
+    <node id="endpoint:unlisted:/workshop/api/mechanic/receive_report">
+      <data key="d0">endpoint</data>
+      <data key="d1">Unlisted API: /workshop/api/mechanic/receive_report</data>
+      <data key="d11">/workshop/api/mechanic/receive_report</data>
+      <data key="d12">UNKNOWN</data>
+      <data key="d13">False</data>
+    </node>
+    <node id="finding:challenge:3">
+      <data key="d0">finding</data>
+      <data key="d1">Challenge 3: Broken Authentication</data>
+      <data key="d18">3</data>
+      <data key="d19">Broken Authentication</data>
+      <data key="d20">doğrulandı</data>
+      <data key="d21">dynamic</data>
+      <data key="d22">/identity/api/auth/v2/check-otp</data>
+      <data key="d23">findings/evidence/challenges_03_bua_password_reset</data>
+      <data key="d24">findings/evidence/challenge_03</data>
+      <data key="d25">CWE-307</data>
+      <data key="d26">CAPEC-49</data>
+      <data key="d27" />
+      <data key="d28">Eski API sürümünde (v2) rate limiting mekanizması uygulanmadığı için şifre sıfırlama OTP doğrulaması bypass edilebildi.</data>
+      <data key="d29">recorded_status_only</data>
+    </node>
+    <node id="endpoint:unlisted:/identity/api/auth/v2/check-otp">
+      <data key="d0">endpoint</data>
+      <data key="d1">Unlisted API: /identity/api/auth/v2/check-otp</data>
+      <data key="d11">/identity/api/auth/v2/check-otp</data>
+      <data key="d12">UNKNOWN</data>
+      <data key="d13">False</data>
+    </node>
+    <node id="CWE:CWE-307">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-307: Improper Restriction of Excessive Authentication Attempts</data>
+      <data key="d30">CWE-307</data>
+      <data key="d31">Improper Restriction of Excessive Authentication Attempts</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/307.html</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+      <data key="d35">high</data>
+      <data key="d36">True</data>
+      <data key="d37">OTP doğrulama girişimlerini sınırlamama, aşırı kimlik doğrulama denemelerinin kısıtlanmamasıyla uyumludur.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="CAPEC:CAPEC-49">
+      <data key="d0">attack_pattern</data>
+      <data key="d1">CAPEC-49: Password Brute Forcing</data>
+      <data key="d30">CAPEC-49</data>
+      <data key="d31">Password Brute Forcing</data>
+      <data key="d32">recorded_but_not_verified</data>
+      <data key="d33">https://capec.mitre.org/data/definitions/49.html</data>
+      <data key="d34">not_supported_by_current_rule_set_unverified</data>
+    </node>
+    <node id="CAPEC:CAPEC-112">
+      <data key="d0">attack_pattern</data>
+      <data key="d1">CAPEC-112: Brute Force</data>
+      <data key="d30">CAPEC-112</data>
+      <data key="d31">Brute Force</data>
+      <data key="d35">medium</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://capec.mitre.org/data/definitions/112.html</data>
+      <data key="d36">True</data>
+      <data key="d37">OTP değerleri üzerinde deneme-yanılma yapıldıysa genel brute-force örüntüsü uygun olabilir.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="finding:challenge:4">
+      <data key="d0">finding</data>
+      <data key="d1">Challenge 4: Excessive Data Exposure</data>
+      <data key="d18">4</data>
+      <data key="d19">Excessive Data Exposure</data>
+      <data key="d20">doğrulandı</data>
+      <data key="d21">dynamic</data>
+      <data key="d22">/community/api/v2/community/posts/recent</data>
+      <data key="d23">findings/evidence/challenges_04_ede_user_details</data>
+      <data key="d24">findings/evidence/challenge_04</data>
+      <data key="d25">CWE-213</data>
+      <data key="d26">CAPEC-118</data>
+      <data key="d27" />
+      <data key="d28">Topluluk gönderileri listelenirken API yanıtında yazarın e-posta ve telefon gibi hassas PII verilerinin gereksiz yere istemciye döndüğü tespit edildi.</data>
+      <data key="d29">recorded_status_only</data>
+    </node>
+    <node id="CWE:CWE-213">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-213: Exposure of Sensitive Information Due to Incompatible Policies</data>
+      <data key="d30">CWE-213</data>
+      <data key="d31">Exposure of Sensitive Information Due to Incompatible Policies</data>
+      <data key="d32">recorded_but_not_verified</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/213.html</data>
+      <data key="d34">not_supported_by_current_rule_set_unverified</data>
+    </node>
+    <node id="CAPEC:CAPEC-118">
+      <data key="d0">attack_pattern</data>
+      <data key="d1">CAPEC-118: Collect and Analyze Information</data>
+      <data key="d30">CAPEC-118</data>
+      <data key="d31">Collect and Analyze Information</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://capec.mitre.org/data/definitions/118.html</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+      <data key="d35">low</data>
+      <data key="d36">True</data>
+      <data key="d37">Bilgi edinme kategorisi üst düzeyde ilişkili olabilir.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="CWE:CWE-359">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-359: Exposure of Private Personal Information to an Unauthorized Actor</data>
+      <data key="d30">CWE-359</data>
+      <data key="d31">Exposure of Private Personal Information to an Unauthorized Actor</data>
+      <data key="d35">high</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/359.html</data>
+      <data key="d36">True</data>
+      <data key="d37">E-posta/telefon gibi kişisel bilgilerin yetkisiz aktörlere açılması CWE-359'un özel kişisel bilgi tanımıyla örtüşür.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="CWE:CWE-201">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-201: Insertion of Sensitive Information Into Sent Data</data>
+      <data key="d30">CWE-201</data>
+      <data key="d31">Insertion of Sensitive Information Into Sent Data</data>
+      <data key="d35">medium</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/201.html</data>
+      <data key="d36">True</data>
+      <data key="d37">İç parametrelerin API yanıtında istemciye gönderilmesi hassas bilgi gönderimiyle örtüşebilir.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="finding:challenge:5">
+      <data key="d0">finding</data>
+      <data key="d1">Challenge 5: Excessive Data Exposure</data>
+      <data key="d18">5</data>
+      <data key="d19">Excessive Data Exposure</data>
+      <data key="d20">doğrulandı</data>
+      <data key="d21">dynamic</data>
+      <data key="d22">/identity/api/v2/user/videos/{video_id}</data>
+      <data key="d23">findings/evidence/challenges_05_ede_video_password</data>
+      <data key="d24">findings/evidence/challenge_05</data>
+      <data key="d25">CWE-200</data>
+      <data key="d26">CAPEC-118</data>
+      <data key="d27">5 -&gt; 10</data>
+      <data key="d28">Video nesnesi sorgulandığında sistemin iç dönüştürme parametrelerinin (conversion_params) yanıtta sızdırıldığı tespit edildi.</data>
+      <data key="d29">recorded_status_only</data>
+    </node>
+    <node id="CWE:CWE-200">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-200: Exposure of Sensitive Information to an Unauthorized Actor</data>
+      <data key="d30">CWE-200</data>
+      <data key="d31">Exposure of Sensitive Information to an Unauthorized Actor</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/200.html</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+      <data key="d35">medium</data>
+      <data key="d36">True</data>
+      <data key="d37">Hassasiyet ve erişim sınırı net değilken CWE-200 genel bir bilgi ifşası adayıdır.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="CWE:CWE-497">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-497: Exposure of Sensitive System Information to an Unauthorized Control Sphere</data>
+      <data key="d30">CWE-497</data>
+      <data key="d31">Exposure of Sensitive System Information to an Unauthorized Control Sphere</data>
+      <data key="d35">low</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/497.html</data>
+      <data key="d36">True</data>
+      <data key="d37">Sızan alan sistem düzeyinde hassas uygulama/ortam bilgisi ise CWE-497 değerlendirilebilir.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="finding:challenge:6">
+      <data key="d0">finding</data>
+      <data key="d1">Challenge 6: Lack of Resources &amp; Rate Limiting</data>
+      <data key="d18">6</data>
+      <data key="d19">Lack of Resources &amp; Rate Limiting</data>
+      <data key="d20">doğrulandı</data>
+      <data key="d21">dynamic</data>
+      <data key="d22">/workshop/api/merchant/contact_mechanic</data>
+      <data key="d23">findings/evidence/challenges_06_rate_limiting_dos</data>
+      <data key="d24">findings/evidence/challenge_06</data>
+      <data key="d25">CWE-770</data>
+      <data key="d26">CAPEC-130</data>
+      <data key="d27" />
+      <data key="d28">Contact mechanic endpoint'inde rate limiting bulunmadığı ve sunucunun ardışık istekleri engellemeden kabul ederek (ID artışı) kaynak tükettiği doğrulandı.</data>
+      <data key="d29">recorded_status_only</data>
+    </node>
+    <node id="CWE:CWE-770">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-770: Allocation of Resources Without Limits or Throttling</data>
+      <data key="d30">CWE-770</data>
+      <data key="d31">Allocation of Resources Without Limits or Throttling</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/770.html</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+      <data key="d35">medium</data>
+      <data key="d36">True</data>
+      <data key="d37">İsteklerin kaynak tükettiği belirtiliyor; CWE-770 sınırsız veya kısıtlanmamış kaynak tahsisini kapsar.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="CAPEC:CAPEC-130">
+      <data key="d0">attack_pattern</data>
+      <data key="d1">CAPEC-130: Excessive Allocation</data>
+      <data key="d30">CAPEC-130</data>
+      <data key="d31">Excessive Allocation</data>
+      <data key="d32">recorded_but_not_verified</data>
+      <data key="d33">https://capec.mitre.org/data/definitions/130.html</data>
+      <data key="d34">not_supported_by_current_rule_set_unverified</data>
+    </node>
+    <node id="CWE:CWE-799">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-799: Improper Control of Interaction Frequency</data>
+      <data key="d30">CWE-799</data>
+      <data key="d31">Improper Control of Interaction Frequency</data>
+      <data key="d35">medium</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/799.html</data>
+      <data key="d36">True</data>
+      <data key="d37">Kayıt art arda gelen isteklerin sınırlandırılmamasını açıkça anlatıyor; CWE-799 etkileşim sıklığının kontrolünü ele alır.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="CAPEC:CAPEC-125">
+      <data key="d0">attack_pattern</data>
+      <data key="d1">CAPEC-125: Flooding</data>
+      <data key="d30">CAPEC-125</data>
+      <data key="d31">Flooding</data>
+      <data key="d35">medium</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://capec.mitre.org/data/definitions/125.html</data>
+      <data key="d36">True</data>
+      <data key="d37">Çok sayıda istekle kaynak tüketimi ve rate limiting zayıflığı CAPEC-125 Flooding tanımıyla örtüşür.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="finding:challenge:7">
+      <data key="d0">finding</data>
+      <data key="d1">Challenge 7: BFLA</data>
+      <data key="d18">7</data>
+      <data key="d19">BFLA</data>
+      <data key="d20">doğrulandı</data>
+      <data key="d21">dynamic</data>
+      <data key="d22">/identity/api/v2/admin/videos/{video_id}</data>
+      <data key="d23">findings/evidence/challenges_07_bfla_delete_video</data>
+      <data key="d24">findings/evidence/challenge_07</data>
+      <data key="d25">CWE-285</data>
+      <data key="d26">CAPEC-233</data>
+      <data key="d27" />
+      <data key="d28">Standart kullanıcı token'ı ile admin silme endpoint'ine (/admin/videos/) istek atılarak yetkisiz fonksiyon seviyesinde işlem gerçekleştirildi ve video silindi.</data>
+      <data key="d29">recorded_status_only</data>
+    </node>
+    <node id="CWE:CWE-285">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-285: Improper Authorization</data>
+      <data key="d30">CWE-285</data>
+      <data key="d31">Improper Authorization</data>
+      <data key="d32">recorded_but_not_verified</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/285.html</data>
+      <data key="d34">not_supported_by_current_rule_set_unverified</data>
+    </node>
+    <node id="CAPEC:CAPEC-233">
+      <data key="d0">attack_pattern</data>
+      <data key="d1">CAPEC-233: Privilege Escalation</data>
+      <data key="d30">CAPEC-233</data>
+      <data key="d31">Privilege Escalation</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://capec.mitre.org/data/definitions/233.html</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+      <data key="d35">medium</data>
+      <data key="d36">True</data>
+      <data key="d37">Daha yüksek ayrıcalık gerektiren eylemin yapılması genel ayrıcalık yükseltme örüntüsüne uyabilir.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="CWE:CWE-862">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-862: Missing Authorization</data>
+      <data key="d30">CWE-862</data>
+      <data key="d31">Missing Authorization</data>
+      <data key="d35">medium</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/862.html</data>
+      <data key="d36">True</data>
+      <data key="d37">Standart kullanıcının yönetici işlevini çalıştırması, o eylem için yetkilendirme kontrolü eksikse CWE-862 ile örtüşür.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="CWE:CWE-863">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-863: Incorrect Authorization</data>
+      <data key="d30">CWE-863</data>
+      <data key="d31">Incorrect Authorization</data>
+      <data key="d35">low</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/863.html</data>
+      <data key="d36">True</data>
+      <data key="d37">Yetkilendirme kontrolünün yanlış karar verdiği ortaya çıkarsa CWE-863 alternatifidir.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="finding:challenge:8">
+      <data key="d0">finding</data>
+      <data key="d1">Challenge 8: Server-Side Request Forgery (SSRF)</data>
+      <data key="d18">8</data>
+      <data key="d19">Server-Side Request Forgery (SSRF)</data>
+      <data key="d20">analiz_edildi</data>
+      <data key="d21">dynamic</data>
+      <data key="d22">/workshop/api/merchant/contact_mechanic</data>
+      <data key="d23">findings/evidence/challenges_08_mass_assignment_free_item</data>
+      <data key="d24">findings/evidence/challenge_08</data>
+      <data key="d25">CWE-918</data>
+      <data key="d26">CAPEC-664</data>
+      <data key="d27" />
+      <data key="d28">mechanic_api parametresinin sunucu tarafında filtrelenmeden istek için kullanıldığı ve doğrulama eksikliği nedeniyle SSRF zafiyetine açık olduğu tespit edildi.</data>
+      <data key="d29">not_final</data>
+    </node>
+    <node id="CWE:CWE-918">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-918: Server-Side Request Forgery (SSRF)</data>
+      <data key="d30">CWE-918</data>
+      <data key="d31">Server-Side Request Forgery (SSRF)</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/918.html</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+      <data key="d35">high</data>
+      <data key="d36">True</data>
+      <data key="d37">Kullanıcı girdisinin sunucuyu başka bir hedefe istek göndermeye zorladığı belirtiliyor; bu SSRF tanımıyla örtüşür.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="CAPEC:CAPEC-664">
+      <data key="d0">attack_pattern</data>
+      <data key="d1">CAPEC-664: Server Side Request Forgery</data>
+      <data key="d30">CAPEC-664</data>
+      <data key="d31">Server Side Request Forgery</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://capec.mitre.org/data/definitions/664.html</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+      <data key="d35">high</data>
+      <data key="d36">True</data>
+      <data key="d37">CAPEC-664, kötü amaçlı girdinin sunucu tarafında istek başlatmaya zorlamasını doğrudan tanımlar.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="finding:challenge:9">
+      <data key="d0">finding</data>
+      <data key="d1">Challenge 9: BOLA</data>
+      <data key="d18">9</data>
+      <data key="d19">BOLA</data>
+      <data key="d20">doğrulandı</data>
+      <data key="d21">dynamic</data>
+      <data key="d22">/workshop/api/shop/orders/{order_id}</data>
+      <data key="d23">findings/evidence/challenges_09_mass_assignment_balance</data>
+      <data key="d24">findings/evidence/challenge_09</data>
+      <data key="d25">CWE-639</data>
+      <data key="d26">CAPEC-1</data>
+      <data key="d27" />
+      <data key="d28">Saldırgan kullanıcısı, nesne seviyesinde yetkilendirme kontrolü eksikliği (BOLA) nedeniyle kurban kullanıcıya ait sipariş detaylarını (ürün, miktar, alıcı bilgileri) yetkisiz olarak görüntüleyebildi.</data>
+      <data key="d29">recorded_status_only</data>
+    </node>
+    <node id="finding:challenge:10">
+      <data key="d0">finding</data>
+      <data key="d1">Challenge 10: Mass Assignment (API6:2023)</data>
+      <data key="d18">10</data>
+      <data key="d19">Mass Assignment (API6:2023)</data>
+      <data key="d20">doğrulandı</data>
+      <data key="d21">dynamic</data>
+      <data key="d22">/workshop/api/merchant/user/videos/{video_id}</data>
+      <data key="d23">findings/evidence/challenges_10_mass_assignment_video</data>
+      <data key="d24">findings/evidence/challenge_10</data>
+      <data key="d25">CWE-915</data>
+      <data key="d26">CAPEC-315</data>
+      <data key="d27">5 -&gt; 10</data>
+      <data key="d28">Video nesnesi güncellenirken istemcinin modeldeki dahili conversion_params alanını doğrudan üzerine yazabildiği (Mass Assignment) ve girdi filtreleme eksikliği tespit edildi.</data>
+      <data key="d29">recorded_status_only</data>
+    </node>
+    <node id="endpoint:unlisted:/workshop/api/merchant/user/videos/{video_id}">
+      <data key="d0">endpoint</data>
+      <data key="d1">Unlisted API: /workshop/api/merchant/user/videos/{video_id}</data>
+      <data key="d11">/workshop/api/merchant/user/videos/{video_id}</data>
+      <data key="d12">UNKNOWN</data>
+      <data key="d13">False</data>
+    </node>
+    <node id="CWE:CWE-915">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes</data>
+      <data key="d30">CWE-915</data>
+      <data key="d31">Improperly Controlled Modification of Dynamically-Determined Object Attributes</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/915.html</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+      <data key="d35">high</data>
+      <data key="d36">True</data>
+      <data key="d37">İstemci girdisinin nesnedeki dahili alanı değiştirebildiği anlatılıyor; CWE-915 dinamik belirlenen nesne özniteliklerinin kontrolsüz değiştirilmesini ve mass assignment terimini kapsar.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="CAPEC:CAPEC-315">
+      <data key="d0">attack_pattern</data>
+      <data key="d1">CAPEC-315: DEPRECATED: TCP/IP Fingerprinting Probes</data>
+      <data key="d30">CAPEC-315</data>
+      <data key="d31">DEPRECATED: TCP/IP Fingerprinting Probes</data>
+      <data key="d32">recorded_but_not_verified</data>
+      <data key="d33">https://capec.mitre.org/data/definitions/315.html</data>
+      <data key="d34">not_supported_by_current_rule_set_unverified</data>
+    </node>
+    <node id="CAPEC:CAPEC-77">
+      <data key="d0">attack_pattern</data>
+      <data key="d1">CAPEC-77: Manipulating User-Controlled Variables</data>
+      <data key="d30">CAPEC-77</data>
+      <data key="d31">Manipulating User-Controlled Variables</data>
+      <data key="d35">low</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://capec.mitre.org/data/definitions/77.html</data>
+      <data key="d36">True</data>
+      <data key="d37">Kullanıcı denetimli alanların uygulama davranışını değiştirmesiyle kavramsal benzerlik var; CAPEC-77 mass assignment'a özel değildir.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="finding:challenge:11">
+      <data key="d0">finding</data>
+      <data key="d1">Challenge 11: Server-Side Request Forgery (SSRF)</data>
+      <data key="d18">11</data>
+      <data key="d19">Server-Side Request Forgery (SSRF)</data>
+      <data key="d20">doğrulandı</data>
+      <data key="d21">dynamic</data>
+      <data key="d22">/workshop/api/merchant/contact_mechanic</data>
+      <data key="d23">findings/evidence/challenges_11_ssrf_mechanic</data>
+      <data key="d24">findings/evidence/challenge_11</data>
+      <data key="d25">CWE-918</data>
+      <data key="d26">CAPEC-664</data>
+      <data key="d27" />
+      <data key="d28">mechanic_api parametresinde adres doğrulaması yapılmadığı ve sunucunun kullanıcı tarafından sağlanan dahili/harici ağ hedeflerine yetkisiz HTTP istekleri yönlendirdiği (SSRF) doğrulandı.</data>
+      <data key="d29">recorded_status_only</data>
+    </node>
+    <node id="finding:challenge:12">
+      <data key="d0">finding</data>
+      <data key="d1">Challenge 12: NoSQL Injection</data>
+      <data key="d18">12</data>
+      <data key="d19">NoSQL Injection</data>
+      <data key="d20">doğrulandı</data>
+      <data key="d21">dynamic</data>
+      <data key="d22">/community/api/v2/coupon/validate-coupon</data>
+      <data key="d23">findings/evidence/challenges_12_nosql_injection_coupon</data>
+      <data key="d24">findings/evidence/challenge_12</data>
+      <data key="d25">CWE-943</data>
+      <data key="d26">CAPEC-248</data>
+      <data key="d27" />
+      <data key="d28">coupon_code parametresinde tip ve şema denetimi yapılmadığı</data>
+      <data key="d29">recorded_status_only</data>
+    </node>
+    <node id="CWE:CWE-943">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-943: Improper Neutralization of Special Elements in Data Query Logic</data>
+      <data key="d30">CWE-943</data>
+      <data key="d31">Improper Neutralization of Special Elements in Data Query Logic</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/943.html</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+      <data key="d35">medium</data>
+      <data key="d36">True</data>
+      <data key="d37">Challenge 12'de coupon_code parametresinin NoSQL sorgu mantığını değiştirebilen girdiler kabul ettiği ve filtreleme mekanizmasının atlatılabildiği bildirilmiştir. CWE-943 veri sorgulama mantığındaki özel öğelerin uygun şekilde etkisizleştirilmemesini kapsar.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="CAPEC:CAPEC-248">
+      <data key="d0">attack_pattern</data>
+      <data key="d1">CAPEC-248: Command Injection</data>
+      <data key="d30">CAPEC-248</data>
+      <data key="d31">Command Injection</data>
+      <data key="d32">recorded_but_not_verified</data>
+      <data key="d33">https://capec.mitre.org/data/definitions/248.html</data>
+      <data key="d34">not_supported_by_current_rule_set_unverified</data>
+    </node>
+    <node id="CAPEC:CAPEC-676">
+      <data key="d0">attack_pattern</data>
+      <data key="d1">CAPEC-676: NoSQL Injection</data>
+      <data key="d30">CAPEC-676</data>
+      <data key="d31">NoSQL Injection</data>
+      <data key="d35">high</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://capec.mitre.org/data/definitions/676.html</data>
+      <data key="d36">True</data>
+      <data key="d37">CAPEC-676 doğrudan NoSQL Injection saldırı örüntüsünü tanımlar ve kullanıcı girdisiyle oluşturulan NoSQL sorgularının manipüle edilmesini kapsar.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="finding:challenge:13">
+      <data key="d0">finding</data>
+      <data key="d1">Challenge 13: SQL Injection</data>
+      <data key="d18">13</data>
+      <data key="d19">SQL Injection</data>
+      <data key="d20">doğrulandı</data>
+      <data key="d21">dynamic</data>
+      <data key="d22">/community/api/v2/coupon/apply-coupon</data>
+      <data key="d23">findings/evidence/challenges_13_sql_injection_coupon</data>
+      <data key="d24">findings/evidence/challenge_13</data>
+      <data key="d25">CWE-89</data>
+      <data key="d26">CAPEC-66</data>
+      <data key="d27" />
+      <data key="d28">coupon_code parametresi üzerinden veritabanı sorgularının parametrelendirilmeden çalıştırıldığı</data>
+      <data key="d29">recorded_status_only</data>
+    </node>
+    <node id="endpoint:unlisted:/community/api/v2/coupon/apply-coupon">
+      <data key="d0">endpoint</data>
+      <data key="d1">Unlisted API: /community/api/v2/coupon/apply-coupon</data>
+      <data key="d11">/community/api/v2/coupon/apply-coupon</data>
+      <data key="d12">UNKNOWN</data>
+      <data key="d13">False</data>
+    </node>
+    <node id="CWE:CWE-89">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-89: Improper Neutralization of Special Elements used in an SQL Command</data>
+      <data key="d30">CWE-89</data>
+      <data key="d31">Improper Neutralization of Special Elements used in an SQL Command</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/89.html</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+      <data key="d35">high</data>
+      <data key="d36">True</data>
+      <data key="d37">Challenge 13'te coupon_code parametresinin SQL sorgularında parametrelendirilmeden kullanıldığı ve SQL enjeksiyonuna neden olduğu belirtilmiştir. CWE-89 bu zafiyetin doğrudan karşılığıdır.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="CAPEC:CAPEC-66">
+      <data key="d0">attack_pattern</data>
+      <data key="d1">CAPEC-66: SQL Injection</data>
+      <data key="d30">CAPEC-66</data>
+      <data key="d31">SQL Injection</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://capec.mitre.org/data/definitions/66.html</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+      <data key="d35">high</data>
+      <data key="d36">True</data>
+      <data key="d37">CAPEC-66 kullanıcı kontrollü girdilerle SQL ifadelerinin manipüle edilmesini tanımlayan doğrudan SQL Injection saldırı örüntüsüdür.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="finding:challenge:14">
+      <data key="d0">finding</data>
+      <data key="d1">Challenge 14: Broken Authentication (Missing Authentication)</data>
+      <data key="d18">14</data>
+      <data key="d19">Broken Authentication (Missing Authentication)</data>
+      <data key="d20">doğrulandı</data>
+      <data key="d21">dynamic</data>
+      <data key="d22">/identity/api/v2/user/videos</data>
+      <data key="d23">findings/evidence/challenges_14_unauthenticated_access</data>
+      <data key="d24">findings/evidence/challenge_14</data>
+      <data key="d25">CWE-306</data>
+      <data key="d26">CAPEC-115</data>
+      <data key="d27" />
+      <data key="d28">Hassas işlem veya veri sunan uç noktada Authorization başlığının denetlenmediği</data>
+      <data key="d29">recorded_status_only</data>
+    </node>
+    <node id="CWE:CWE-306">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-306: Missing Authentication for Critical Functionality</data>
+      <data key="d30">CWE-306</data>
+      <data key="d31">Missing Authentication for Critical Functionality</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/306.html</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+      <data key="d35">high</data>
+      <data key="d36">True</data>
+      <data key="d37">Challenge 14'te hassas API endpoint'ine Authorization başlığı olmadan erişilebildiği belirtilmiştir. Bu durum kritik işlevlerde kimlik doğrulamasının uygulanmamasıyla örtüşür.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="CAPEC:CAPEC-115">
+      <data key="d0">attack_pattern</data>
+      <data key="d1">CAPEC-115: Authentication Bypass</data>
+      <data key="d30">CAPEC-115</data>
+      <data key="d31">Authentication Bypass</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://capec.mitre.org/data/definitions/115.html</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+      <data key="d35">high</data>
+      <data key="d36">True</data>
+      <data key="d37">Kimlik doğrulama kontrolünü atlayarak korunan API işlevine erişim CAPEC-115 Authentication Bypass saldırı örüntüsüyle örtüşür.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="finding:challenge:15">
+      <data key="d0">finding</data>
+      <data key="d1">Challenge 15: Broken Authentication (Improper JWT Validation)</data>
+      <data key="d18">15</data>
+      <data key="d19">Broken Authentication (Improper JWT Validation)</data>
+      <data key="d20">doğrulandı</data>
+      <data key="d21">dynamic</data>
+      <data key="d22">/identity/api/v2/user/dashboard</data>
+      <data key="d23">findings/evidence/challenges_15_jwt_forgery</data>
+      <data key="d24">findings/evidence/challenge_15</data>
+      <data key="d25">CWE-347</data>
+      <data key="d26">CAPEC-633</data>
+      <data key="d27" />
+      <data key="d28">JWT doğrulama sürecinde zayıf gizli anahtar (weak secret) kullanımı veya algoritma denetimi eksikliği nedeniyle yetkisiz kullanıcı kimliğiyle sahte belirteç (forged token) üretilebildiği doğrulandı.</data>
+      <data key="d29">recorded_status_only</data>
+    </node>
+    <node id="CWE:CWE-347">
+      <data key="d0">weakness</data>
+      <data key="d1">CWE-347: Improper Verification of Cryptographic Signature</data>
+      <data key="d30">CWE-347</data>
+      <data key="d31">Improper Verification of Cryptographic Signature</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://cwe.mitre.org/data/definitions/347.html</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+      <data key="d35">medium</data>
+      <data key="d36">True</data>
+      <data key="d37">Challenge 15'te JWT imzasının doğrulanması veya algoritma kontrolüyle ilgili zayıflık nedeniyle sahte token oluşturulabildiği belirtilmiştir.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="CAPEC:CAPEC-633">
+      <data key="d0">attack_pattern</data>
+      <data key="d1">CAPEC-633: Token Impersonation</data>
+      <data key="d30">CAPEC-633</data>
+      <data key="d31">Token Impersonation</data>
+      <data key="d32">candidate_not_verified_human_review_required</data>
+      <data key="d33">https://capec.mitre.org/data/definitions/633.html</data>
+      <data key="d34">candidate_also_proposed_but_not_verified</data>
+      <data key="d35">high</data>
+      <data key="d36">True</data>
+      <data key="d37">Sahte erişim belirteciyle başka bir kullanıcının kimliğine bürünülmesi CAPEC-633 Token Impersonation saldırı örüntüsüyle örtüşür.</data>
+      <data key="d38">False</data>
+    </node>
+    <node id="risk:challenge:1">
+      <data key="d0">risk</data>
+      <data key="d18">1</data>
+      <data key="d39">86.0</data>
+      <data key="d40">Yüksek</data>
+      <data key="d41">5</data>
+      <data key="d42">baseline</data>
+    </node>
+    <node id="risk:challenge:2">
+      <data key="d0">risk</data>
+      <data key="d18">2</data>
+      <data key="d39">86.0</data>
+      <data key="d40">Yüksek</data>
+      <data key="d41">5</data>
+      <data key="d42">baseline</data>
+    </node>
+    <node id="risk:challenge:3">
+      <data key="d0">risk</data>
+      <data key="d18">3</data>
+      <data key="d39">86.0</data>
+      <data key="d40">Yüksek</data>
+      <data key="d41">5</data>
+      <data key="d42">baseline</data>
+    </node>
+    <node id="risk:challenge:4">
+      <data key="d0">risk</data>
+      <data key="d18">4</data>
+      <data key="d39">73.0</data>
+      <data key="d40">Orta</data>
+      <data key="d41">5</data>
+      <data key="d42">baseline</data>
+    </node>
+    <node id="risk:challenge:5">
+      <data key="d0">risk</data>
+      <data key="d18">5</data>
+      <data key="d39">73.0</data>
+      <data key="d40">Orta</data>
+      <data key="d41">5</data>
+      <data key="d42">baseline</data>
+    </node>
+    <node id="risk:challenge:6">
+      <data key="d0">risk</data>
+      <data key="d18">6</data>
+      <data key="d39">79.0</data>
+      <data key="d40">Orta</data>
+      <data key="d41">5</data>
+      <data key="d42">baseline</data>
+    </node>
+    <node id="risk:challenge:7">
+      <data key="d0">risk</data>
+      <data key="d18">7</data>
+      <data key="d39">86.0</data>
+      <data key="d40">Yüksek</data>
+      <data key="d41">5</data>
+      <data key="d42">baseline</data>
+    </node>
+    <node id="risk:challenge:8">
+      <data key="d0">risk</data>
+      <data key="d18">8</data>
+      <data key="d39">71.0</data>
+      <data key="d40">Orta</data>
+      <data key="d41">2</data>
+      <data key="d42">baseline</data>
+    </node>
+    <node id="risk:challenge:9">
+      <data key="d0">risk</data>
+      <data key="d18">9</data>
+      <data key="d39">86.0</data>
+      <data key="d40">Yüksek</data>
+      <data key="d41">5</data>
+      <data key="d42">baseline</data>
+    </node>
+    <node id="risk:challenge:10">
+      <data key="d0">risk</data>
+      <data key="d18">10</data>
+      <data key="d39">79.0</data>
+      <data key="d40">Orta</data>
+      <data key="d41">5</data>
+      <data key="d42">baseline</data>
+    </node>
+    <node id="risk:challenge:11">
+      <data key="d0">risk</data>
+      <data key="d18">11</data>
+      <data key="d39">86.0</data>
+      <data key="d40">Yüksek</data>
+      <data key="d41">5</data>
+      <data key="d42">baseline</data>
+    </node>
+    <node id="risk:challenge:12">
+      <data key="d0">risk</data>
+      <data key="d18">12</data>
+      <data key="d39">86.0</data>
+      <data key="d40">Yüksek</data>
+      <data key="d41">5</data>
+      <data key="d42">baseline</data>
+    </node>
+    <node id="risk:challenge:13">
+      <data key="d0">risk</data>
+      <data key="d18">13</data>
+      <data key="d39">86.0</data>
+      <data key="d40">Yüksek</data>
+      <data key="d41">5</data>
+      <data key="d42">baseline</data>
+    </node>
+    <node id="risk:challenge:14">
+      <data key="d0">risk</data>
+      <data key="d18">14</data>
+      <data key="d39">78.0</data>
+      <data key="d40">Orta</data>
+      <data key="d41">5</data>
+      <data key="d42">baseline</data>
+    </node>
+    <node id="risk:challenge:15">
+      <data key="d0">risk</data>
+      <data key="d18">15</data>
+      <data key="d39">72.0</data>
+      <data key="d40">Orta</data>
+      <data key="d41">5</data>
+      <data key="d42">baseline</data>
+    </node>
+    <node id="control:C01">
+      <data key="d0">defense_control</data>
+      <data key="d43">C01</data>
+      <data key="d1">Nesne seviyesinde yetkilendirme</data>
+      <data key="d44">5</data>
+      <data key="d45">0.85</data>
+      <data key="d46">True</data>
+      <data key="d47">proposed_not_deployed</data>
+    </node>
+    <node id="control:C02">
+      <data key="d0">defense_control</data>
+      <data key="d43">C02</data>
+      <data key="d1">Fonksiyon seviyesinde RBAC/ABAC kontrolü</data>
+      <data key="d44">4</data>
+      <data key="d45">0.85</data>
+      <data key="d46">False</data>
+      <data key="d47">proposed_not_deployed</data>
+    </node>
+    <node id="control:C03">
+      <data key="d0">defense_control</data>
+      <data key="d43">C03</data>
+      <data key="d1">Rate limiting ve OTP deneme sınırı</data>
+      <data key="d44">3</data>
+      <data key="d45">0.8</data>
+      <data key="d46">True</data>
+      <data key="d47">proposed_not_deployed</data>
+    </node>
+    <node id="control:C04">
+      <data key="d0">defense_control</data>
+      <data key="d43">C04</data>
+      <data key="d1">Yanıt alanı allowlist'i ve veri minimizasyonu</data>
+      <data key="d44">3</data>
+      <data key="d45">0.75</data>
+      <data key="d46">True</data>
+      <data key="d47">proposed_not_deployed</data>
+    </node>
+    <node id="control:C05">
+      <data key="d0">defense_control</data>
+      <data key="d43">C05</data>
+      <data key="d1">Mass assignment için DTO allowlist'i</data>
+      <data key="d44">3</data>
+      <data key="d45">0.85</data>
+      <data key="d46">False</data>
+      <data key="d47">proposed_not_deployed</data>
+    </node>
+    <node id="control:C06">
+      <data key="d0">defense_control</data>
+      <data key="d43">C06</data>
+      <data key="d1">SSRF URL doğrulama ve egress kısıtlaması</data>
+      <data key="d44">5</data>
+      <data key="d45">0.85</data>
+      <data key="d46">True</data>
+      <data key="d47">proposed_not_deployed</data>
+    </node>
+    <node id="control:C07">
+      <data key="d0">defense_control</data>
+      <data key="d43">C07</data>
+      <data key="d1">NoSQL sorgu şeması ve operatör allowlist'i</data>
+      <data key="d44">4</data>
+      <data key="d45">0.85</data>
+      <data key="d46">False</data>
+      <data key="d47">proposed_not_deployed</data>
+    </node>
+    <node id="control:C08">
+      <data key="d0">defense_control</data>
+      <data key="d43">C08</data>
+      <data key="d1">Parametreli SQL sorguları</data>
+      <data key="d44">4</data>
+      <data key="d45">0.9</data>
+      <data key="d46">True</data>
+      <data key="d47">proposed_not_deployed</data>
+    </node>
+    <node id="control:C09">
+      <data key="d0">defense_control</data>
+      <data key="d43">C09</data>
+      <data key="d1">Hassas endpoint'lerde kimlik doğrulama zorunluluğu</data>
+      <data key="d44">4</data>
+      <data key="d45">0.9</data>
+      <data key="d46">False</data>
+      <data key="d47">proposed_not_deployed</data>
+    </node>
+    <node id="control:C10">
+      <data key="d0">defense_control</data>
+      <data key="d43">C10</data>
+      <data key="d1">JWT imza ve algoritma doğrulamasını güçlendirme</data>
+      <data key="d44">4</data>
+      <data key="d45">0.9</data>
+      <data key="d46">False</data>
+      <data key="d47">proposed_not_deployed</data>
+    </node>
+    <edge source="system:crAPI" target="service:svc-gateway" id="0">
+      <data key="d48">contains</data>
+    </edge>
+    <edge source="system:crAPI" target="service:svc-web" id="0">
+      <data key="d48">contains</data>
+    </edge>
+    <edge source="system:crAPI" target="service:svc-identity" id="0">
+      <data key="d48">contains</data>
+    </edge>
+    <edge source="system:crAPI" target="service:svc-community" id="0">
+      <data key="d48">contains</data>
+    </edge>
+    <edge source="system:crAPI" target="service:svc-workshop" id="0">
+      <data key="d48">contains</data>
+    </edge>
+    <edge source="system:crAPI" target="service:svc-chatbot" id="0">
+      <data key="d48">contains</data>
+    </edge>
+    <edge source="system:crAPI" target="service:db-postgres" id="0">
+      <data key="d48">contains</data>
+    </edge>
+    <edge source="system:crAPI" target="service:db-mongo" id="0">
+      <data key="d48">contains</data>
+    </edge>
+    <edge source="system:crAPI" target="service:db-chroma" id="0">
+      <data key="d48">contains</data>
+    </edge>
+    <edge source="system:crAPI" target="service:svc-mailhog" id="0">
+      <data key="d48">contains</data>
+    </edge>
+    <edge source="service:svc-gateway" target="service:svc-web" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-gateway" target="service:svc-identity" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-gateway" target="service:svc-workshop" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-gateway" target="service:svc-community" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-web" target="service:svc-mailhog" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-identity" target="service:db-postgres" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-identity" target="service:db-mongo" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-identity" target="service:svc-mailhog" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:POST:/identity/api/auth/signup" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:POST:/identity/api/auth/login" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:POST:/identity/api/auth/verify" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:POST:/identity/api/auth/forget-password" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:POST:/identity/api/auth/v3/check-otp" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:POST:/identity/api/v2/vehicle/resend_email" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:POST:/identity/api/v2/vehicle/add_vehicle" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:GET:/identity/api/v2/user/dashboard" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:GET:/identity/api/v2/vehicle/vehicles" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:GET:/identity/api/v2/vehicle/{vehicle_id}/location" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:POST:/identity/api/v2/user/videos" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:GET:/identity/api/v2/user/videos/{video_id}" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:PUT:/identity/api/v2/user/videos/{video_id}" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:DELETE:/identity/api/v2/user/videos/{video_id}" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:GET:/identity/api/v2/user/videos/convert_video" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:DELETE:/identity/api/v2/admin/videos/{video_id}" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:POST:/identity/api/v2/user/change-email" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:POST:/identity/api/v2/user/verify-email-token" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-identity" target="endpoint:unlisted:/identity/api/auth/v2/check-otp" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-community" target="service:db-postgres" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-community" target="service:db-mongo" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-community" target="service:svc-identity" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-community" target="endpoint:POST:/community/api/v2/coupon/validate-coupon" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-community" target="endpoint:POST:/community/api/v2/community/posts" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-community" target="endpoint:GET:/community/api/v2/community/posts/{post_id}" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-community" target="endpoint:GET:/community/api/v2/community/posts/recent" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-community" target="endpoint:POST:/community/api/v2/community/posts/{post_id}/comment" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-community" target="endpoint:unlisted:/community/api/v2/coupon/apply-coupon" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-workshop" target="service:db-postgres" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-workshop" target="service:db-mongo" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-workshop" target="service:svc-identity" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-workshop" target="service:svc-community" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-workshop" target="endpoint:POST:/workshop/api/shop/apply_coupon" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-workshop" target="endpoint:GET:/workshop/api/mechanic" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-workshop" target="endpoint:POST:/workshop/api/merchant/contact_mechanic" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-workshop" target="endpoint:GET:/workshop/api/mechanic/service_requests" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-workshop" target="endpoint:GET:/workshop/api/mechanic/mechanic_report" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-workshop" target="endpoint:GET:/workshop/api/shop/products" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-workshop" target="endpoint:POST:/workshop/api/shop/products" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-workshop" target="endpoint:POST:/workshop/api/shop/orders" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-workshop" target="endpoint:GET:/workshop/api/shop/orders/all" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-workshop" target="endpoint:GET:/workshop/api/shop/orders/{order_id}" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-workshop" target="endpoint:POST:/workshop/api/shop/orders/return_order" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-workshop" target="endpoint:GET:/workshop/api/management/users/all" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-workshop" target="endpoint:unlisted:/workshop/api/mechanic/receive_report" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-workshop" target="endpoint:unlisted:/workshop/api/merchant/user/videos/{video_id}" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">inventory_api_surface</data>
+    </edge>
+    <edge source="service:svc-chatbot" target="service:db-mongo" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-chatbot" target="service:db-chroma" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-mailhog" target="service:db-mongo" id="0">
+      <data key="d48">depends_on</data>
+      <data key="d49">service_inventory.csv</data>
+    </edge>
+    <edge source="service:svc-mailhog" target="endpoint:GET:/api/v2/search" id="0">
+      <data key="d48">exposes</data>
+      <data key="d50">postman_url_mail_variable</data>
+    </edge>
+    <edge source="endpoint:GET:/identity/api/v2/user/dashboard" target="finding:challenge:15" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="endpoint:GET:/identity/api/v2/vehicle/{vehicle_id}/location" target="finding:challenge:1" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="endpoint:POST:/community/api/v2/coupon/validate-coupon" target="finding:challenge:12" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="endpoint:GET:/community/api/v2/community/posts/recent" target="finding:challenge:4" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="endpoint:POST:/workshop/api/merchant/contact_mechanic" target="finding:challenge:6" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="endpoint:POST:/workshop/api/merchant/contact_mechanic" target="finding:challenge:8" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="endpoint:POST:/workshop/api/merchant/contact_mechanic" target="finding:challenge:11" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="endpoint:GET:/workshop/api/shop/orders/{order_id}" target="finding:challenge:9" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="endpoint:POST:/identity/api/v2/user/videos" target="finding:challenge:14" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="endpoint:GET:/identity/api/v2/user/videos/{video_id}" target="finding:challenge:5" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="endpoint:PUT:/identity/api/v2/user/videos/{video_id}" target="finding:challenge:5" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="endpoint:DELETE:/identity/api/v2/user/videos/{video_id}" target="finding:challenge:5" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="endpoint:DELETE:/identity/api/v2/admin/videos/{video_id}" target="finding:challenge:7" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="finding:challenge:1" target="CWE:CWE-639" id="0">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:1" target="CWE:CWE-639" id="1">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:1" target="CWE:CWE-639" id="2">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Başka kullanıcıya ait kayda, istekle denetlenen vehicle_id/report_id/order_id üzerinden erişim anlatılıyor; CWE-639 kullanıcı denetimli anahtarla yetkilendirme atlatmayı tanımlar.</data>
+    </edge>
+    <edge source="finding:challenge:1" target="CAPEC:CAPEC-210" id="0">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:1" target="CAPEC:CAPEC-210" id="1">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:1" target="CAPEC:CAPEC-1" id="0">
+      <data key="d48">candidate_capec_mapping</data>
+      <data key="d52">medium</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Yetkilendirme çerçevesinin kısıtlamadığı işlev veya sorgu üzerinden korunan kayda erişim, CAPEC-1 ile olası biçimde örtüşür.</data>
+    </edge>
+    <edge source="finding:challenge:1" target="risk:challenge:1" id="0">
+      <data key="d48">has_risk</data>
+    </edge>
+    <edge source="finding:challenge:2" target="CWE:CWE-639" id="0">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:2" target="CWE:CWE-639" id="1">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:2" target="CWE:CWE-639" id="2">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Başka kullanıcıya ait kayda, istekle denetlenen vehicle_id/report_id/order_id üzerinden erişim anlatılıyor; CWE-639 kullanıcı denetimli anahtarla yetkilendirme atlatmayı tanımlar.</data>
+    </edge>
+    <edge source="finding:challenge:2" target="CAPEC:CAPEC-210" id="0">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:2" target="CAPEC:CAPEC-210" id="1">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:2" target="CAPEC:CAPEC-1" id="0">
+      <data key="d48">candidate_capec_mapping</data>
+      <data key="d52">medium</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Yetkilendirme çerçevesinin kısıtlamadığı işlev veya sorgu üzerinden korunan kayda erişim, CAPEC-1 ile olası biçimde örtüşür.</data>
+    </edge>
+    <edge source="finding:challenge:2" target="risk:challenge:2" id="0">
+      <data key="d48">has_risk</data>
+    </edge>
+    <edge source="endpoint:unlisted:/workshop/api/mechanic/receive_report" target="finding:challenge:2" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="finding:challenge:3" target="CWE:CWE-307" id="0">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:3" target="CWE:CWE-307" id="1">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:3" target="CWE:CWE-307" id="2">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">OTP doğrulama girişimlerini sınırlamama, aşırı kimlik doğrulama denemelerinin kısıtlanmamasıyla uyumludur.</data>
+    </edge>
+    <edge source="finding:challenge:3" target="CAPEC:CAPEC-49" id="0">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:3" target="CAPEC:CAPEC-49" id="1">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:3" target="CAPEC:CAPEC-112" id="0">
+      <data key="d48">candidate_capec_mapping</data>
+      <data key="d52">medium</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">OTP değerleri üzerinde deneme-yanılma yapıldıysa genel brute-force örüntüsü uygun olabilir.</data>
+    </edge>
+    <edge source="finding:challenge:3" target="risk:challenge:3" id="0">
+      <data key="d48">has_risk</data>
+    </edge>
+    <edge source="endpoint:unlisted:/identity/api/auth/v2/check-otp" target="finding:challenge:3" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="finding:challenge:4" target="CWE:CWE-213" id="0">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:4" target="CWE:CWE-213" id="1">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:4" target="CAPEC:CAPEC-118" id="0">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:4" target="CAPEC:CAPEC-118" id="1">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:4" target="CAPEC:CAPEC-118" id="2">
+      <data key="d48">candidate_capec_mapping</data>
+      <data key="d52">low</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Bilgi toplama/hedefin beklenenden fazla bilgi vermesi üst kategorisi senaryoyla ilişkili olabilir.</data>
+    </edge>
+    <edge source="finding:challenge:4" target="CWE:CWE-359" id="0">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">E-posta/telefon gibi kişisel bilgilerin yetkisiz aktörlere açılması CWE-359'un özel kişisel bilgi tanımıyla örtüşür.</data>
+    </edge>
+    <edge source="finding:challenge:4" target="CWE:CWE-201" id="0">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Hassas alanların API yanıtında istemciye gönderilmesi, gönderilen veriye hassas bilgi eklenmesiyle örtüşür.</data>
+    </edge>
+    <edge source="finding:challenge:4" target="risk:challenge:4" id="0">
+      <data key="d48">has_risk</data>
+    </edge>
+    <edge source="finding:challenge:5" target="CWE:CWE-200" id="0">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:5" target="CWE:CWE-200" id="1">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:5" target="CWE:CWE-200" id="2">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">medium</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Hassasiyet ve erişim sınırı net değilken CWE-200 genel bir bilgi ifşası adayıdır.</data>
+    </edge>
+    <edge source="finding:challenge:5" target="CAPEC:CAPEC-118" id="0">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:5" target="CAPEC:CAPEC-118" id="1">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:5" target="CAPEC:CAPEC-118" id="2">
+      <data key="d48">candidate_capec_mapping</data>
+      <data key="d52">low</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Bilgi edinme kategorisi üst düzeyde ilişkili olabilir.</data>
+    </edge>
+    <edge source="finding:challenge:5" target="CWE:CWE-201" id="0">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">medium</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">İç parametrelerin API yanıtında istemciye gönderilmesi hassas bilgi gönderimiyle örtüşebilir.</data>
+    </edge>
+    <edge source="finding:challenge:5" target="CWE:CWE-497" id="0">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">low</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Sızan alan sistem düzeyinde hassas uygulama/ortam bilgisi ise CWE-497 değerlendirilebilir.</data>
+    </edge>
+    <edge source="finding:challenge:5" target="risk:challenge:5" id="0">
+      <data key="d48">has_risk</data>
+    </edge>
+    <edge source="finding:challenge:6" target="CWE:CWE-770" id="0">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:6" target="CWE:CWE-770" id="1">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:6" target="CWE:CWE-770" id="2">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">medium</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">İsteklerin kaynak tükettiği belirtiliyor; CWE-770 sınırsız veya kısıtlanmamış kaynak tahsisini kapsar.</data>
+    </edge>
+    <edge source="finding:challenge:6" target="CAPEC:CAPEC-130" id="0">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:6" target="CAPEC:CAPEC-130" id="1">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:6" target="CWE:CWE-799" id="0">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">medium</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Kayıt art arda gelen isteklerin sınırlandırılmamasını açıkça anlatıyor; CWE-799 etkileşim sıklığının kontrolünü ele alır.</data>
+    </edge>
+    <edge source="finding:challenge:6" target="CAPEC:CAPEC-125" id="0">
+      <data key="d48">candidate_capec_mapping</data>
+      <data key="d52">medium</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Çok sayıda istekle kaynak tüketimi ve rate limiting zayıflığı CAPEC-125 Flooding tanımıyla örtüşür.</data>
+    </edge>
+    <edge source="finding:challenge:6" target="risk:challenge:6" id="0">
+      <data key="d48">has_risk</data>
+    </edge>
+    <edge source="finding:challenge:7" target="CWE:CWE-285" id="0">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:7" target="CWE:CWE-285" id="1">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:7" target="CAPEC:CAPEC-233" id="0">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:7" target="CAPEC:CAPEC-233" id="1">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:7" target="CAPEC:CAPEC-233" id="2">
+      <data key="d48">candidate_capec_mapping</data>
+      <data key="d52">medium</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Daha yüksek ayrıcalık gerektiren eylemin yapılması genel ayrıcalık yükseltme örüntüsüne uyabilir.</data>
+    </edge>
+    <edge source="finding:challenge:7" target="CWE:CWE-862" id="0">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">medium</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Standart kullanıcının yönetici işlevini çalıştırması, o eylem için yetkilendirme kontrolü eksikse CWE-862 ile örtüşür.</data>
+    </edge>
+    <edge source="finding:challenge:7" target="CWE:CWE-863" id="0">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">low</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Yetkilendirme kontrolünün yanlış karar verdiği ortaya çıkarsa CWE-863 alternatifidir.</data>
+    </edge>
+    <edge source="finding:challenge:7" target="CAPEC:CAPEC-1" id="0">
+      <data key="d48">candidate_capec_mapping</data>
+      <data key="d52">medium</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Yetkisiz standart kullanıcının ACL ile kısıtlanması gereken yönetim URL'sine erişmesi CAPEC-1 ile olası biçimde örtüşür.</data>
+    </edge>
+    <edge source="finding:challenge:7" target="risk:challenge:7" id="0">
+      <data key="d48">has_risk</data>
+    </edge>
+    <edge source="finding:challenge:8" target="CWE:CWE-918" id="0">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:8" target="CWE:CWE-918" id="1">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:8" target="CWE:CWE-918" id="2">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Kullanıcı girdisinin sunucuyu başka bir hedefe istek göndermeye zorladığı belirtiliyor; bu SSRF tanımıyla örtüşür.</data>
+    </edge>
+    <edge source="finding:challenge:8" target="CAPEC:CAPEC-664" id="0">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:8" target="CAPEC:CAPEC-664" id="1">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:8" target="CAPEC:CAPEC-664" id="2">
+      <data key="d48">candidate_capec_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">CAPEC-664, kötü amaçlı girdinin sunucu tarafında istek başlatmaya zorlamasını doğrudan tanımlar.</data>
+    </edge>
+    <edge source="finding:challenge:8" target="risk:challenge:8" id="0">
+      <data key="d48">has_risk</data>
+    </edge>
+    <edge source="finding:challenge:9" target="CWE:CWE-639" id="0">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:9" target="CWE:CWE-639" id="1">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:9" target="CWE:CWE-639" id="2">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Başka kullanıcıya ait kayda, istekle denetlenen vehicle_id/report_id/order_id üzerinden erişim anlatılıyor; CWE-639 kullanıcı denetimli anahtarla yetkilendirme atlatmayı tanımlar.</data>
+    </edge>
+    <edge source="finding:challenge:9" target="CAPEC:CAPEC-1" id="0">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:9" target="CAPEC:CAPEC-1" id="1">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:9" target="CAPEC:CAPEC-1" id="2">
+      <data key="d48">candidate_capec_mapping</data>
+      <data key="d52">medium</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Yetkilendirme çerçevesinin kısıtlamadığı işlev veya sorgu üzerinden korunan kayda erişim, CAPEC-1 ile olası biçimde örtüşür.</data>
+    </edge>
+    <edge source="finding:challenge:9" target="risk:challenge:9" id="0">
+      <data key="d48">has_risk</data>
+    </edge>
+    <edge source="finding:challenge:10" target="CWE:CWE-915" id="0">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:10" target="CWE:CWE-915" id="1">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:10" target="CWE:CWE-915" id="2">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">İstemci girdisinin nesnedeki dahili alanı değiştirebildiği anlatılıyor; CWE-915 dinamik belirlenen nesne özniteliklerinin kontrolsüz değiştirilmesini ve mass assignment terimini kapsar.</data>
+    </edge>
+    <edge source="finding:challenge:10" target="CAPEC:CAPEC-315" id="0">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:10" target="CAPEC:CAPEC-315" id="1">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:10" target="CAPEC:CAPEC-77" id="0">
+      <data key="d48">candidate_capec_mapping</data>
+      <data key="d52">low</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Kullanıcı denetimli alanların uygulama davranışını değiştirmesiyle kavramsal benzerlik var; CAPEC-77 mass assignment'a özel değildir.</data>
+    </edge>
+    <edge source="finding:challenge:10" target="risk:challenge:10" id="0">
+      <data key="d48">has_risk</data>
+    </edge>
+    <edge source="endpoint:unlisted:/workshop/api/merchant/user/videos/{video_id}" target="finding:challenge:10" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="finding:challenge:11" target="CWE:CWE-918" id="0">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:11" target="CWE:CWE-918" id="1">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:11" target="CWE:CWE-918" id="2">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Kullanıcı girdisinin sunucuyu başka bir hedefe istek göndermeye zorladığı belirtiliyor; bu SSRF tanımıyla örtüşür.</data>
+    </edge>
+    <edge source="finding:challenge:11" target="CAPEC:CAPEC-664" id="0">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:11" target="CAPEC:CAPEC-664" id="1">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:11" target="CAPEC:CAPEC-664" id="2">
+      <data key="d48">candidate_capec_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">CAPEC-664, kötü amaçlı girdinin sunucu tarafında istek başlatmaya zorlamasını doğrudan tanımlar.</data>
+    </edge>
+    <edge source="finding:challenge:11" target="risk:challenge:11" id="0">
+      <data key="d48">has_risk</data>
+    </edge>
+    <edge source="finding:challenge:12" target="CWE:CWE-943" id="0">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:12" target="CWE:CWE-943" id="1">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:12" target="CWE:CWE-943" id="2">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">medium</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Challenge 12'de coupon_code parametresinin NoSQL sorgu mantığını değiştirebilen girdiler kabul ettiği ve filtreleme mekanizmasının atlatılabildiği bildirilmiştir. CWE-943 veri sorgulama mantığındaki özel öğelerin uygun şekilde etkisizleştirilmemesini kapsar.</data>
+    </edge>
+    <edge source="finding:challenge:12" target="CAPEC:CAPEC-248" id="0">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:12" target="CAPEC:CAPEC-248" id="1">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:12" target="CAPEC:CAPEC-676" id="0">
+      <data key="d48">candidate_capec_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">CAPEC-676 doğrudan NoSQL Injection saldırı örüntüsünü tanımlar ve kullanıcı girdisiyle oluşturulan NoSQL sorgularının manipüle edilmesini kapsar.</data>
+    </edge>
+    <edge source="finding:challenge:12" target="risk:challenge:12" id="0">
+      <data key="d48">has_risk</data>
+    </edge>
+    <edge source="finding:challenge:13" target="CWE:CWE-89" id="0">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:13" target="CWE:CWE-89" id="1">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:13" target="CWE:CWE-89" id="2">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Challenge 13'te coupon_code parametresinin SQL sorgularında parametrelendirilmeden kullanıldığı ve SQL enjeksiyonuna neden olduğu belirtilmiştir. CWE-89 bu zafiyetin doğrudan karşılığıdır.</data>
+    </edge>
+    <edge source="finding:challenge:13" target="CAPEC:CAPEC-66" id="0">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:13" target="CAPEC:CAPEC-66" id="1">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:13" target="CAPEC:CAPEC-66" id="2">
+      <data key="d48">candidate_capec_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">CAPEC-66 kullanıcı kontrollü girdilerle SQL ifadelerinin manipüle edilmesini tanımlayan doğrudan SQL Injection saldırı örüntüsüdür.</data>
+    </edge>
+    <edge source="finding:challenge:13" target="risk:challenge:13" id="0">
+      <data key="d48">has_risk</data>
+    </edge>
+    <edge source="endpoint:unlisted:/community/api/v2/coupon/apply-coupon" target="finding:challenge:13" id="0">
+      <data key="d48">has_finding</data>
+      <data key="d49">challenges.csv</data>
+    </edge>
+    <edge source="finding:challenge:14" target="CWE:CWE-306" id="0">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:14" target="CWE:CWE-306" id="1">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:14" target="CWE:CWE-306" id="2">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Challenge 14'te hassas API endpoint'ine Authorization başlığı olmadan erişilebildiği belirtilmiştir. Bu durum kritik işlevlerde kimlik doğrulamasının uygulanmamasıyla örtüşür.</data>
+    </edge>
+    <edge source="finding:challenge:14" target="CAPEC:CAPEC-115" id="0">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:14" target="CAPEC:CAPEC-115" id="1">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:14" target="CAPEC:CAPEC-115" id="2">
+      <data key="d48">candidate_capec_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Kimlik doğrulama kontrolünü atlayarak korunan API işlevine erişim CAPEC-115 Authentication Bypass saldırı örüntüsüyle örtüşür.</data>
+    </edge>
+    <edge source="finding:challenge:14" target="risk:challenge:14" id="0">
+      <data key="d48">has_risk</data>
+    </edge>
+    <edge source="finding:challenge:15" target="CWE:CWE-347" id="0">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:15" target="CWE:CWE-347" id="1">
+      <data key="d48">recorded_cwe_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:15" target="CWE:CWE-347" id="2">
+      <data key="d48">candidate_cwe_mapping</data>
+      <data key="d52">medium</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Challenge 15'te JWT imzasının doğrulanması veya algoritma kontrolüyle ilgili zayıflık nedeniyle sahte token oluşturulabildiği belirtilmiştir.</data>
+    </edge>
+    <edge source="finding:challenge:15" target="CAPEC:CAPEC-633" id="0">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:15" target="CAPEC:CAPEC-633" id="1">
+      <data key="d48">recorded_capec_mapping</data>
+      <data key="d51">recorded_but_not_verified</data>
+    </edge>
+    <edge source="finding:challenge:15" target="CAPEC:CAPEC-633" id="2">
+      <data key="d48">candidate_capec_mapping</data>
+      <data key="d52">high</data>
+      <data key="d51">candidate_not_verified_human_review_required</data>
+      <data key="d53">Sahte erişim belirteciyle başka bir kullanıcının kimliğine bürünülmesi CAPEC-633 Token Impersonation saldırı örüntüsüyle örtüşür.</data>
+    </edge>
+    <edge source="finding:challenge:15" target="risk:challenge:15" id="0">
+      <data key="d48">has_risk</data>
+    </edge>
+    <edge source="risk:challenge:1" target="control:C01" id="0">
+      <data key="d48">mitigated_by</data>
+      <data key="d54">True</data>
+    </edge>
+    <edge source="risk:challenge:2" target="control:C01" id="0">
+      <data key="d48">mitigated_by</data>
+      <data key="d54">True</data>
+    </edge>
+    <edge source="risk:challenge:3" target="control:C03" id="0">
+      <data key="d48">mitigated_by</data>
+      <data key="d54">True</data>
+    </edge>
+    <edge source="risk:challenge:4" target="control:C04" id="0">
+      <data key="d48">mitigated_by</data>
+      <data key="d54">True</data>
+    </edge>
+    <edge source="risk:challenge:5" target="control:C04" id="0">
+      <data key="d48">mitigated_by</data>
+      <data key="d54">True</data>
+    </edge>
+    <edge source="risk:challenge:6" target="control:C03" id="0">
+      <data key="d48">mitigated_by</data>
+      <data key="d54">True</data>
+    </edge>
+    <edge source="risk:challenge:7" target="control:C02" id="0">
+      <data key="d48">mitigated_by</data>
+      <data key="d54">False</data>
+    </edge>
+    <edge source="risk:challenge:8" target="control:C06" id="0">
+      <data key="d48">mitigated_by</data>
+      <data key="d54">True</data>
+    </edge>
+    <edge source="risk:challenge:9" target="control:C01" id="0">
+      <data key="d48">mitigated_by</data>
+      <data key="d54">True</data>
+    </edge>
+    <edge source="risk:challenge:10" target="control:C05" id="0">
+      <data key="d48">mitigated_by</data>
+      <data key="d54">False</data>
+    </edge>
+    <edge source="risk:challenge:11" target="control:C06" id="0">
+      <data key="d48">mitigated_by</data>
+      <data key="d54">True</data>
+    </edge>
+    <edge source="risk:challenge:12" target="control:C07" id="0">
+      <data key="d48">mitigated_by</data>
+      <data key="d54">False</data>
+    </edge>
+    <edge source="risk:challenge:13" target="control:C08" id="0">
+      <data key="d48">mitigated_by</data>
+      <data key="d54">True</data>
+    </edge>
+    <edge source="risk:challenge:14" target="control:C09" id="0">
+      <data key="d48">mitigated_by</data>
+      <data key="d54">False</data>
+    </edge>
+    <edge source="risk:challenge:15" target="control:C10" id="0">
+      <data key="d48">mitigated_by</data>
+      <data key="d54">False</data>
+    </edge>
+  </graph>
+</graphml>

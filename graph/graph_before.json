@@ -1,0 +1,110 @@
+{
+  "target": "crAPI",
+  "finding_count": 15,
+  "validated_finding_count": 14,
+  "analysis_only_finding_count": 1,
+  "budget_units": 20,
+  "selected_control_ids": [
+    "C01",
+    "C03",
+    "C04",
+    "C06",
+    "C08"
+  ],
+  "selected_cost_units": 20,
+  "note": "Bu senaryo, önerilen kontrollerin varsayılan etkinlik oranlarıyla modellenmiş simülasyondur; canlı sistemde uygulanmış kontrol sonucu değildir.",
+  "scenario": "before_defense",
+  "total_risk_points": 1213.0,
+  "findings": [
+    {
+      "challenge_no": 1,
+      "risk_score": 86.0,
+      "risk_level": "Yüksek",
+      "status": "doğrulandı"
+    },
+    {
+      "challenge_no": 2,
+      "risk_score": 86.0,
+      "risk_level": "Yüksek",
+      "status": "doğrulandı"
+    },
+    {
+      "challenge_no": 3,
+      "risk_score": 86.0,
+      "risk_level": "Yüksek",
+      "status": "doğrulandı"
+    },
+    {
+      "challenge_no": 4,
+      "risk_score": 73.0,
+      "risk_level": "Orta",
+      "status": "doğrulandı"
+    },
+    {
+      "challenge_no": 5,
+      "risk_score": 73.0,
+      "risk_level": "Orta",
+      "status": "doğrulandı"
+    },
+    {
+      "challenge_no": 6,
+      "risk_score": 79.0,
+      "risk_level": "Orta",
+      "status": "doğrulandı"
+    },
+    {
+      "challenge_no": 7,
+      "risk_score": 86.0,
+      "risk_level": "Yüksek",
+      "status": "doğrulandı"
+    },
+    {
+      "challenge_no": 8,
+      "risk_score": 71.0,
+      "risk_level": "Orta",
+      "status": "analiz_edildi"
+    },
+    {
+      "challenge_no": 9,
+      "risk_score": 86.0,
+      "risk_level": "Yüksek",
+      "status": "doğrulandı"
+    },
+    {
+      "challenge_no": 10,
+      "risk_score": 79.0,
+      "risk_level": "Orta",
+      "status": "doğrulandı"
+    },
+    {
+      "challenge_no": 11,
+      "risk_score": 86.0,
+      "risk_level": "Yüksek",
+      "status": "doğrulandı"
+    },
+    {
+      "challenge_no": 12,
+      "risk_score": 86.0,
+      "risk_level": "Yüksek",
+      "status": "doğrulandı"
+    },
+    {
+      "challenge_no": 13,
+      "risk_score": 86.0,
+      "risk_level": "Yüksek",
+      "status": "doğrulandı"
+    },
+    {
+      "challenge_no": 14,
+      "risk_score": 78.0,
+      "risk_level": "Orta",
+      "status": "doğrulandı"
+    },
+    {
+      "challenge_no": 15,
+      "risk_score": 72.0,
+      "risk_level": "Orta",
+      "status": "doğrulandı"
+    }
+  ]
+}

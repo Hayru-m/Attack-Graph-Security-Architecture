@@ -1,0 +1,182 @@
+﻿confidence,key,match_basis,rationale,relation,source,target,verification_status
+,0,,,contains,system:crAPI,service:svc-gateway,
+,0,,,contains,system:crAPI,service:svc-web,
+,0,,,contains,system:crAPI,service:svc-identity,
+,0,,,contains,system:crAPI,service:svc-community,
+,0,,,contains,system:crAPI,service:svc-workshop,
+,0,,,contains,system:crAPI,service:svc-chatbot,
+,0,,,contains,system:crAPI,service:db-postgres,
+,0,,,contains,system:crAPI,service:db-mongo,
+,0,,,contains,system:crAPI,service:db-chroma,
+,0,,,contains,system:crAPI,service:svc-mailhog,
+,0,,,depends_on,service_inventory.csv,service:svc-web,
+,0,,,depends_on,service_inventory.csv,service:svc-identity,
+,0,,,depends_on,service_inventory.csv,service:svc-workshop,
+,0,,,depends_on,service_inventory.csv,service:svc-community,
+,0,,,depends_on,service_inventory.csv,service:svc-mailhog,
+,0,,,depends_on,service_inventory.csv,service:db-postgres,
+,0,,,depends_on,service_inventory.csv,service:db-mongo,
+,0,,,depends_on,service_inventory.csv,service:svc-mailhog,
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:POST:/identity/api/auth/signup,
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:POST:/identity/api/auth/login,
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:POST:/identity/api/auth/verify,
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:POST:/identity/api/auth/forget-password,
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:POST:/identity/api/auth/v3/check-otp,
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:POST:/identity/api/v2/vehicle/resend_email,
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:POST:/identity/api/v2/vehicle/add_vehicle,
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:GET:/identity/api/v2/user/dashboard,
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:GET:/identity/api/v2/vehicle/vehicles,
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:GET:/identity/api/v2/vehicle/{vehicle_id}/location,
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:POST:/identity/api/v2/user/videos,
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:GET:/identity/api/v2/user/videos/{video_id},
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:PUT:/identity/api/v2/user/videos/{video_id},
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:DELETE:/identity/api/v2/user/videos/{video_id},
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:GET:/identity/api/v2/user/videos/convert_video,
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:DELETE:/identity/api/v2/admin/videos/{video_id},
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:POST:/identity/api/v2/user/change-email,
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:POST:/identity/api/v2/user/verify-email-token,
+,0,inventory_api_surface,,exposes,service:svc-identity,endpoint:unlisted:/identity/api/auth/v2/check-otp,
+,0,,,depends_on,service_inventory.csv,service:db-postgres,
+,0,,,depends_on,service_inventory.csv,service:db-mongo,
+,0,,,depends_on,service_inventory.csv,service:svc-identity,
+,0,inventory_api_surface,,exposes,service:svc-community,endpoint:POST:/community/api/v2/coupon/validate-coupon,
+,0,inventory_api_surface,,exposes,service:svc-community,endpoint:POST:/community/api/v2/community/posts,
+,0,inventory_api_surface,,exposes,service:svc-community,endpoint:GET:/community/api/v2/community/posts/{post_id},
+,0,inventory_api_surface,,exposes,service:svc-community,endpoint:GET:/community/api/v2/community/posts/recent,
+,0,inventory_api_surface,,exposes,service:svc-community,endpoint:POST:/community/api/v2/community/posts/{post_id}/comment,
+,0,inventory_api_surface,,exposes,service:svc-community,endpoint:unlisted:/community/api/v2/coupon/apply-coupon,
+,0,,,depends_on,service_inventory.csv,service:db-postgres,
+,0,,,depends_on,service_inventory.csv,service:db-mongo,
+,0,,,depends_on,service_inventory.csv,service:svc-identity,
+,0,,,depends_on,service_inventory.csv,service:svc-community,
+,0,inventory_api_surface,,exposes,service:svc-workshop,endpoint:POST:/workshop/api/shop/apply_coupon,
+,0,inventory_api_surface,,exposes,service:svc-workshop,endpoint:GET:/workshop/api/mechanic,
+,0,inventory_api_surface,,exposes,service:svc-workshop,endpoint:POST:/workshop/api/merchant/contact_mechanic,
+,0,inventory_api_surface,,exposes,service:svc-workshop,endpoint:GET:/workshop/api/mechanic/service_requests,
+,0,inventory_api_surface,,exposes,service:svc-workshop,endpoint:GET:/workshop/api/mechanic/mechanic_report,
+,0,inventory_api_surface,,exposes,service:svc-workshop,endpoint:GET:/workshop/api/shop/products,
+,0,inventory_api_surface,,exposes,service:svc-workshop,endpoint:POST:/workshop/api/shop/products,
+,0,inventory_api_surface,,exposes,service:svc-workshop,endpoint:POST:/workshop/api/shop/orders,
+,0,inventory_api_surface,,exposes,service:svc-workshop,endpoint:GET:/workshop/api/shop/orders/all,
+,0,inventory_api_surface,,exposes,service:svc-workshop,endpoint:GET:/workshop/api/shop/orders/{order_id},
+,0,inventory_api_surface,,exposes,service:svc-workshop,endpoint:POST:/workshop/api/shop/orders/return_order,
+,0,inventory_api_surface,,exposes,service:svc-workshop,endpoint:GET:/workshop/api/management/users/all,
+,0,inventory_api_surface,,exposes,service:svc-workshop,endpoint:unlisted:/workshop/api/mechanic/receive_report,
+,0,inventory_api_surface,,exposes,service:svc-workshop,endpoint:unlisted:/workshop/api/merchant/user/videos/{video_id},
+,0,,,depends_on,service_inventory.csv,service:db-mongo,
+,0,,,depends_on,service_inventory.csv,service:db-chroma,
+,0,,,depends_on,service_inventory.csv,service:db-mongo,
+,0,postman_url_mail_variable,,exposes,service:svc-mailhog,endpoint:GET:/api/v2/search,
+,0,,,has_finding,challenges.csv,finding:challenge:15,
+,0,,,has_finding,challenges.csv,finding:challenge:1,
+,0,,,has_finding,challenges.csv,finding:challenge:12,
+,0,,,has_finding,challenges.csv,finding:challenge:4,
+,0,,,has_finding,challenges.csv,finding:challenge:6,
+,0,,,has_finding,challenges.csv,finding:challenge:8,
+,0,,,has_finding,challenges.csv,finding:challenge:11,
+,0,,,has_finding,challenges.csv,finding:challenge:9,
+,0,,,has_finding,challenges.csv,finding:challenge:14,
+,0,,,has_finding,challenges.csv,finding:challenge:5,
+,0,,,has_finding,challenges.csv,finding:challenge:5,
+,0,,,has_finding,challenges.csv,finding:challenge:5,
+,0,,,has_finding,challenges.csv,finding:challenge:7,
+,0,,,recorded_cwe_mapping,finding:challenge:1,CWE:CWE-639,recorded_but_not_verified
+,1,,,recorded_cwe_mapping,finding:challenge:1,CWE:CWE-639,recorded_but_not_verified
+high,2,,"Başka kullanıcıya ait kayda, istekle denetlenen vehicle_id/report_id/order_id üzerinden erişim anlatılıyor; CWE-639 kullanıcı denetimli anahtarla yetkilendirme atlatmayı tanımlar.",candidate_cwe_mapping,finding:challenge:1,CWE:CWE-639,candidate_not_verified_human_review_required
+,0,,,recorded_capec_mapping,finding:challenge:1,CAPEC:CAPEC-210,recorded_but_not_verified
+,1,,,recorded_capec_mapping,finding:challenge:1,CAPEC:CAPEC-210,recorded_but_not_verified
+medium,0,,"Yetkilendirme çerçevesinin kısıtlamadığı işlev veya sorgu üzerinden korunan kayda erişim, CAPEC-1 ile olası biçimde örtüşür.",candidate_capec_mapping,finding:challenge:1,CAPEC:CAPEC-1,candidate_not_verified_human_review_required
+,0,,,recorded_cwe_mapping,finding:challenge:2,CWE:CWE-639,recorded_but_not_verified
+,1,,,recorded_cwe_mapping,finding:challenge:2,CWE:CWE-639,recorded_but_not_verified
+high,2,,"Başka kullanıcıya ait kayda, istekle denetlenen vehicle_id/report_id/order_id üzerinden erişim anlatılıyor; CWE-639 kullanıcı denetimli anahtarla yetkilendirme atlatmayı tanımlar.",candidate_cwe_mapping,finding:challenge:2,CWE:CWE-639,candidate_not_verified_human_review_required
+,0,,,recorded_capec_mapping,finding:challenge:2,CAPEC:CAPEC-210,recorded_but_not_verified
+,1,,,recorded_capec_mapping,finding:challenge:2,CAPEC:CAPEC-210,recorded_but_not_verified
+medium,0,,"Yetkilendirme çerçevesinin kısıtlamadığı işlev veya sorgu üzerinden korunan kayda erişim, CAPEC-1 ile olası biçimde örtüşür.",candidate_capec_mapping,finding:challenge:2,CAPEC:CAPEC-1,candidate_not_verified_human_review_required
+,0,,,has_finding,challenges.csv,finding:challenge:2,
+,0,,,recorded_cwe_mapping,finding:challenge:3,CWE:CWE-307,recorded_but_not_verified
+,1,,,recorded_cwe_mapping,finding:challenge:3,CWE:CWE-307,recorded_but_not_verified
+high,2,,"OTP doğrulama girişimlerini sınırlamama, aşırı kimlik doğrulama denemelerinin kısıtlanmamasıyla uyumludur.",candidate_cwe_mapping,finding:challenge:3,CWE:CWE-307,candidate_not_verified_human_review_required
+,0,,,recorded_capec_mapping,finding:challenge:3,CAPEC:CAPEC-49,recorded_but_not_verified
+,1,,,recorded_capec_mapping,finding:challenge:3,CAPEC:CAPEC-49,recorded_but_not_verified
+medium,0,,OTP değerleri üzerinde deneme-yanılma yapıldıysa genel brute-force örüntüsü uygun olabilir.,candidate_capec_mapping,finding:challenge:3,CAPEC:CAPEC-112,candidate_not_verified_human_review_required
+,0,,,has_finding,challenges.csv,finding:challenge:3,
+,0,,,recorded_cwe_mapping,finding:challenge:4,CWE:CWE-213,recorded_but_not_verified
+,1,,,recorded_cwe_mapping,finding:challenge:4,CWE:CWE-213,recorded_but_not_verified
+,0,,,recorded_capec_mapping,finding:challenge:4,CAPEC:CAPEC-118,recorded_but_not_verified
+,1,,,recorded_capec_mapping,finding:challenge:4,CAPEC:CAPEC-118,recorded_but_not_verified
+low,2,,Bilgi toplama/hedefin beklenenden fazla bilgi vermesi üst kategorisi senaryoyla ilişkili olabilir.,candidate_capec_mapping,finding:challenge:4,CAPEC:CAPEC-118,candidate_not_verified_human_review_required
+high,0,,E-posta/telefon gibi kişisel bilgilerin yetkisiz aktörlere açılması CWE-359'un özel kişisel bilgi tanımıyla örtüşür.,candidate_cwe_mapping,finding:challenge:4,CWE:CWE-359,candidate_not_verified_human_review_required
+high,0,,"Hassas alanların API yanıtında istemciye gönderilmesi, gönderilen veriye hassas bilgi eklenmesiyle örtüşür.",candidate_cwe_mapping,finding:challenge:4,CWE:CWE-201,candidate_not_verified_human_review_required
+,0,,,recorded_cwe_mapping,finding:challenge:5,CWE:CWE-200,recorded_but_not_verified
+,1,,,recorded_cwe_mapping,finding:challenge:5,CWE:CWE-200,recorded_but_not_verified
+medium,2,,Hassasiyet ve erişim sınırı net değilken CWE-200 genel bir bilgi ifşası adayıdır.,candidate_cwe_mapping,finding:challenge:5,CWE:CWE-200,candidate_not_verified_human_review_required
+,0,,,recorded_capec_mapping,finding:challenge:5,CAPEC:CAPEC-118,recorded_but_not_verified
+,1,,,recorded_capec_mapping,finding:challenge:5,CAPEC:CAPEC-118,recorded_but_not_verified
+low,2,,Bilgi edinme kategorisi üst düzeyde ilişkili olabilir.,candidate_capec_mapping,finding:challenge:5,CAPEC:CAPEC-118,candidate_not_verified_human_review_required
+medium,0,,İç parametrelerin API yanıtında istemciye gönderilmesi hassas bilgi gönderimiyle örtüşebilir.,candidate_cwe_mapping,finding:challenge:5,CWE:CWE-201,candidate_not_verified_human_review_required
+low,0,,Sızan alan sistem düzeyinde hassas uygulama/ortam bilgisi ise CWE-497 değerlendirilebilir.,candidate_cwe_mapping,finding:challenge:5,CWE:CWE-497,candidate_not_verified_human_review_required
+,0,,,recorded_cwe_mapping,finding:challenge:6,CWE:CWE-770,recorded_but_not_verified
+,1,,,recorded_cwe_mapping,finding:challenge:6,CWE:CWE-770,recorded_but_not_verified
+medium,2,,İsteklerin kaynak tükettiği belirtiliyor; CWE-770 sınırsız veya kısıtlanmamış kaynak tahsisini kapsar.,candidate_cwe_mapping,finding:challenge:6,CWE:CWE-770,candidate_not_verified_human_review_required
+,0,,,recorded_capec_mapping,finding:challenge:6,CAPEC:CAPEC-130,recorded_but_not_verified
+,1,,,recorded_capec_mapping,finding:challenge:6,CAPEC:CAPEC-130,recorded_but_not_verified
+medium,0,,Kayıt art arda gelen isteklerin sınırlandırılmamasını açıkça anlatıyor; CWE-799 etkileşim sıklığının kontrolünü ele alır.,candidate_cwe_mapping,finding:challenge:6,CWE:CWE-799,candidate_not_verified_human_review_required
+medium,0,,Çok sayıda istekle kaynak tüketimi ve rate limiting zayıflığı CAPEC-125 Flooding tanımıyla örtüşür.,candidate_capec_mapping,finding:challenge:6,CAPEC:CAPEC-125,candidate_not_verified_human_review_required
+,0,,,recorded_cwe_mapping,finding:challenge:7,CWE:CWE-285,recorded_but_not_verified
+,1,,,recorded_cwe_mapping,finding:challenge:7,CWE:CWE-285,recorded_but_not_verified
+,0,,,recorded_capec_mapping,finding:challenge:7,CAPEC:CAPEC-233,recorded_but_not_verified
+,1,,,recorded_capec_mapping,finding:challenge:7,CAPEC:CAPEC-233,recorded_but_not_verified
+medium,2,,Daha yüksek ayrıcalık gerektiren eylemin yapılması genel ayrıcalık yükseltme örüntüsüne uyabilir.,candidate_capec_mapping,finding:challenge:7,CAPEC:CAPEC-233,candidate_not_verified_human_review_required
+medium,0,,"Standart kullanıcının yönetici işlevini çalıştırması, o eylem için yetkilendirme kontrolü eksikse CWE-862 ile örtüşür.",candidate_cwe_mapping,finding:challenge:7,CWE:CWE-862,candidate_not_verified_human_review_required
+low,0,,Yetkilendirme kontrolünün yanlış karar verdiği ortaya çıkarsa CWE-863 alternatifidir.,candidate_cwe_mapping,finding:challenge:7,CWE:CWE-863,candidate_not_verified_human_review_required
+medium,0,,Yetkisiz standart kullanıcının ACL ile kısıtlanması gereken yönetim URL'sine erişmesi CAPEC-1 ile olası biçimde örtüşür.,candidate_capec_mapping,finding:challenge:7,CAPEC:CAPEC-1,candidate_not_verified_human_review_required
+,0,,,recorded_cwe_mapping,finding:challenge:8,CWE:CWE-918,recorded_but_not_verified
+,1,,,recorded_cwe_mapping,finding:challenge:8,CWE:CWE-918,recorded_but_not_verified
+high,2,,Kullanıcı girdisinin sunucuyu başka bir hedefe istek göndermeye zorladığı belirtiliyor; bu SSRF tanımıyla örtüşür.,candidate_cwe_mapping,finding:challenge:8,CWE:CWE-918,candidate_not_verified_human_review_required
+,0,,,recorded_capec_mapping,finding:challenge:8,CAPEC:CAPEC-664,recorded_but_not_verified
+,1,,,recorded_capec_mapping,finding:challenge:8,CAPEC:CAPEC-664,recorded_but_not_verified
+high,2,,"CAPEC-664, kötü amaçlı girdinin sunucu tarafında istek başlatmaya zorlamasını doğrudan tanımlar.",candidate_capec_mapping,finding:challenge:8,CAPEC:CAPEC-664,candidate_not_verified_human_review_required
+,0,,,recorded_cwe_mapping,finding:challenge:9,CWE:CWE-639,recorded_but_not_verified
+,1,,,recorded_cwe_mapping,finding:challenge:9,CWE:CWE-639,recorded_but_not_verified
+high,2,,"Başka kullanıcıya ait kayda, istekle denetlenen vehicle_id/report_id/order_id üzerinden erişim anlatılıyor; CWE-639 kullanıcı denetimli anahtarla yetkilendirme atlatmayı tanımlar.",candidate_cwe_mapping,finding:challenge:9,CWE:CWE-639,candidate_not_verified_human_review_required
+,0,,,recorded_capec_mapping,finding:challenge:9,CAPEC:CAPEC-1,recorded_but_not_verified
+,1,,,recorded_capec_mapping,finding:challenge:9,CAPEC:CAPEC-1,recorded_but_not_verified
+medium,2,,"Yetkilendirme çerçevesinin kısıtlamadığı işlev veya sorgu üzerinden korunan kayda erişim, CAPEC-1 ile olası biçimde örtüşür.",candidate_capec_mapping,finding:challenge:9,CAPEC:CAPEC-1,candidate_not_verified_human_review_required
+,0,,,recorded_cwe_mapping,finding:challenge:10,CWE:CWE-915,recorded_but_not_verified
+,1,,,recorded_cwe_mapping,finding:challenge:10,CWE:CWE-915,recorded_but_not_verified
+high,2,,İstemci girdisinin nesnedeki dahili alanı değiştirebildiği anlatılıyor; CWE-915 dinamik belirlenen nesne özniteliklerinin kontrolsüz değiştirilmesini ve mass assignment terimini kapsar.,candidate_cwe_mapping,finding:challenge:10,CWE:CWE-915,candidate_not_verified_human_review_required
+,0,,,recorded_capec_mapping,finding:challenge:10,CAPEC:CAPEC-315,recorded_but_not_verified
+,1,,,recorded_capec_mapping,finding:challenge:10,CAPEC:CAPEC-315,recorded_but_not_verified
+low,0,,Kullanıcı denetimli alanların uygulama davranışını değiştirmesiyle kavramsal benzerlik var; CAPEC-77 mass assignment'a özel değildir.,candidate_capec_mapping,finding:challenge:10,CAPEC:CAPEC-77,candidate_not_verified_human_review_required
+,0,,,has_finding,challenges.csv,finding:challenge:10,
+,0,,,recorded_cwe_mapping,finding:challenge:11,CWE:CWE-918,recorded_but_not_verified
+,1,,,recorded_cwe_mapping,finding:challenge:11,CWE:CWE-918,recorded_but_not_verified
+high,2,,Kullanıcı girdisinin sunucuyu başka bir hedefe istek göndermeye zorladığı belirtiliyor; bu SSRF tanımıyla örtüşür.,candidate_cwe_mapping,finding:challenge:11,CWE:CWE-918,candidate_not_verified_human_review_required
+,0,,,recorded_capec_mapping,finding:challenge:11,CAPEC:CAPEC-664,recorded_but_not_verified
+,1,,,recorded_capec_mapping,finding:challenge:11,CAPEC:CAPEC-664,recorded_but_not_verified
+high,2,,"CAPEC-664, kötü amaçlı girdinin sunucu tarafında istek başlatmaya zorlamasını doğrudan tanımlar.",candidate_capec_mapping,finding:challenge:11,CAPEC:CAPEC-664,candidate_not_verified_human_review_required
+,0,,,recorded_cwe_mapping,finding:challenge:12,CWE:CWE-943,recorded_but_not_verified
+,1,,,recorded_cwe_mapping,finding:challenge:12,CWE:CWE-943,recorded_but_not_verified
+medium,2,,Challenge 12'de coupon_code parametresinin NoSQL sorgu mantığını değiştirebilen girdiler kabul ettiği ve filtreleme mekanizmasının atlatılabildiği bildirilmiştir. CWE-943 veri sorgulama mantığındaki özel öğelerin uygun şekilde etkisizleştirilmemesini kapsar.,candidate_cwe_mapping,finding:challenge:12,CWE:CWE-943,candidate_not_verified_human_review_required
+,0,,,recorded_capec_mapping,finding:challenge:12,CAPEC:CAPEC-248,recorded_but_not_verified
+,1,,,recorded_capec_mapping,finding:challenge:12,CAPEC:CAPEC-248,recorded_but_not_verified
+high,0,,CAPEC-676 doğrudan NoSQL Injection saldırı örüntüsünü tanımlar ve kullanıcı girdisiyle oluşturulan NoSQL sorgularının manipüle edilmesini kapsar.,candidate_capec_mapping,finding:challenge:12,CAPEC:CAPEC-676,candidate_not_verified_human_review_required
+,0,,,recorded_cwe_mapping,finding:challenge:13,CWE:CWE-89,recorded_but_not_verified
+,1,,,recorded_cwe_mapping,finding:challenge:13,CWE:CWE-89,recorded_but_not_verified
+high,2,,Challenge 13'te coupon_code parametresinin SQL sorgularında parametrelendirilmeden kullanıldığı ve SQL enjeksiyonuna neden olduğu belirtilmiştir. CWE-89 bu zafiyetin doğrudan karşılığıdır.,candidate_cwe_mapping,finding:challenge:13,CWE:CWE-89,candidate_not_verified_human_review_required
+,0,,,recorded_capec_mapping,finding:challenge:13,CAPEC:CAPEC-66,recorded_but_not_verified
+,1,,,recorded_capec_mapping,finding:challenge:13,CAPEC:CAPEC-66,recorded_but_not_verified
+high,2,,CAPEC-66 kullanıcı kontrollü girdilerle SQL ifadelerinin manipüle edilmesini tanımlayan doğrudan SQL Injection saldırı örüntüsüdür.,candidate_capec_mapping,finding:challenge:13,CAPEC:CAPEC-66,candidate_not_verified_human_review_required
+,0,,,has_finding,challenges.csv,finding:challenge:13,
+,0,,,recorded_cwe_mapping,finding:challenge:14,CWE:CWE-306,recorded_but_not_verified
+,1,,,recorded_cwe_mapping,finding:challenge:14,CWE:CWE-306,recorded_but_not_verified
+high,2,,Challenge 14'te hassas API endpoint'ine Authorization başlığı olmadan erişilebildiği belirtilmiştir. Bu durum kritik işlevlerde kimlik doğrulamasının uygulanmamasıyla örtüşür.,candidate_cwe_mapping,finding:challenge:14,CWE:CWE-306,candidate_not_verified_human_review_required
+,0,,,recorded_capec_mapping,finding:challenge:14,CAPEC:CAPEC-115,recorded_but_not_verified
+,1,,,recorded_capec_mapping,finding:challenge:14,CAPEC:CAPEC-115,recorded_but_not_verified
+high,2,,Kimlik doğrulama kontrolünü atlayarak korunan API işlevine erişim CAPEC-115 Authentication Bypass saldırı örüntüsüyle örtüşür.,candidate_capec_mapping,finding:challenge:14,CAPEC:CAPEC-115,candidate_not_verified_human_review_required
+,0,,,recorded_cwe_mapping,finding:challenge:15,CWE:CWE-347,recorded_but_not_verified
+,1,,,recorded_cwe_mapping,finding:challenge:15,CWE:CWE-347,recorded_but_not_verified
+medium,2,,Challenge 15'te JWT imzasının doğrulanması veya algoritma kontrolüyle ilgili zayıflık nedeniyle sahte token oluşturulabildiği belirtilmiştir.,candidate_cwe_mapping,finding:challenge:15,CWE:CWE-347,candidate_not_verified_human_review_required
+,0,,,recorded_capec_mapping,finding:challenge:15,CAPEC:CAPEC-633,recorded_but_not_verified
+,1,,,recorded_capec_mapping,finding:challenge:15,CAPEC:CAPEC-633,recorded_but_not_verified
+high,2,,Sahte erişim belirteciyle başka bir kullanıcının kimliğine bürünülmesi CAPEC-633 Token Impersonation saldırı örüntüsüyle örtüşür.,candidate_capec_mapping,finding:challenge:15,CAPEC:CAPEC-633,candidate_not_verified_human_review_required

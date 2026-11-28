@@ -101,6 +101,26 @@ CWE_CATALOG: dict[str, dict[str, str]] = {
         "abstraction": "Base",
         "mapping_guidance": "allowed",
     },
+        "CWE-943": {
+        "title": "Improper Neutralization of Special Elements in Data Query Logic",
+        "abstraction": "Class",
+        "mapping_guidance": "allowed with review; inspect more-specific children",
+    },
+    "CWE-89": {
+        "title": "Improper Neutralization of Special Elements used in an SQL Command",
+        "abstraction": "Base",
+        "mapping_guidance": "allowed",
+    },
+        "CWE-306": {
+        "title": "Missing Authentication for Critical Functionality",
+        "abstraction": "Base",
+        "mapping_guidance": "allowed",
+    },
+    "CWE-347": {
+        "title": "Improper Verification of Cryptographic Signature",
+        "abstraction": "Base",
+        "mapping_guidance": "allowed",
+    },
 }
 
 CAPEC_CATALOG: dict[str, dict[str, Any]] = {
@@ -157,6 +177,31 @@ CAPEC_CATALOG: dict[str, dict[str, Any]] = {
     "CAPEC-664": {
         "title": "Server Side Request Forgery",
         "abstraction": "Standard",
+        "deprecated": False,
+    },
+        "CAPEC-66": {
+        "title": "SQL Injection",
+        "abstraction": "Standard",
+        "deprecated": False,
+    },
+    "CAPEC-248": {
+        "title": "Command Injection",
+        "abstraction": "Meta",
+        "deprecated": False,
+    },
+    "CAPEC-676": {
+        "title": "NoSQL Injection",
+        "abstraction": "Standard",
+        "deprecated": False,
+    },
+        "CAPEC-115": {
+        "title": "Authentication Bypass",
+        "abstraction": "Meta",
+        "deprecated": False,
+    },
+    "CAPEC-633": {
+        "title": "Token Impersonation",
+        "abstraction": "Detailed",
         "deprecated": False,
     },
 }
@@ -356,7 +401,36 @@ def infer_candidates(finding: dict[str, Any]) -> tuple[list[dict[str, Any]], lis
             flags.append("Mevcut CAPEC-210 genel bir CAPEC kategorisidir; tekniğe özgü saldırı örüntüsü olarak fazla geneldir.")
         if finding["existing_capec"].upper() == "CAPEC-1":
             flags.append("Mevcut CAPEC-1 olasıdır ancak işlev ACL'sini anlatır; nesne düzeyi sahiplik kontrolü ayrıca incelenmeli.")
+    elif "missing authentication" in category:
+        cwe.append(candidate(
+            "cwe",
+            "CWE-306",
+            "high",
+            "Challenge 14'te hassas API endpoint'ine Authorization başlığı olmadan erişilebildiği belirtilmiştir. Bu durum kritik işlevlerde kimlik doğrulamasının uygulanmamasıyla örtüşür.",
+        ))
 
+        capec.append(candidate(
+            "capec",
+            "CAPEC-115",
+            "high",
+            "Kimlik doğrulama kontrolünü atlayarak korunan API işlevine erişim CAPEC-115 Authentication Bypass saldırı örüntüsüyle örtüşür.",
+        ))
+
+    elif "jwt" in category or "jwt" in text or "forged token" in text:
+        cwe.append(candidate(
+            "cwe",
+            "CWE-347",
+            "medium",
+            "Challenge 15'te JWT imzasının doğrulanması veya algoritma kontrolüyle ilgili zayıflık nedeniyle sahte token oluşturulabildiği belirtilmiştir.",
+            caveat="Zayıflığın gerçekten imza doğrulama eksikliği mi yoksa yalnızca zayıf gizli anahtar mı olduğu kanıt üzerinden ayrıştırılmalıdır.",
+        ))
+
+        capec.append(candidate(
+            "capec",
+            "CAPEC-633",
+            "high",
+            "Sahte erişim belirteciyle başka bir kullanıcının kimliğine bürünülmesi CAPEC-633 Token Impersonation saldırı örüntüsüyle örtüşür.",
+        ))
     elif "broken authentication" in category or "otp" in text or "one-time password" in text:
         cwe.append(candidate(
             "cwe", "CWE-307", "high",
@@ -457,6 +531,42 @@ def infer_candidates(finding: dict[str, Any]) -> tuple[list[dict[str, Any]], lis
             flags.append("CWE-200 genel bir Class'tır; conversion_params'ın hassasiyet ve yetkisiz alıcı bağlamı netleştirilmeli.")
         if finding["existing_capec"].upper() == "CAPEC-118":
             flags.append("CAPEC-118 bilgi toplama kategorisidir; saldırı tekniği için fazla geneldir.")
+    elif "nosql injection" in category or "nosql injection" in text:
+        cwe.append(candidate(
+            "cwe",
+            "CWE-943",
+            "medium",
+            "Challenge 12'de coupon_code parametresinin NoSQL sorgu mantığını değiştirebilen girdiler kabul ettiği ve filtreleme mekanizmasının atlatılabildiği bildirilmiştir. CWE-943 veri sorgulama mantığındaki özel öğelerin uygun şekilde etkisizleştirilmemesini kapsar.",
+            caveat="CWE-943 Class seviyesindedir. Daha özel bir alt CWE bulunup bulunmadığı ayrıca incelenmelidir.",
+        ))
+
+        capec.append(candidate(
+            "capec",
+            "CAPEC-676",
+            "high",
+            "CAPEC-676 doğrudan NoSQL Injection saldırı örüntüsünü tanımlar ve kullanıcı girdisiyle oluşturulan NoSQL sorgularının manipüle edilmesini kapsar.",
+        ))
+
+        if finding["existing_capec"].upper() == "CAPEC-248":
+            flags.append(
+                "Mevcut CAPEC-248 genel Meta seviyesinde Command Injection örüntüsüdür. "
+                "CAPEC-676 daha özel NoSQL Injection eşleşmesidir."
+            )
+
+    elif "sql injection" in category or "sql injection" in text:
+        cwe.append(candidate(
+            "cwe",
+            "CWE-89",
+            "high",
+            "Challenge 13'te coupon_code parametresinin SQL sorgularında parametrelendirilmeden kullanıldığı ve SQL enjeksiyonuna neden olduğu belirtilmiştir. CWE-89 bu zafiyetin doğrudan karşılığıdır.",
+        ))
+
+        capec.append(candidate(
+            "capec",
+            "CAPEC-66",
+            "high",
+            "CAPEC-66 kullanıcı kontrollü girdilerle SQL ifadelerinin manipüle edilmesini tanımlayan doğrudan SQL Injection saldırı örüntüsüdür.",
+        ))
 
     else:
         flags.append("Kategori/açıklama için güvenilir bir özel kural bulunamadı; otomatik CWE/CAPEC önerisi üretilmedi.")

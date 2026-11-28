@@ -216,3 +216,20 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Temporary backup files
+*.bak
+
+# Environment files
+.env.*
+!.env.example
+
+@"
+
+# Temporary backup files
+*.bak
+
+# Environment files
+.env.*
+!.env.example
+"@ | Add-Content .gitignore

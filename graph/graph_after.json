@@ -1,0 +1,173 @@
+{
+  "target": "crAPI",
+  "finding_count": 15,
+  "validated_finding_count": 14,
+  "analysis_only_finding_count": 1,
+  "budget_units": 20,
+  "selected_control_ids": [
+    "C01",
+    "C03",
+    "C04",
+    "C06",
+    "C08"
+  ],
+  "selected_cost_units": 20,
+  "note": "Bu senaryo, önerilen kontrollerin varsayılan etkinlik oranlarıyla modellenmiş simülasyondur; canlı sistemde uygulanmış kontrol sonucu değildir.",
+  "scenario": "after_defense_simulation",
+  "total_baseline_risk_points": 1213.0,
+  "total_residual_risk_points": 541.35,
+  "risk_reduction_points": 671.65,
+  "risk_reduction_percent": 55.37,
+  "findings": [
+    {
+      "challenge_no": 1,
+      "baseline_risk_score": 86.0,
+      "residual_risk_score": 12.9,
+      "risk_reduction_pct_for_finding": 85.0,
+      "selected_control_id": "C01",
+      "selected_control": "Nesne seviyesinde yetkilendirme",
+      "status": "doğrulandı",
+      "scenario_type": "simülasyon"
+    },
+    {
+      "challenge_no": 2,
+      "baseline_risk_score": 86.0,
+      "residual_risk_score": 12.9,
+      "risk_reduction_pct_for_finding": 85.0,
+      "selected_control_id": "C01",
+      "selected_control": "Nesne seviyesinde yetkilendirme",
+      "status": "doğrulandı",
+      "scenario_type": "simülasyon"
+    },
+    {
+      "challenge_no": 3,
+      "baseline_risk_score": 86.0,
+      "residual_risk_score": 17.2,
+      "risk_reduction_pct_for_finding": 80.0,
+      "selected_control_id": "C03",
+      "selected_control": "Rate limiting ve OTP deneme sınırı",
+      "status": "doğrulandı",
+      "scenario_type": "simülasyon"
+    },
+    {
+      "challenge_no": 4,
+      "baseline_risk_score": 73.0,
+      "residual_risk_score": 18.25,
+      "risk_reduction_pct_for_finding": 75.0,
+      "selected_control_id": "C04",
+      "selected_control": "Yanıt alanı allowlist'i ve veri minimizasyonu",
+      "status": "doğrulandı",
+      "scenario_type": "simülasyon"
+    },
+    {
+      "challenge_no": 5,
+      "baseline_risk_score": 73.0,
+      "residual_risk_score": 18.25,
+      "risk_reduction_pct_for_finding": 75.0,
+      "selected_control_id": "C04",
+      "selected_control": "Yanıt alanı allowlist'i ve veri minimizasyonu",
+      "status": "doğrulandı",
+      "scenario_type": "simülasyon"
+    },
+    {
+      "challenge_no": 6,
+      "baseline_risk_score": 79.0,
+      "residual_risk_score": 15.8,
+      "risk_reduction_pct_for_finding": 80.0,
+      "selected_control_id": "C03",
+      "selected_control": "Rate limiting ve OTP deneme sınırı",
+      "status": "doğrulandı",
+      "scenario_type": "simülasyon"
+    },
+    {
+      "challenge_no": 7,
+      "baseline_risk_score": 86.0,
+      "residual_risk_score": 86.0,
+      "risk_reduction_pct_for_finding": 0.0,
+      "selected_control_id": "",
+      "selected_control": "",
+      "status": "doğrulandı",
+      "scenario_type": "simülasyon"
+    },
+    {
+      "challenge_no": 8,
+      "baseline_risk_score": 71.0,
+      "residual_risk_score": 10.65,
+      "risk_reduction_pct_for_finding": 85.0,
+      "selected_control_id": "C06",
+      "selected_control": "SSRF URL doğrulama ve egress kısıtlaması",
+      "status": "analiz_edildi",
+      "scenario_type": "simülasyon"
+    },
+    {
+      "challenge_no": 9,
+      "baseline_risk_score": 86.0,
+      "residual_risk_score": 12.9,
+      "risk_reduction_pct_for_finding": 85.0,
+      "selected_control_id": "C01",
+      "selected_control": "Nesne seviyesinde yetkilendirme",
+      "status": "doğrulandı",
+      "scenario_type": "simülasyon"
+    },
+    {
+      "challenge_no": 10,
+      "baseline_risk_score": 79.0,
+      "residual_risk_score": 79.0,
+      "risk_reduction_pct_for_finding": 0.0,
+      "selected_control_id": "",
+      "selected_control": "",
+      "status": "doğrulandı",
+      "scenario_type": "simülasyon"
+    },
+    {
+      "challenge_no": 11,
+      "baseline_risk_score": 86.0,
+      "residual_risk_score": 12.9,
+      "risk_reduction_pct_for_finding": 85.0,
+      "selected_control_id": "C06",
+      "selected_control": "SSRF URL doğrulama ve egress kısıtlaması",
+      "status": "doğrulandı",
+      "scenario_type": "simülasyon"
+    },
+    {
+      "challenge_no": 12,
+      "baseline_risk_score": 86.0,
+      "residual_risk_score": 86.0,
+      "risk_reduction_pct_for_finding": 0.0,
+      "selected_control_id": "",
+      "selected_control": "",
+      "status": "doğrulandı",
+      "scenario_type": "simülasyon"
+    },
+    {
+      "challenge_no": 13,
+      "baseline_risk_score": 86.0,
+      "residual_risk_score": 8.6,
+      "risk_reduction_pct_for_finding": 90.0,
+      "selected_control_id": "C08",
+      "selected_control": "Parametreli SQL sorguları",
+      "status": "doğrulandı",
+      "scenario_type": "simülasyon"
+    },
+    {
+      "challenge_no": 14,
+      "baseline_risk_score": 78.0,
+      "residual_risk_score": 78.0,
+      "risk_reduction_pct_for_finding": 0.0,
+      "selected_control_id": "",
+      "selected_control": "",
+      "status": "doğrulandı",
+      "scenario_type": "simülasyon"
+    },
+    {
+      "challenge_no": 15,
+      "baseline_risk_score": 72.0,
+      "residual_risk_score": 72.0,
+      "risk_reduction_pct_for_finding": 0.0,
+      "selected_control_id": "",
+      "selected_control": "",
+      "status": "doğrulandı",
+      "scenario_type": "simülasyon"
+    }
+  ]
+}

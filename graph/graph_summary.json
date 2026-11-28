@@ -1,0 +1,60 @@
+{
+  "graph_type": "directed_multigraph",
+  "target": "crAPI",
+  "node_count": 101,
+  "edge_count": 181,
+  "challenge_count": 15,
+  "service_count": 10,
+  "endpoint_count": 41,
+  "finding_count": 15,
+  "weakness_count": 18,
+  "attack_pattern_count": 16,
+  "attack_technique_count": 0,
+  "openapi_matched_findings": 11,
+  "unmatched_challenge_endpoints": [
+    {
+      "challenge_no": "2",
+      "endpoint": "/workshop/api/mechanic/receive_report"
+    },
+    {
+      "challenge_no": "3",
+      "endpoint": "/identity/api/auth/v2/check-otp"
+    },
+    {
+      "challenge_no": "10",
+      "endpoint": "/workshop/api/merchant/user/videos/{video_id}"
+    },
+    {
+      "challenge_no": "13",
+      "endpoint": "/community/api/v2/coupon/apply-coupon"
+    }
+  ],
+  "missing_evidence_folders": [],
+  "finding_status_distribution": {
+    "doğrulandı": 14,
+    "analiz_edildi": 1
+  },
+  "node_type_distribution": {
+    "system": 1,
+    "service": 10,
+    "endpoint": 41,
+    "finding": 15,
+    "weakness": 18,
+    "attack_pattern": 16
+  },
+  "edge_type_distribution": {
+    "contains": 10,
+    "depends_on": 18,
+    "exposes": 40,
+    "has_finding": 17,
+    "recorded_cwe_mapping": 30,
+    "candidate_cwe_mapping": 20,
+    "recorded_capec_mapping": 30,
+    "candidate_capec_mapping": 16
+  },
+  "warnings": [
+    "4 challenge endpoint was not found in the Postman-derived OpenAPI paths.",
+    "No ATT&CK technique IDs were found in the supplied CSV or mapping candidates. No ATT&CK nodes were invented."
+  ],
+  "mapping_note": "Recorded mappings and candidate mappings are kept separate. Candidate mappings are not treated as verified."
+}

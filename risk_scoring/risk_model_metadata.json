@@ -1,0 +1,23 @@
+{
+  "model_type": "weighted_rule_based",
+  "is_cvss": false,
+  "weights": {
+    "impact": 0.35,
+    "exploitability": 0.3,
+    "exposure": 0.2,
+    "evidence_confidence": 0.15
+  },
+  "score_range": [
+    0,
+    100
+  ],
+  "exposure_default": 3,
+  "confidence_mapping": {
+    "doğrulandı": 5,
+    "analiz_edildi": 2,
+    "other": 1
+  },
+  "control_effectiveness_values_are_assumptions": true,
+  "simulation_only": true,
+  "scope": "crAPI challenges 1-15; challenges 16-18 excluded"
+}

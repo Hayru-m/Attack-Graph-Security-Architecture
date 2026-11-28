@@ -1,0 +1,1540 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "crAPI Accepted",
+    "version": "1.0.0",
+    "description": "OpenAPI specification generated from the provided Postman collection. Endpoints and methods are collection-derived. Response schemas are not inferred."
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "Relative server URL. Configure the target host in the API client."
+    }
+  ],
+  "paths": {
+    "/identity/api/auth/signup": {
+      "post": {
+        "operationId": "post_identity_api_auth_signup",
+        "summary": "Signup example.com",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Signup example.com"
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "number": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "example": {
+                "name": "{{name}}",
+                "email": "{{email}}",
+                "number": "{{phone}}",
+                "password": "{{password}}"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity/api/auth/login": {
+      "post": {
+        "operationId": "post_identity_api_auth_login",
+        "summary": "Login",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 5,
+        "x-postman-request-names": [
+          "Login",
+          "Mechanic Login",
+          "Admin Login",
+          "Login Back",
+          "Login"
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "example": {
+                "email": "{{email}}",
+                "password": "{{password}}"
+              }
+            }
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/identity/api/auth/verify": {
+      "post": {
+        "operationId": "post_identity_api_auth_verify",
+        "summary": "Verify JWT Token",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Verify JWT Token"
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "token": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "example": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity/api/auth/forget-password": {
+      "post": {
+        "operationId": "post_identity_api_auth_forget_password",
+        "summary": "Forgot Password",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Forgot Password"
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "example": {
+                "email": "{{email}}"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/search": {
+      "get": {
+        "operationId": "get_api_v2_search",
+        "summary": "SearchMailOTP",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Mail service"
+        ],
+        "x-postman-request-count": 4,
+        "x-postman-request-names": [
+          "SearchMailOTP",
+          "SearchMailVehicle",
+          "SearchMailVerificationToken",
+          "SearchMailVerificationToken Back"
+        ],
+        "parameters": [
+          {
+            "name": "kind",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url_mail"
+      }
+    },
+    "/identity/api/auth/v3/check-otp": {
+      "post": {
+        "operationId": "post_identity_api_auth_v3_check_otp",
+        "summary": "Check OTP",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Check OTP"
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "otp": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "example": {
+                "email": "{{email}}",
+                "otp": "{{OTP}}",
+                "password": "{{password}}"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity/api/v2/vehicle/resend_email": {
+      "post": {
+        "operationId": "post_identity_api_v2_vehicle_resend_email",
+        "summary": "Resend vehicle email",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Resend vehicle email"
+        ],
+        "x-postman-base-variable": "url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/identity/api/v2/vehicle/add_vehicle": {
+      "post": {
+        "operationId": "post_identity_api_v2_vehicle_add_vehicle",
+        "summary": "Add Vehicle from Mail",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Add Vehicle from Mail"
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "vin": {
+                    "type": "string"
+                  },
+                  "pincode": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "example": {
+                "vin": "{{VIN}}",
+                "pincode": "{{PIN}}"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/identity/api/v2/user/dashboard": {
+      "get": {
+        "operationId": "get_identity_api_v2_user_dashboard",
+        "summary": "Get Dashboard",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 2,
+        "x-postman-request-names": [
+          "Get Dashboard",
+          "Get user dashboard"
+        ],
+        "x-postman-base-variable": "url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": []
+      }
+    },
+    "/identity/api/v2/vehicle/vehicles": {
+      "get": {
+        "operationId": "get_identity_api_v2_vehicle_vehicles",
+        "summary": "Get vehicles",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Get vehicles"
+        ],
+        "x-postman-base-variable": "url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/identity/api/v2/vehicle/{vehicle_id}/location": {
+      "get": {
+        "operationId": "get_identity_api_v2_vehicle_vehicle_id_location",
+        "summary": "Get vehicle location",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Get vehicle location"
+        ],
+        "parameters": [
+          {
+            "name": "vehicle_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/community/api/v2/coupon/validate-coupon": {
+      "post": {
+        "operationId": "post_community_api_v2_coupon_validate_coupon",
+        "summary": "Validate coupon",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Community"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Validate coupon"
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "coupon_code": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "example": {
+                "coupon_code": "TRAC075"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workshop/api/shop/apply_coupon": {
+      "post": {
+        "operationId": "post_workshop_api_shop_apply_coupon",
+        "summary": "Apply coupon",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Workshop"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Apply coupon"
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "coupon_code": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "integer"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "example": {
+                "coupon_code": "TRAC075",
+                "amount": 75
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/community/api/v2/community/posts": {
+      "post": {
+        "operationId": "post_community_api_v2_community_posts",
+        "summary": "Create post ",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Community"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Create post "
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "content": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "example": {
+                "title": "{{$randomLoremSentence}}",
+                "content": "{{$randomLoremParagraph}}"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/community/api/v2/community/posts/{post_id}": {
+      "get": {
+        "operationId": "get_community_api_v2_community_posts_post_id",
+        "summary": "Get post",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Community"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Get post"
+        ],
+        "parameters": [
+          {
+            "name": "post_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/community/api/v2/community/posts/recent": {
+      "get": {
+        "operationId": "get_community_api_v2_community_posts_recent",
+        "summary": "Get recent posts",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Community"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Get recent posts"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/community/api/v2/community/posts/{post_id}/comment": {
+      "post": {
+        "operationId": "post_community_api_v2_community_posts_post_id_comment",
+        "summary": "Post comment",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Community"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Post comment"
+        ],
+        "description": "Post comment",
+        "parameters": [
+          {
+            "name": "post_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "content": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "example": {
+                "content": "{{$randomLoremSentence}}"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workshop/api/mechanic": {
+      "get": {
+        "operationId": "get_workshop_api_mechanic",
+        "summary": "Get All Mechanics",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Workshop"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Get All Mechanics"
+        ],
+        "x-postman-base-variable": "url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workshop/api/merchant/contact_mechanic": {
+      "post": {
+        "operationId": "post_workshop_api_merchant_contact_mechanic",
+        "summary": "Contact mechanic",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Workshop"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Contact mechanic"
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "mechanic_code": {
+                    "type": "string"
+                  },
+                  "problem_details": {
+                    "type": "string"
+                  },
+                  "vin": {
+                    "type": "string"
+                  },
+                  "mechanic_api": {
+                    "type": "string"
+                  },
+                  "repeat_request_if_failed": {
+                    "type": "boolean"
+                  },
+                  "number_of_repeats": {
+                    "type": "integer"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "example": {
+                "mechanic_code": "TRAC_JHN",
+                "problem_details": "Hi Jhon",
+                "vin": "{{VIN}}",
+                "mechanic_api": "{{url}}/workshop/api/mechanic/receive_report",
+                "repeat_request_if_failed": false,
+                "number_of_repeats": 1
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workshop/api/mechanic/service_requests": {
+      "get": {
+        "operationId": "get_workshop_api_mechanic_service_requests",
+        "summary": "Service Requests",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Workshop"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Service Requests"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workshop/api/mechanic/mechanic_report": {
+      "get": {
+        "operationId": "get_workshop_api_mechanic_mechanic_report",
+        "summary": "GetReport",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Workshop"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "GetReport"
+        ],
+        "parameters": [
+          {
+            "name": "report_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "text/plain": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workshop/api/shop/products": {
+      "get": {
+        "operationId": "get_workshop_api_shop_products",
+        "summary": "Get products",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Workshop"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Get products"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      },
+      "post": {
+        "operationId": "post_workshop_api_shop_products",
+        "summary": "Add Product",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Workshop"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Add Product"
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "price": {
+                    "type": "integer"
+                  },
+                  "image_url": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "example": {
+                "name": "NewSeat",
+                "price": 100,
+                "image_url": "images/seat.svg"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workshop/api/shop/orders": {
+      "post": {
+        "operationId": "post_workshop_api_shop_orders",
+        "summary": "Create Order",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Workshop"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Create Order"
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workshop/api/shop/orders/all": {
+      "get": {
+        "operationId": "get_workshop_api_shop_orders_all",
+        "summary": "Get orders",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Workshop"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Get orders"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workshop/api/shop/orders/{order_id}": {
+      "get": {
+        "operationId": "get_workshop_api_shop_orders_order_id",
+        "summary": "Get Order",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Workshop"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Get Order"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workshop/api/shop/orders/return_order": {
+      "post": {
+        "operationId": "post_workshop_api_shop_orders_return_order",
+        "summary": "Return order",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Workshop"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Return order"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/identity/api/v2/user/videos": {
+      "post": {
+        "operationId": "post_identity_api_v2_user_videos",
+        "summary": "Add video",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 3,
+        "x-postman-request-names": [
+          "Add video",
+          "Add new video",
+          "ReAdd new video"
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "string"
+              },
+              "example": "\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"file\"; filename=\"abc.mp4\"\r\nContent-Type: video/mp4\r\n\r\nhakfhas\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW--"
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": []
+      }
+    },
+    "/identity/api/v2/user/videos/{video_id}": {
+      "get": {
+        "operationId": "get_identity_api_v2_user_videos_video_id",
+        "summary": "Get Video",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Get Video"
+        ],
+        "parameters": [
+          {
+            "name": "video_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      },
+      "put": {
+        "operationId": "put_identity_api_v2_user_videos_video_id",
+        "summary": "Change Video Name",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Change Video Name"
+        ],
+        "parameters": [
+          {
+            "name": "video_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "videoName": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "example": {
+                "videoName": "{{$randomNoun}}.mp4"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "delete_identity_api_v2_user_videos_video_id",
+        "summary": "Delete video",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Delete video"
+        ],
+        "parameters": [
+          {
+            "name": "video_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/identity/api/v2/user/videos/convert_video": {
+      "get": {
+        "operationId": "get_identity_api_v2_user_videos_convert_video",
+        "summary": "Share video",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Share video"
+        ],
+        "parameters": [
+          {
+            "name": "video_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/identity/api/v2/admin/videos/{video_id}": {
+      "delete": {
+        "operationId": "delete_identity_api_v2_admin_videos_video_id",
+        "summary": "Delete video by admin",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Delete video by admin"
+        ],
+        "parameters": [
+          {
+            "name": "video_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/workshop/api/management/users/all": {
+      "get": {
+        "operationId": "get_workshop_api_management_users_all",
+        "summary": "Get Workshop User Details",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Workshop"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Get Workshop User Details"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "string"
+              },
+              "example": "\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"file\"; filename=\"abc.mp4\"\r\nContent-Type: video/mp4\r\n\r\nhakfhas\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW--"
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/identity/api/v2/user/change-email": {
+      "post": {
+        "operationId": "post_identity_api_v2_user_change_email",
+        "summary": "Change email",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 2,
+        "x-postman-request-names": [
+          "Change email",
+          "Change email Back"
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "old_email": {
+                    "type": "string"
+                  },
+                  "new_email": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "example": {
+                "old_email": "{{email}}",
+                "new_email": "{{new_email}}"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": []
+      }
+    },
+    "/identity/api/v2/user/verify-email-token": {
+      "post": {
+        "operationId": "post_identity_api_v2_user_verify_email_token",
+        "summary": "Verify email token",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          "Identity"
+        ],
+        "x-postman-request-count": 2,
+        "x-postman-request-names": [
+          "Verify email token",
+          "Verify email token Back"
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "old_email": {
+                    "type": "string"
+                  },
+                  "new_email": {
+                    "type": "string"
+                  },
+                  "token": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "example": {
+                "old_email": "{{email}}",
+                "new_email": "{{new_email}}",
+                "token": "{{email_token}}"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": []
+      }
+    },
+    "/.well-known/jwks.json": {
+      "get": {
+        "operationId": "get_well_known_jwks_json",
+        "summary": "Get Public Key",
+        "responses": {
+          "default": {
+            "description": "Response details are not documented in the Postman collection."
+          }
+        },
+        "tags": [
+          ".Well Known"
+        ],
+        "x-postman-request-count": 1,
+        "x-postman-request-names": [
+          "Get Public Key"
+        ],
+        "x-postman-base-variable": "url",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-postman-source": "recon/postman_collection.json",
+  "x-postman-total-requests": 49,
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
